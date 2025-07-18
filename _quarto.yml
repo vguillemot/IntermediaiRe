@@ -1,21 +1,58 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "IntermediaiRe"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  title: "IntermediaiRe: intermediate R"
+  description: "Homepage for IntermediaiRe - Intermediate R programming."
+  
+  open-graph: true
+
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    background: "#D9E3E4"
+
+  sidebar:
+    background: "#D9E3E4"
+    logo: "img/Rlogo.svg"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/vguillemot/IntermediaiRe
+        text: "GitHub"
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: index.qmd
+            text: Schedule
+      - section: "R Markdown"
+        contents:
+          - href: pages/01_rmarkdown.qmd
+            text: R Markdown
+      - section: "Visualization"
+        contents:
+          - href: pages/02_visualization.qmd
+            text: Visualization
+      - section: "Project"
+        contents:
+          - href: pages/03_project.qmd
+            text: Project
+      - href: pages/about.qmd
+        text: About
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
     toc: true
 
-
-
+freeze: auto

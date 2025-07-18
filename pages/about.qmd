@@ -1,0 +1,20 @@
+---
+title: "About"
+---
+
+# Amaury et Vincent
+
+We are engineers at the Hub of Bioinformatics and Biostatistics.
+[Link](link)
+
+
+Please check the schedule for the Open Desk, every Tuesday mornings.
+[Link](link)
+
+
+# We must thank...
+
+
+  * STA120 (for the website)
+  * ...
+

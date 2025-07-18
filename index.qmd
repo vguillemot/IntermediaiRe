@@ -2,10 +2,19 @@
 title: "IntermediaiRe"
 ---
 
-This is a Quarto website.
+This is the companion website for the class "IntermediaiRe"[^1]. You will find here the objectives, schedule, slides, and other materials related to this course.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Objectives
 
-```{r}
-1 + 1
-```
+
+# Schedule
+
+
+ * Day 1: advanced reporting with R Markdown
+ * Day 2: visualization
+
+
+# To go further
+
+
+[^1]: have you spotted this infinitely funny pun that works only in French?
