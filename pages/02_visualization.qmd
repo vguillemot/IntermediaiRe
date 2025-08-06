@@ -3,3 +3,12 @@ title: "02_visualization"
 format: html
 ---
 
+# Visualisation using advanced heatmaps
+
+## 3 solutions in R
+ * Heatmap() a base R function
+ * Pheatmap() easy heatmap
+ * Complex heatmap : advanced
+ * build your heatmap with ggplot: overkill
+
+
