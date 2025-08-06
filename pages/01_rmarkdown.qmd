@@ -1,5 +1,106 @@
 ---
-title: "01_rmarkdown"
-format: html
+title: "Reproducible Reports with R Markdown"
+author: "Amaury & Vincent"
+footer: "[Home](https://vguillemot.github.io/IntermediaiRe/)"
+logo: "../img/p.svg"
+format: 
+  revealjs:
+    theme: ../slides.scss
+    transition: none
+    slide-number: true
+execute:
+  freeze: auto
 ---
 
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 10, fig.asp = 0.618,
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+```
+
+# Cheat-sheet
+
+
+## Recto
+
+![](01_rmarkdown_extra/rmarkdown-recto.png)
+
+
+## Verso
+
+![](01_rmarkdown_extra/rmarkdown-verso.png)
+
+# Essentials
+
+YAML, Markdown and chunks
+
+## YAML
+
+```
+---
+title: "Document title"
+author: "Lewis Forwarder"
+output: html_document
+---
+```
+
+ * Starts with `---`, ends with `---`
+ * Intuitive syntax $\rightarrow$ `field: value`
+ * Outputs: HTML, docx, pptx, (pdf)
+
+
+## Markdown
+
+Intuitive language to write, in plain text, a document that is transformed 
+into a report.
+
+:::::: {.columns}
+
+Emphasis
+
+::: {.column}
+```
+*italic*   **bold**
+_italic_   __bold__
+```
+
+Headers
+
+```
+# Header 1
+## Header 2
+### Header 3
+```
+:::
+
+:::{.column}
+
+Unordered List
+
+```
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+```
+:::
+
+:::{.column}
+Ordered List
+
+```
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+:::
+
+::::::
+
+And so much more!

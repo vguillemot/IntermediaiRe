@@ -30,5 +30,115 @@
     "crumbs": [
       "About"
     ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#solutions-in-r",
+    "href": "pages/02_visualization.html#solutions-in-r",
+    "title": "02_visualization",
+    "section": "3 solutions in R",
+    "text": "3 solutions in R\n\nHeatmap() a base R function\nPheatmap() easy heatmap\nComplex heatmap : advanced\nbuild your heatmap with ggplot: overkill\n\nother stuff",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#computational-setup",
+    "href": "pages/02_visualization.html#computational-setup",
+    "title": "02_visualization",
+    "section": "Computational setup",
+    "text": "Computational setup",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#data",
+    "href": "pages/02_visualization.html#data",
+    "title": "02_visualization",
+    "section": "Data",
+    "text": "Data",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#data-exploration",
+    "href": "pages/02_visualization.html#data-exploration",
+    "title": "02_visualization",
+    "section": "data exploration",
+    "text": "data exploration",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#conclusion",
+    "href": "pages/02_visualization.html#conclusion",
+    "title": "02_visualization",
+    "section": "conclusion",
+    "text": "conclusion",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#outcome",
+    "href": "pages/02_visualization.html#outcome",
+    "title": "02_visualization",
+    "section": "Outcome:",
+    "text": "Outcome:",
+    "crumbs": [
+      "Visualization",
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#recto",
+    "href": "pages/01_rmarkdown.html#recto",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Recto",
+    "text": "Recto",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#verso",
+    "href": "pages/01_rmarkdown.html#verso",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Verso",
+    "text": "Verso",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#yaml",
+    "href": "pages/01_rmarkdown.html#yaml",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "YAML",
+    "text": "YAML\n---\ntitle: \"Document title\"\nauthor: \"Lewis Forwarder\"\noutput: html_document\n---\n\nStarts with ---, ends with ---\nIntuitive syntax \\(\\rightarrow\\) field: value\nOutputs: HTML, docx, pptx, (pdf)",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#markdown",
+    "href": "pages/01_rmarkdown.html#markdown",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Markdown",
+    "text": "Markdown\nIntuitive language to write, in plain text, a document that is transformed into a report.\n\nEmphasis\n*italic*   **bold**\n_italic_   __bold__\nHeaders\n# Header 1\n## Header 2\n### Header 3\n\nUnordered List\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nOrdered List\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nAnd so much more!",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
   }
 ]

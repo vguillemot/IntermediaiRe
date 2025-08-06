@@ -1,0 +1,19 @@
+{
+  "hash": "e716e092d75df177ba71e25d52f09f15",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Reproducible Reports with R Markdown\"\nauthor: \"Amaury & Vincent\"\nfooter: \"[Home](https://vguillemot.github.io/IntermediaiRe/)\"\nlogo: \"../img/p.svg\"\nformat: \n  revealjs:\n    theme: ../slides.scss\n    transition: none\n    slide-number: true\nexecute:\n  freeze: auto\n---\n\n\n\n# Cheat-sheet\n\n\n## Recto\n\n![](01_rmarkdown_extra/rmarkdown-recto.png)\n\n\n## Verso\n\n![](01_rmarkdown_extra/rmarkdown-verso.png)\n\n# Essentials\n\nYAML, Markdown and chunks\n\n## YAML\n\n```\n---\ntitle: \"Document title\"\nauthor: \"Lewis Forwarder\"\noutput: html_document\n---\n```\n\n * Starts with `---`, ends with `---`\n * Intuitive syntax $\\rightarrow$ `field: value`\n * Outputs: HTML, docx, pptx, (pdf)\n\n\n## Markdown\n\nIntuitive language to write, in plain text, a document that is transformed \ninto a report.\n\n:::::: {.columns}\n\nEmphasis\n\n::: {.column}\n```\n*italic*   **bold**\n_italic_   __bold__\n```\n\nHeaders\n\n```\n# Header 1\n## Header 2\n### Header 3\n```\n:::\n\n:::{.column}\n\nUnordered List\n\n```\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n```\n:::\n\n:::{.column}\nOrdered List\n\n```\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n```\n:::\n\n::::::\n\nAnd so much more!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

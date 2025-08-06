@@ -26,13 +26,13 @@ knitr::opts_chunk$set(
 # Visualisation using advanced heatmaps
 
 ## 3 solutions in R
-:::
+
  * Heatmap() a base R function
  * Pheatmap() easy heatmap
  * Complex heatmap : advanced
  * build your heatmap with ggplot: overkill
+
 [other stuff](https://r-graph-gallery.com/heatmap)
-:::
 
 # Introduction
 
@@ -42,12 +42,8 @@ knitr::opts_chunk$set(
 
 # Heatmap: what why how when where who
 
----
-<br>
 
-::: question
 What is a heatmap ?
-:::
 
 ## conclusion
 
