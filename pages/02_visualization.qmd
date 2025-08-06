@@ -1,14 +1,56 @@
 ---
 title: "02_visualization"
-format: html
+subtitle: "Intermediate level R heatmap"
+author: "Amaury & Vincent"
+footer: "[Home](https://vguillemot.github.io/IntermediaiRe/)"
+logo: "../img/p.svg"
+format: 
+  revealjs:
+    theme: ../slides.scss
+    transition: none
+    slide-number: true
+execute:
+  freeze: auto
 ---
+
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 10, fig.asp = 0.618,
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+```
 
 # Visualisation using advanced heatmaps
 
 ## 3 solutions in R
+:::
  * Heatmap() a base R function
  * Pheatmap() easy heatmap
  * Complex heatmap : advanced
  * build your heatmap with ggplot: overkill
+[other stuff](https://r-graph-gallery.com/heatmap)
+:::
+
+# Introduction
+
+## Computational setup
+## Data
+## data exploration
+
+# Heatmap: what why how when where who
+
+---
+<br>
+
+::: question
+What is a heatmap ?
+:::
+
+## conclusion
+
+## Outcome:
 
 
