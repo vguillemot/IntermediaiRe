@@ -30,6 +30,8 @@ website:
         contents:
           - href: index.qmd
             text: Schedule
+      - href: pages/00_reminders.qmd
+        text: Introduction and reminders
       - section: "R Markdown"
         contents:
           - href: pages/01_rmarkdown.qmd

@@ -1,0 +1,62 @@
+---
+title: "Introduction and Reminders"
+author: "Amaury & Vincent"
+footer: "[Home](../index.qmd)"
+logo: "../img/IP_Logo_Noir_RVB.svg"
+format: 
+  revealjs:
+    theme: ../slides.scss
+    transition: none
+    slide-number: true
+execute:
+  freeze: auto
+---
+
+# Introduction
+
+## This is us
+
+:::::: {.columns}
+
+
+::: {.column width="30%"}
+![Amaury Vaysse, bioinformatician](../img/amaury.jpg){height=300px}
+:::
+
+::: {.column width="30%"}
+:::
+
+::: {.column width="30%"}
+![Vincent Guillemot, biostatistician](../img/vincent.jpeg){height=300px}
+:::
+
+
+::::::
+
+## Course objectives
+
+
+
+## Kahoot
+
+![](../img/Kahoot_Logo.svg)
+
+# Reminders
+
+
+## Reminder: package installation
+
+## Reminder: dplyr (cheatsheet)
+
+## Reminder: ggplot2 (cheasheet)
+
+## Reminder: data import
+
+
+
+
+
+
+
+
+

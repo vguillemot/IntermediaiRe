@@ -1,7 +1,7 @@
 ---
 title: "Reproducible Reports with R Markdown"
 author: "Amaury & Vincent"
-footer: "[Home](https://vguillemot.github.io/IntermediaiRe/)"
+footer: "[Home](../index.qmd)"
 logo: "../img/p.svg"
 format: 
   revealjs:
@@ -62,7 +62,7 @@ into a report.
 
 Emphasis
 
-::: {.column}
+::: {.column width="30%"}
 ```
 *italic*   **bold**
 _italic_   __bold__
@@ -77,7 +77,7 @@ Headers
 ```
 :::
 
-:::{.column}
+:::{.column  width="30%"}
 
 Unordered List
 
@@ -89,7 +89,8 @@ Unordered List
 ```
 :::
 
-:::{.column}
+:::{.column  width="30%"}
+
 Ordered List
 
 ```

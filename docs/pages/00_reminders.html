@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Amaury &amp; Vincent">
-  <title>IntermediaiRe: intermediate R – Reproducible Reports with R Markdown</title>
+  <title>IntermediaiRe: intermediate R – Introduction and Reminders</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -121,7 +121,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Reproducible Reports with R Markdown – IntermediaiRe: intermediate R">
+<meta property="og:title" content="Introduction and Reminders – IntermediaiRe: intermediate R">
 <meta property="og:site_name" content="IntermediaiRe: intermediate R">
 </head>
 <body class="quarto-light">
@@ -129,7 +129,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducible Reports with R Markdown</h1>
+  <h1 class="title">Introduction and Reminders</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -141,68 +141,60 @@ Amaury &amp; Vincent
 
 </section>
 <section>
-<section id="cheat-sheet" class="title-slide slide level1 center">
-<h1>Cheat-sheet</h1>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
 </section>
-<section id="recto" class="slide level2">
-<h2>Recto</h2>
-
-<img data-src="01_rmarkdown_extra/rmarkdown-recto.png" class="r-stretch"></section>
-<section id="verso" class="slide level2">
-<h2>Verso</h2>
-
-<img data-src="01_rmarkdown_extra/rmarkdown-verso.png" class="r-stretch"></section></section>
-<section>
-<section id="essentials" class="title-slide slide level1 center">
-<h1>Essentials</h1>
-<p>YAML, Markdown and chunks</p>
-</section>
-<section id="yaml" class="slide level2">
-<h2>YAML</h2>
-<pre><code>---
-title: "Document title"
-author: "Lewis Forwarder"
-output: html_document
----</code></pre>
-<ul>
-<li>Starts with <code>---</code>, ends with <code>---</code></li>
-<li>Intuitive syntax <span class="math inline">\(\rightarrow\)</span> <code>field: value</code></li>
-<li>Outputs: HTML, docx, pptx, (pdf)</li>
-</ul>
-</section>
-<section id="markdown" class="slide level2">
-<h2>Markdown</h2>
-<p>Intuitive language to write, in plain text, a document that is transformed into a report.</p>
+<section id="this-is-us" class="slide level2">
+<h2>This is us</h2>
 <div class="columns">
-<p>Emphasis</p><div class="column" style="width:30%;">
-<pre><code>*italic*   **bold**
-_italic_   __bold__</code></pre>
-<p>Headers</p>
-<pre><code># Header 1
-## Header 2
-### Header 3</code></pre>
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img/amaury.jpg" height="300"></p>
+<figcaption>Amaury Vaysse, bioinformatician</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:30%;">
-<p>Unordered List</p>
-<pre><code>* Item 1
-* Item 2
-    + Item 2a
-    + Item 2b</code></pre>
+
 </div><div class="column" style="width:30%;">
-<p>Ordered List</p>
-<pre><code>1. Item 1
-2. Item 2
-3. Item 3
-    + Item 3a
-    + Item 3b</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img/vincent.jpeg" height="300"></p>
+<figcaption>Vincent Guillemot, biostatistician</figcaption>
+</figure>
+</div>
 </div></div>
-<p>And so much more!</p>
+</section>
+<section id="course-objectives" class="slide level2">
+<h2>Course objectives</h2>
+</section>
+<section id="kahoot" class="slide level2">
+<h2>Kahoot</h2>
+
+<img data-src="../img/Kahoot_Logo.svg" class="r-stretch"></section></section>
+<section>
+<section id="reminders" class="title-slide slide level1 center">
+<h1>Reminders</h1>
+
+</section>
+<section id="reminder-package-installation" class="slide level2">
+<h2>Reminder: package installation</h2>
+</section>
+<section id="reminder-dplyr-cheatsheet" class="slide level2">
+<h2>Reminder: dplyr (cheatsheet)</h2>
+</section>
+<section id="reminder-ggplot2-cheasheet" class="slide level2">
+<h2>Reminder: ggplot2 (cheasheet)</h2>
+</section>
+<section id="reminder-data-import" class="slide level2">
+<h2>Reminder: data import</h2>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../img/p.svg" class="slide-logo"></p>
+<p><img src="../img/IP_Logo_Noir_RVB.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="../index.html">Home</a></p>
 </div>
@@ -416,44 +408,6 @@ _italic_   __bold__</code></pre>
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

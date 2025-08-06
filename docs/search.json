@@ -1,37 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "IntermediaiRe",
-    "section": "",
-    "text": "This is the companion website for the class “IntermediaiRe”1. You will find here the objectives, schedule, slides, and other materials related to this course.",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "IntermediaiRe",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhave you spotted this infinitely funny pun that works only in French?↩︎",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "pages/about.html",
-    "href": "pages/about.html",
-    "title": "About",
-    "section": "",
-    "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120 (for the website)\n…",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
     "objectID": "pages/02_visualization.html#solutions-in-r",
     "href": "pages/02_visualization.html#solutions-in-r",
     "title": "02_visualization",
@@ -139,6 +107,108 @@
     "crumbs": [
       "R Markdown",
       "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#this-is-us",
+    "href": "pages/00_reminders.html#this-is-us",
+    "title": "Introduction and Reminders",
+    "section": "This is us",
+    "text": "This is us\n\n\n\n\n\nAmaury Vaysse, bioinformatician\n\n\n\n\n\n\n\n\nVincent Guillemot, biostatistician",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#course-objectives",
+    "href": "pages/00_reminders.html#course-objectives",
+    "title": "Introduction and Reminders",
+    "section": "Course objectives",
+    "text": "Course objectives",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#kahoot",
+    "href": "pages/00_reminders.html#kahoot",
+    "title": "Introduction and Reminders",
+    "section": "Kahoot",
+    "text": "Kahoot",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-package-installation",
+    "href": "pages/00_reminders.html#reminder-package-installation",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: package installation",
+    "text": "Reminder: package installation",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-dplyr-cheatsheet",
+    "href": "pages/00_reminders.html#reminder-dplyr-cheatsheet",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: dplyr (cheatsheet)",
+    "text": "Reminder: dplyr (cheatsheet)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-ggplot2-cheasheet",
+    "href": "pages/00_reminders.html#reminder-ggplot2-cheasheet",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: ggplot2 (cheasheet)",
+    "text": "Reminder: ggplot2 (cheasheet)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-data-import",
+    "href": "pages/00_reminders.html#reminder-data-import",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: data import",
+    "text": "Reminder: data import",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IntermediaiRe",
+    "section": "",
+    "text": "This is the companion website for the class “IntermediaiRe”1. You will find here the objectives, schedule, slides, and other materials related to this course.",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "IntermediaiRe",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhave you spotted this infinitely funny pun that works only in French?↩︎",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "pages/about.html",
+    "href": "pages/about.html",
+    "title": "About",
+    "section": "",
+    "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120 (for the website)\n…",
+    "crumbs": [
+      "About"
     ]
   }
 ]
