@@ -15,8 +15,7 @@ Morning = 9h30 to 12h30. Afternoon = 13h30 to 17h30. (Coffee breaks included)
  * Day 1: advanced reporting with R Markdown
  * Day 2: visualization
 
-
-Shared script: [link](https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing)
+During this class, we will work on a shared script ([link]({{< meta shared_script_url >}})).
 
 # To go further
 

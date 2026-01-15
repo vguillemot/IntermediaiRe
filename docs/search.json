@@ -124,7 +124,7 @@
     "href": "pages/00_reminders.html#course-objectives",
     "title": "Introduction and Reminders",
     "section": "Course objectives",
-    "text": "Course objectives",
+    "text": "Course objectives\n\n\nArtwork by @allison_horst",
     "crumbs": [
       "Introduction and reminders"
     ]
@@ -144,7 +144,7 @@
     "href": "pages/00_reminders.html#reminder-package-installation",
     "title": "Introduction and Reminders",
     "section": "Reminder: package installation",
-    "text": "Reminder: package installation",
+    "text": "Reminder: package installation\nWhat’s your favorite method?\n\nRstudio wizard\ninstall.packages\nBiocManager::install\nremotes::install_github\npak::pak\nOther?",
     "crumbs": [
       "Introduction and reminders"
     ]
@@ -209,6 +209,16 @@
     "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120 (for the website)\n…",
     "crumbs": [
       "About"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#schedule-language-etc",
+    "href": "pages/00_reminders.html#schedule-language-etc",
+    "title": "Introduction and Reminders",
+    "section": "Schedule, language, etc",
+    "text": "Schedule, language, etc\n\nDay 1: tips and tricks of dplyr and ggplot2. Create a report in R Markdown.\nDay 2: Heatmaps, and other advanced graphical representations. Create panels of plots. Good practices in data visualization.\nDay 3: work on your data.",
+    "crumbs": [
+      "Introduction and reminders"
     ]
   }
 ]

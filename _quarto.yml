@@ -14,7 +14,7 @@ website:
 
   sidebar:
     background: "#D9E3E4"
-    logo: "img/Rlogo.svg"
+    logo: "img/bologo.png"
     pinned: true
     align: center
     tools:
@@ -46,6 +46,11 @@ website:
             text: Project
       - href: pages/about.qmd
         text: About
+      - href: https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing
+        text: Link to shared script
+
+shared_script_url: "https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing"
+# Attention, il faut mettre à jour le lien vers le site à deux endroits : ci-dessous et trois lignes plus haut
 
 format:
   html:

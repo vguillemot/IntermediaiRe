@@ -303,3 +303,25 @@ details>summary {
   font-style: italic;
 }
 
+
+/* Style pour aligner du texte à droite */
+.right-align {
+  text-align: right;
+}
+
+/* Style un peu plus discret pour des légendes */
+.aside-note {
+  text-align: right;
+  font-size: 0.5em;
+  color: #BBB;
+  margin-top: 0.5em;
+  a {
+    color: #5da9ff;          /* bleu clair (tu peux ajuster) */
+    text-decoration: none;   /* optionnel : pas de soulignement */
+  }
+
+  a:hover {
+    color: #89c8ff;          /* bleu encore plus clair au survol */
+    text-decoration: underline;
+  }
+}

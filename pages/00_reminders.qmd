@@ -14,6 +14,12 @@ execute:
 
 # Introduction
 
+## Schedule, language, etc
+
+ * Day 1: tips and tricks of `dplyr` and `ggplot2`. Create a report in R Markdown.
+ * Day 2: Heatmaps, and other advanced graphical representations. Create panels of plots. Good practices in data visualization.
+ * Day 3: work on your data.
+
 ## This is us
 
 :::::: {.columns}
@@ -35,7 +41,11 @@ execute:
 
 ## Course objectives
 
+![](../img/hedgehog.png)
 
+::: {.aside-note}
+Artwork by [@allison_horst](https://twitter.com/allison_horst)
+:::
 
 ## Kahoot
 
@@ -45,6 +55,19 @@ execute:
 
 
 ## Reminder: package installation
+
+What's your favorite method?
+
+::: {.incremental}
+
+ * Rstudio wizard
+ * `install.packages`
+ * `BiocManager::install`
+ * `remotes::install_github`
+ * `pak::pak`
+ * Other?
+
+:::
 
 ## Reminder: dplyr (cheatsheet)
 
