@@ -2,7 +2,7 @@
 title: "Reproducible Reports with R Markdown"
 author: "Amaury & Vincent"
 footer: "[Home](../index.qmd)"
-logo: "../img/p.svg"
+logo: "../img/logos/phi.svg"
 format: 
   revealjs:
     theme: ../slides.scss

@@ -14,7 +14,7 @@ website:
 
   sidebar:
     background: "#D9E3E4"
-    logo: "img/bologo.png"
+    logo: "img/logos/logo1.png"
     pinned: true
     align: center
     tools:

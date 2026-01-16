@@ -1,5 +1,7 @@
 ---
-title: "03_workshop"
+title: "Workshop"
 format: html
+logo: "../img/logos/phi.svg"
 ---
 
+This is the description of the project.

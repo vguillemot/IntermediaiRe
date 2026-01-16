@@ -6,9 +6,9 @@ This is the companion website for the class "IntermediaiRe"[^1]. You will find h
 
 # Objectives
 
+The objective of this class is to show students how to combine their skills in R programming to create reproducible reports with R Markdown, along with publication ready figures. The course ends with a workshop during which students will be asked to work in teams on a dataset extracted from a recent publication, reproduce some or all the figures from the paper, and propose alternative visualizations.
 
 # Schedule
- 
  
 Morning = 9h30 to 12h30. Afternoon = 13h30 to 17h30. (Coffee breaks included)
 
@@ -18,6 +18,10 @@ Morning = 9h30 to 12h30. Afternoon = 13h30 to 17h30. (Coffee breaks included)
 During this class, we will work on a shared script ([link]({{< meta shared_script_url >}})).
 
 # To go further
+
+  * Advanced R programming: https://adv-r.hadley.nz/index.html
+  * Tidyplots: https://jbengler.github.io/tidyplots/index.html
+  * etc...
 
 
 [^1]: have you spotted this infinitely funny pun that works only in French?

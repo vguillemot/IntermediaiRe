@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-10632358f1e1df87e73c32acacbdc550.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Amaury &amp; Vincent">
   <title>IntermediaiRe: intermediate R – Introduction and Reminders</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a700e232207a754c37bf4bd3219e22ba.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-37747909821cb704e8b021b784119ba1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -159,7 +159,7 @@ Amaury &amp; Vincent
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../img/amaury.jpg" height="300"></p>
+<p><img data-src="../img/00_amaury.jpg" height="300"></p>
 <figcaption>Amaury Vaysse, bioinformatician</figcaption>
 </figure>
 </div>
@@ -168,7 +168,7 @@ Amaury &amp; Vincent
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../img/vincent.jpeg" height="300"></p>
+<p><img data-src="../img/00_vincent.jpeg" height="300"></p>
 <figcaption>Vincent Guillemot, biostatistician</figcaption>
 </figure>
 </div>
@@ -177,14 +177,14 @@ Amaury &amp; Vincent
 <section id="course-objectives" class="slide level2">
 <h2>Course objectives</h2>
 
-<img data-src="../img/hedgehog.png" class="r-stretch"><div class="aside-note">
+<img data-src="../img/00_hedgehog.png" class="r-stretch"><div class="aside-note">
 <p>Artwork by <a href="https://twitter.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
 </div>
 </section>
 <section id="kahoot" class="slide level2">
 <h2>Kahoot</h2>
 
-<img data-src="../img/Kahoot_Logo.svg" class="r-stretch"></section></section>
+<img data-src="../img/00_Kahoot_Logo.svg" class="r-stretch"></section></section>
 <section>
 <section id="reminders" class="title-slide slide level1 center">
 <h1>Reminders</h1>
@@ -210,12 +210,20 @@ Amaury &amp; Vincent
 </section>
 <section id="reminder-data-import" class="slide level2">
 <h2>Reminder: data import</h2>
+<p>What’s your favorite method/package?</p>
+<ul>
+<li class="fragment">Rstudio wizard</li>
+<li class="fragment"><code>openxlsx</code></li>
+<li class="fragment"><code>readxl</code></li>
+<li class="fragment"><code>read.table</code></li>
+<li class="fragment">Other?</li>
+</ul>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../img/IP_Logo_Noir_RVB.svg" class="slide-logo"></p>
+<p><img src="../img/logos/phi.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="../index.html">Home</a></p>
 </div>
@@ -403,7 +411,7 @@ Amaury &amp; Vincent
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -477,13 +485,14 @@ Amaury &amp; Vincent
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

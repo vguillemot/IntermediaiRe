@@ -2,7 +2,7 @@
 title: "Introduction and Reminders"
 author: "Amaury & Vincent"
 footer: "[Home](../index.qmd)"
-logo: "../img/IP_Logo_Noir_RVB.svg"
+logo: "../img/logos/phi.svg"
 format: 
   revealjs:
     theme: ../slides.scss
@@ -26,14 +26,14 @@ execute:
 
 
 ::: {.column width="30%"}
-![Amaury Vaysse, bioinformatician](../img/amaury.jpg){height=300px}
+![Amaury Vaysse, bioinformatician](../img/00_amaury.jpg){height=300px}
 :::
 
 ::: {.column width="30%"}
 :::
 
 ::: {.column width="30%"}
-![Vincent Guillemot, biostatistician](../img/vincent.jpeg){height=300px}
+![Vincent Guillemot, biostatistician](../img/00_vincent.jpeg){height=300px}
 :::
 
 
@@ -41,7 +41,7 @@ execute:
 
 ## Course objectives
 
-![](../img/hedgehog.png)
+![](../img/00_hedgehog.png)
 
 ::: {.aside-note}
 Artwork by [@allison_horst](https://twitter.com/allison_horst)
@@ -49,7 +49,7 @@ Artwork by [@allison_horst](https://twitter.com/allison_horst)
 
 ## Kahoot
 
-![](../img/Kahoot_Logo.svg)
+![](../img/00_Kahoot_Logo.svg)
 
 # Reminders
 
@@ -75,6 +75,17 @@ What's your favorite method?
 
 ## Reminder: data import
 
+What's your favorite method/package?
+
+::: {.incremental}
+
+ * Rstudio wizard
+ * `openxlsx`
+ * `readxl`
+ * `read.table`
+ * Other?
+
+:::
 
 
 

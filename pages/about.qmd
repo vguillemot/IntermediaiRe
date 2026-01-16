@@ -5,16 +5,16 @@ title: "About"
 # Amaury et Vincent
 
 We are engineers at the Hub of Bioinformatics and Biostatistics.
-[Link](link)
+[Link](https://research.pasteur.fr/en/team/bioinformatics-and-biostatistics-hub/)
 
 
 Please check the schedule for the Open Desk, every Tuesday mornings.
-[Link](link)
+[Link](https://research.pasteur.fr/en/service/open-desk/)
 
 
 # We must thank...
 
 
-  * STA120 (for the website)
+  * STA120, for inspiring us a lot [with their beautiful website](https://sta210-s22.github.io/website/)!
   * ...
 

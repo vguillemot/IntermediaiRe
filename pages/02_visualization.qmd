@@ -1,9 +1,9 @@
 ---
-title: "02_visualization"
+title: "Visualization"
 subtitle: "Intermediate level R heatmap"
 author: "Amaury & Vincent"
-footer: "[Home](https://vguillemot.github.io/IntermediaiRe/)"
-logo: "../img/p.svg"
+footer: "[Home](../index.qmd)"
+logo: "../img/logos/phi.svg"
 format: 
   revealjs:
     theme: ../slides.scss

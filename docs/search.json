@@ -2,7 +2,7 @@
   {
     "objectID": "pages/02_visualization.html#solutions-in-r",
     "href": "pages/02_visualization.html#solutions-in-r",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "3 solutions in R",
     "text": "3 solutions in R\n\nHeatmap() a base R function\nPheatmap() easy heatmap\nComplex heatmap : advanced\nbuild your heatmap with ggplot: overkill\n\nother stuff",
     "crumbs": [
@@ -13,7 +13,7 @@
   {
     "objectID": "pages/02_visualization.html#computational-setup",
     "href": "pages/02_visualization.html#computational-setup",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "Computational setup",
     "text": "Computational setup",
     "crumbs": [
@@ -24,7 +24,7 @@
   {
     "objectID": "pages/02_visualization.html#data",
     "href": "pages/02_visualization.html#data",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "Data",
     "text": "Data",
     "crumbs": [
@@ -35,7 +35,7 @@
   {
     "objectID": "pages/02_visualization.html#data-exploration",
     "href": "pages/02_visualization.html#data-exploration",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "data exploration",
     "text": "data exploration",
     "crumbs": [
@@ -46,7 +46,7 @@
   {
     "objectID": "pages/02_visualization.html#conclusion",
     "href": "pages/02_visualization.html#conclusion",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "conclusion",
     "text": "conclusion",
     "crumbs": [
@@ -57,7 +57,7 @@
   {
     "objectID": "pages/02_visualization.html#outcome",
     "href": "pages/02_visualization.html#outcome",
-    "title": "02_visualization",
+    "title": "Visualization",
     "section": "Outcome:",
     "text": "Outcome:",
     "crumbs": [
@@ -107,6 +107,16 @@
     "crumbs": [
       "R Markdown",
       "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#schedule-language-etc",
+    "href": "pages/00_reminders.html#schedule-language-etc",
+    "title": "Introduction and Reminders",
+    "section": "Schedule, language, etc",
+    "text": "Schedule, language, etc\n\nDay 1: tips and tricks of dplyr and ggplot2. Create a report in R Markdown.\nDay 2: Heatmaps, and other advanced graphical representations. Create panels of plots. Good practices in data visualization.\nDay 3: work on your data.",
+    "crumbs": [
+      "Introduction and reminders"
     ]
   },
   {
@@ -174,7 +184,7 @@
     "href": "pages/00_reminders.html#reminder-data-import",
     "title": "Introduction and Reminders",
     "section": "Reminder: data import",
-    "text": "Reminder: data import",
+    "text": "Reminder: data import\nWhat’s your favorite method/package?\n\nRstudio wizard\nopenxlsx\nreadxl\nread.table\nOther?",
     "crumbs": [
       "Introduction and reminders"
     ]
@@ -202,23 +212,24 @@
     ]
   },
   {
+    "objectID": "pages/03_project.html",
+    "href": "pages/03_project.html",
+    "title": "Workshop",
+    "section": "",
+    "text": "This is the description of the project.",
+    "crumbs": [
+      "Project",
+      "Project"
+    ]
+  },
+  {
     "objectID": "pages/about.html",
     "href": "pages/about.html",
     "title": "About",
     "section": "",
-    "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120 (for the website)\n…",
+    "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120, for inspiring us a lot with their beautiful website!\n…",
     "crumbs": [
       "About"
-    ]
-  },
-  {
-    "objectID": "pages/00_reminders.html#schedule-language-etc",
-    "href": "pages/00_reminders.html#schedule-language-etc",
-    "title": "Introduction and Reminders",
-    "section": "Schedule, language, etc",
-    "text": "Schedule, language, etc\n\nDay 1: tips and tricks of dplyr and ggplot2. Create a report in R Markdown.\nDay 2: Heatmaps, and other advanced graphical representations. Create panels of plots. Good practices in data visualization.\nDay 3: work on your data.",
-    "crumbs": [
-      "Introduction and reminders"
     ]
   }
 ]
