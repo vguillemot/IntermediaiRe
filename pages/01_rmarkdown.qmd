@@ -27,12 +27,12 @@ knitr::opts_chunk$set(
 
 ## Recto
 
-![](01_rmarkdown_extra/rmarkdown-recto.png)
+![](../img/01_rmarkdown/rmarkdown-recto.png)
 
 
 ## Verso
 
-![](01_rmarkdown_extra/rmarkdown-verso.png)
+![](../img/01_rmarkdown/rmarkdown-verso.png)
 
 # Essentials
 
@@ -55,8 +55,7 @@ output: html_document
 
 ## Markdown
 
-Intuitive language to write, in plain text, a document that is transformed 
-into a report.
+Intuitive language to write, in plain text, a document that is transformed into a report (in Rstudio, go to submenu "Help > Markdown Quick Reference" for a quick tour).
 
 :::::: {.columns}
 
@@ -105,3 +104,194 @@ Ordered List
 ::::::
 
 And so much more!
+
+## R Chunks
+
+:::::: {.columns}
+
+Your code goes in **"R chunks"**.
+
+:::{.column  width="50%"}
+
+
+```{r chunk title, echo = TRUE}
+#| echo: fenced
+
+hist(rnorm(100))
+```
+
+Rstudio shortcut!
+
+:::
+
+:::{.column  width="50%"}
+
+  * Beginners: ⚙️,
+  * Intermediate users: [go here](https://rmarkdown.rstudio.com/lesson-3.html),
+  * Advanced users: [Yi Hui's website](https://yihui.org/knitr/options/).
+
+:::
+
+::::::
+
+## Other features
+
+ * PDF: $\LaTeX$
+ * Maths: $\LaTeX$
+ * Customized HTML documents: CSS (ou SCSS)
+ * Diagrams: mermaid or GraphViz
+ * Other high-level programming languages: Python, Julia, SQL
+ * Other: bash, Rcpp (C++), Stan (Bayesian statistics), etc.
+
+# YAML
+
+## Most useful fields
+
+  * `title`: title of the document
+  * `author`: your name
+  * `output`: 
+    + `html_document` $\rightarrow$ is the easiest to use
+    + `word_document` $\rightarrow$ is very convenient
+    + `pdf_document` $\rightarrow$ requires $\LaTeX$ 
+
+## In Rstudio
+
+:::::: {.columns}
+
+
+::: {.column .small width="45%"}
+
+File > New File > R Markdown...
+
+ * create a document,
+ * change the default values, 
+ * change 
+    + headers, 
+    + text, 
+    + R code, 
+ * save document as an Rmd file.
+ * Click on "Knit"
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="45%"}
+
+![](../img/01_rmarkdown/rstudio_window.png)
+
+:::
+
+::::::
+
+## Exercise 1: header alone
+
+Create an R Markdown document that will create the following html output.
+
+![](../img/01_rmarkdown/exo1.png)
+
+# Markdown
+
+## Example
+
+:::::: {.columns}
+
+::: {.column width= "45%"}
+
+```
+Twinkle **twinkle** ~little~ _star_
+
+$$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
+
+ * One item
+ * Two items
+```
+
+:::
+
+
+::: {.column width= "5%"}
+
+:::
+
+::: {.column width= "45%"}
+
+Twinkle **twinkle** ~little~ _star_
+
+$$y = \frac{1}{2\pi} e^{x^2}$$
+
+ * One item
+ * Two items
+:::
+
+::::::
+
+## In Rstudio
+
+
+:::::: {.columns}
+
+::: {.column width="30%"}
+
+Useful ressources:
+
+  * Markdown Quick Reference Guide ($\rightarrow$)
+  * Cheatsheet
+  * [Markdown Guide](https://www.markdownguide.org/)
+
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="30%"}
+
+![](../img/01_rmarkdown/rstudio_menu_quick_guide.png)
+
+:::
+
+
+::::::
+
+
+## Exercise 2: only text
+
+Create an R Markdown document that will create the following html output.
+
+![](../img/01_rmarkdown/exo2.png)
+
+# R Chunks
+
+## My advice
+
+ * create your chunk by clicking on the "+c" button
+ * customize its options by clicking on the wheel
+ * write your R script (execute often)
+ * knit often
+
+## Exercise 3: only R
+
+
+:::::: {.columns}
+
+::: {.column width="45%"}
+Create an R Markdown document that will create this ($\rightarrow$) output.
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="45%"}
+
+![](../img/01_rmarkdown/exo3.png)
+
+:::
+
+::::::
+
+# Conclusion

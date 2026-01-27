@@ -103,7 +103,117 @@
     "href": "pages/01_rmarkdown.html#markdown",
     "title": "Reproducible Reports with R Markdown",
     "section": "Markdown",
-    "text": "Markdown\nIntuitive language to write, in plain text, a document that is transformed into a report.\n\nEmphasis\n*italic*   **bold**\n_italic_   __bold__\nHeaders\n# Header 1\n## Header 2\n### Header 3\n\nUnordered List\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nOrdered List\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nAnd so much more!",
+    "text": "Markdown\nIntuitive language to write, in plain text, a document that is transformed into a report (in Rstudio, go to submenu “Help &gt; Markdown Quick Reference” for a quick tour).\n\nEmphasis\n*italic*   **bold**\n_italic_   __bold__\nHeaders\n# Header 1\n## Header 2\n### Header 3\n\nUnordered List\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nOrdered List\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nAnd so much more!",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#r-chunks",
+    "href": "pages/01_rmarkdown.html#r-chunks",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "R Chunks",
+    "text": "R Chunks\n\nYour code goes in “R chunks”.\n\n```{r chunk title, echo = TRUE}\nhist(rnorm(100))\n```\n\n\n\n\n\n\n\n\nRstudio shortcut!\n\n\nBeginners: ⚙️,\nIntermediate users: go here,\nAdvanced users: Yi Hui’s website.",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#other-features",
+    "href": "pages/01_rmarkdown.html#other-features",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Other features",
+    "text": "Other features\n\nPDF: \\(\\LaTeX\\)\nMaths: \\(\\LaTeX\\)\nCustomized HTML documents: CSS (ou SCSS)\nDiagrams: mermaid or GraphViz\nOther high-level programming languages: Python, Julia, SQL\nOther: bash, Rcpp (C++), Stan (Bayesian statistics), etc.",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#most-useful-fields",
+    "href": "pages/01_rmarkdown.html#most-useful-fields",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Most useful fields",
+    "text": "Most useful fields\n\ntitle: title of the document\nauthor: your name\noutput:\n\nhtml_document \\(\\rightarrow\\) is the easiest to use\nword_document \\(\\rightarrow\\) is very convenient\npdf_document \\(\\rightarrow\\) requires \\(\\LaTeX\\)",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#in-rstudio",
+    "href": "pages/01_rmarkdown.html#in-rstudio",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "In Rstudio",
+    "text": "In Rstudio\n\n\nFile &gt; New File &gt; R Markdown…\n\ncreate a document,\nchange the default values,\nchange\n\nheaders,\ntext,\nR code,\n\nsave document as an Rmd file.\nClick on “Knit”",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#exercise-1-header-alone",
+    "href": "pages/01_rmarkdown.html#exercise-1-header-alone",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Exercise 1: header alone",
+    "text": "Exercise 1: header alone\nCreate an R Markdown document that will create the following html output.",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#example",
+    "href": "pages/01_rmarkdown.html#example",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Example",
+    "text": "Example\n\n\nTwinkle **twinkle** ~little~ _star_\n\n$$y = \\frac{1}{\\sqrt{2\\pi}} e^{x^2}$$\n\n * One item\n * Two items\n\n\n\nTwinkle twinkle little star\n\\[y = \\frac{1}{2\\pi} e^{x^2}\\]\n\nOne item\nTwo items",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#in-rstudio-1",
+    "href": "pages/01_rmarkdown.html#in-rstudio-1",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "In Rstudio",
+    "text": "In Rstudio\n\n\nUseful ressources:\n\nMarkdown Quick Reference Guide (\\(\\rightarrow\\))\nCheatsheet\nMarkdown Guide",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#exercise-2-only-text",
+    "href": "pages/01_rmarkdown.html#exercise-2-only-text",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Exercise 2: only text",
+    "text": "Exercise 2: only text\nCreate an R Markdown document that will create the following html output.",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#my-advice",
+    "href": "pages/01_rmarkdown.html#my-advice",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "My advice",
+    "text": "My advice\n\ncreate your chunk by clicking on the “+c” button\ncustomize its options by clicking on the wheel\nwrite your R script (execute often)\nknit often",
+    "crumbs": [
+      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#exercise-3-only-r",
+    "href": "pages/01_rmarkdown.html#exercise-3-only-r",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Exercise 3: only R",
+    "text": "Exercise 3: only R\n\n\nCreate an R Markdown document that will create this (\\(\\rightarrow\\)) output.",
     "crumbs": [
       "R Markdown",
       "R Markdown"
@@ -160,31 +270,71 @@
     ]
   },
   {
-    "objectID": "pages/00_reminders.html#reminder-dplyr-cheatsheet",
-    "href": "pages/00_reminders.html#reminder-dplyr-cheatsheet",
-    "title": "Introduction and Reminders",
-    "section": "Reminder: dplyr (cheatsheet)",
-    "text": "Reminder: dplyr (cheatsheet)",
-    "crumbs": [
-      "Introduction and reminders"
-    ]
-  },
-  {
-    "objectID": "pages/00_reminders.html#reminder-ggplot2-cheasheet",
-    "href": "pages/00_reminders.html#reminder-ggplot2-cheasheet",
-    "title": "Introduction and Reminders",
-    "section": "Reminder: ggplot2 (cheasheet)",
-    "text": "Reminder: ggplot2 (cheasheet)",
-    "crumbs": [
-      "Introduction and reminders"
-    ]
-  },
-  {
     "objectID": "pages/00_reminders.html#reminder-data-import",
     "href": "pages/00_reminders.html#reminder-data-import",
     "title": "Introduction and Reminders",
     "section": "Reminder: data import",
     "text": "Reminder: data import\nWhat’s your favorite method/package?\n\nRstudio wizard\nopenxlsx\nreadxl\nread.table\nOther?",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-dplyr-cheatsheet-recto",
+    "href": "pages/00_reminders.html#reminder-dplyr-cheatsheet-recto",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: dplyr (cheatsheet, recto)",
+    "text": "Reminder: dplyr (cheatsheet, recto)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-dplyr-cheatsheet-verso",
+    "href": "pages/00_reminders.html#reminder-dplyr-cheatsheet-verso",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: dplyr (cheatsheet, verso)",
+    "text": "Reminder: dplyr (cheatsheet, verso)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#useful-dplyr-functions",
+    "href": "pages/00_reminders.html#useful-dplyr-functions",
+    "title": "Introduction and Reminders",
+    "section": "Useful dplyr functions",
+    "text": "Useful dplyr functions\n\nselect: select variables\nfilter: filter observations\nmutate: add, modify, variables\ngroup_by: create groups\nsummarize: compute summary statistics (on groups)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-ggplot2-cheasheet-recto",
+    "href": "pages/00_reminders.html#reminder-ggplot2-cheasheet-recto",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: ggplot2 (cheasheet recto)",
+    "text": "Reminder: ggplot2 (cheasheet recto)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-ggplot2-cheasheet-verso",
+    "href": "pages/00_reminders.html#reminder-ggplot2-cheasheet-verso",
+    "title": "Introduction and Reminders",
+    "section": "Reminder: ggplot2 (cheasheet verso)",
+    "text": "Reminder: ggplot2 (cheasheet verso)",
+    "crumbs": [
+      "Introduction and reminders"
+    ]
+  },
+  {
+    "objectID": "pages/00_reminders.html#reminder-as-an-exercise",
+    "href": "pages/00_reminders.html#reminder-as-an-exercise",
+    "title": "Introduction and Reminders",
+    "section": "Reminder as an exercise",
+    "text": "Reminder as an exercise\n\n\nWith the example dataset example1.csv, recreate the plot on the right.",
     "crumbs": [
       "Introduction and reminders"
     ]

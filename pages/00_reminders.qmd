@@ -26,14 +26,14 @@ execute:
 
 
 ::: {.column width="30%"}
-![Amaury Vaysse, bioinformatician](../img/00_amaury.jpg){height=300px}
+![Amaury Vaysse, bioinformatician](../img/00_reminders/amaury.jpg){height=300px}
 :::
 
 ::: {.column width="30%"}
 :::
 
 ::: {.column width="30%"}
-![Vincent Guillemot, biostatistician](../img/00_vincent.jpeg){height=300px}
+![Vincent Guillemot, biostatistician](../img/00_reminders/vincent.jpeg){height=300px}
 :::
 
 
@@ -41,7 +41,7 @@ execute:
 
 ## Course objectives
 
-![](../img/00_hedgehog.png)
+![](../img/00_reminders/hedgehog.png)
 
 ::: {.aside-note}
 Artwork by [@allison_horst](https://twitter.com/allison_horst)
@@ -49,7 +49,7 @@ Artwork by [@allison_horst](https://twitter.com/allison_horst)
 
 ## Kahoot
 
-![](../img/00_Kahoot_Logo.svg)
+![](../img/00_reminders/Kahoot_Logo.svg)
 
 # Reminders
 
@@ -69,9 +69,6 @@ What's your favorite method?
 
 :::
 
-## Reminder: dplyr (cheatsheet)
-
-## Reminder: ggplot2 (cheasheet)
 
 ## Reminder: data import
 
@@ -88,8 +85,54 @@ What's your favorite method/package?
 :::
 
 
+## Reminder: dplyr (cheatsheet, recto)
+
+![](../img/00_reminders/dplyr-recto.png)
+
+## Reminder: dplyr (cheatsheet, verso)
+
+![](../img/00_reminders/dplyr-verso.png)
+
+## Useful `dplyr` functions
+
+::: {.incremental}
+
+ * `select`: select variables
+ * `filter`: filter observations
+ * `mutate`: add, modify, variables
+ * `group_by`: create groups
+ * `summarize`: compute summary statistics (on groups)
+
+:::
 
 
+## Reminder: ggplot2 (cheasheet recto)
+
+![](../img/00_reminders/ggplot2-recto.png)
+
+## Reminder: ggplot2 (cheasheet verso)
+
+![](../img/00_reminders/ggplot2-verso.png)
+
+
+
+## Reminder as an exercise
+
+:::::: {.columns}
+
+::: {.column width="45%"}
+With the example dataset [example1.csv](../data/example1.csv), recreate the plot on the right.
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="45%"}
+![](../img/00_reminders/example1_plot.svg)
+:::
+
+::::::
 
 
 

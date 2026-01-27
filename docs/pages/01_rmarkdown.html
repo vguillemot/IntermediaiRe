@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-37747909821cb704e8b021b784119ba1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -148,11 +214,11 @@ Amaury &amp; Vincent
 <section id="recto" class="slide level2">
 <h2>Recto</h2>
 
-<img data-src="01_rmarkdown_extra/rmarkdown-recto.png" class="r-stretch"></section>
+<img data-src="../img/01_rmarkdown/rmarkdown-recto.png" class="r-stretch"></section>
 <section id="verso" class="slide level2">
 <h2>Verso</h2>
 
-<img data-src="01_rmarkdown_extra/rmarkdown-verso.png" class="r-stretch"></section></section>
+<img data-src="../img/01_rmarkdown/rmarkdown-verso.png" class="r-stretch"></section></section>
 <section>
 <section id="essentials" class="title-slide slide level1 center">
 <h1>Essentials</h1>
@@ -173,7 +239,7 @@ output: html_document
 </section>
 <section id="markdown" class="slide level2">
 <h2>Markdown</h2>
-<p>Intuitive language to write, in plain text, a document that is transformed into a report.</p>
+<p>Intuitive language to write, in plain text, a document that is transformed into a report (in Rstudio, go to submenu “Help &gt; Markdown Quick Reference” for a quick tour).</p>
 <div class="columns">
 <p>Emphasis</p><div class="column" style="width:30%;">
 <pre><code>*italic*   **bold**
@@ -197,9 +263,166 @@ _italic_   __bold__</code></pre>
     + Item 3b</code></pre>
 </div></div>
 <p>And so much more!</p>
-
-
+</section>
+<section id="r-chunks" class="slide level2">
+<h2>R Chunks</h2>
+<div class="columns">
+<p>Your code goes in <strong>“R chunks”</strong>.</p><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="in">```{r chunk title, echo = TRUE}</span></span>
+<span id="cb6-2"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb6-3"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="01_rmarkdown_files/figure-revealjs/chunk title-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Rstudio shortcut!</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Beginners: ⚙️,</li>
+<li>Intermediate users: <a href="https://rmarkdown.rstudio.com/lesson-3.html">go here</a>,</li>
+<li>Advanced users: <a href="https://yihui.org/knitr/options/">Yi Hui’s website</a>.</li>
+</ul>
+</div></div>
+</section>
+<section id="other-features" class="slide level2">
+<h2>Other features</h2>
+<ul>
+<li>PDF: <span class="math inline">\(\LaTeX\)</span></li>
+<li>Maths: <span class="math inline">\(\LaTeX\)</span></li>
+<li>Customized HTML documents: CSS (ou SCSS)</li>
+<li>Diagrams: mermaid or GraphViz</li>
+<li>Other high-level programming languages: Python, Julia, SQL</li>
+<li>Other: bash, Rcpp (C++), Stan (Bayesian statistics), etc.</li>
+</ul>
 </section></section>
+<section>
+<section id="yaml-1" class="title-slide slide level1 center">
+<h1>YAML</h1>
+
+</section>
+<section id="most-useful-fields" class="slide level2">
+<h2>Most useful fields</h2>
+<ul>
+<li><code>title</code>: title of the document</li>
+<li><code>author</code>: your name</li>
+<li><code>output</code>:
+<ul>
+<li><code>html_document</code> <span class="math inline">\(\rightarrow\)</span> is the easiest to use</li>
+<li><code>word_document</code> <span class="math inline">\(\rightarrow\)</span> is very convenient</li>
+<li><code>pdf_document</code> <span class="math inline">\(\rightarrow\)</span> requires <span class="math inline">\(\LaTeX\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="in-rstudio" class="slide level2">
+<h2>In Rstudio</h2>
+<div class="columns">
+<div class="column small" style="width:45%;">
+<p>File &gt; New File &gt; R Markdown…</p>
+<ul>
+<li>create a document,</li>
+<li>change the default values,</li>
+<li>change
+<ul>
+<li>headers,</li>
+<li>text,</li>
+<li>R code,</li>
+</ul></li>
+<li>save document as an Rmd file.</li>
+<li>Click on “Knit”</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p><img data-src="../img/01_rmarkdown/rstudio_window.png"></p>
+</div></div>
+</section>
+<section id="exercise-1-header-alone" class="slide level2">
+<h2>Exercise 1: header alone</h2>
+<p>Create an R Markdown document that will create the following html output.</p>
+
+<img data-src="../img/01_rmarkdown/exo1.png" class="r-stretch"></section></section>
+<section>
+<section id="markdown-1" class="title-slide slide level1 center">
+<h1>Markdown</h1>
+
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<pre><code>Twinkle **twinkle** ~little~ _star_
+
+$$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
+
+ * One item
+ * Two items</code></pre>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p>Twinkle <strong>twinkle</strong> <sub>little</sub> <em>star</em></p>
+<p><span class="math display">\[y = \frac{1}{2\pi} e^{x^2}\]</span></p>
+<ul>
+<li>One item</li>
+<li>Two items</li>
+</ul>
+</div></div>
+</section>
+<section id="in-rstudio-1" class="slide level2">
+<h2>In Rstudio</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>Useful ressources:</p>
+<ul>
+<li>Markdown Quick Reference Guide (<span class="math inline">\(\rightarrow\)</span>)</li>
+<li>Cheatsheet</li>
+<li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
+<p><img data-src="../img/01_rmarkdown/rstudio_menu_quick_guide.png"></p>
+</div></div>
+</section>
+<section id="exercise-2-only-text" class="slide level2">
+<h2>Exercise 2: only text</h2>
+<p>Create an R Markdown document that will create the following html output.</p>
+
+<img data-src="../img/01_rmarkdown/exo2.png" class="r-stretch"></section></section>
+<section>
+<section id="r-chunks-1" class="title-slide slide level1 center">
+<h1>R Chunks</h1>
+
+</section>
+<section id="my-advice" class="slide level2">
+<h2>My advice</h2>
+<ul>
+<li>create your chunk by clicking on the “+c” button</li>
+<li>customize its options by clicking on the wheel</li>
+<li>write your R script (execute often)</li>
+<li>knit often</li>
+</ul>
+</section>
+<section id="exercise-3-only-r" class="slide level2">
+<h2>Exercise 3: only R</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Create an R Markdown document that will create this (<span class="math inline">\(\rightarrow\)</span>) output.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p><img data-src="../img/01_rmarkdown/exo3.png"></p>
+</div></div>
+</section></section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../img/logos/phi.svg" class="slide-logo"></p>
