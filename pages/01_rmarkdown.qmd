@@ -38,6 +38,10 @@ knitr::opts_chunk$set(
 
 YAML, Markdown and chunks
 
+## R Markdown
+
+![](../img/01_rmarkdown/summary.png)
+
 ## YAML
 
 ```
@@ -107,11 +111,14 @@ And so much more!
 
 ## R Chunks
 
+Your code goes in **"R chunks"**[^1]. 
+
+[^1]: click on "+c" to insert a chunk quickly
+
 :::::: {.columns}
 
-Your code goes in **"R chunks"**.
 
-:::{.column  width="50%"}
+:::{.column  width="45%"}
 
 
 ```{r chunk title, echo = TRUE}
@@ -120,11 +127,17 @@ Your code goes in **"R chunks"**.
 hist(rnorm(100))
 ```
 
-Rstudio shortcut!
 
 :::
 
-:::{.column  width="50%"}
+::: {.column  width="5%"}
+
+:::
+
+
+:::{.column  width="45%"}
+
+Customization:
 
   * Beginners: ⚙️,
   * Intermediate users: [go here](https://rmarkdown.rstudio.com/lesson-3.html),
@@ -272,6 +285,13 @@ Create an R Markdown document that will create the following html output.
  * customize its options by clicking on the wheel
  * write your R script (execute often)
  * knit often
+
+. . .
+
+::: {.callout-warning}
+Your current environment might not match the temp environment that will be created to generate the report!
+:::
+
 
 ## Exercise 3: only R
 

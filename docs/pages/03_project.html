@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop – IntermediaiRe: intermediate R</title>
+<title>Workshop: reproduce a complex panelled figure – IntermediaiRe: intermediate R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -73,9 +93,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Workshop – IntermediaiRe: intermediate R">
+<meta property="og:title" content="Workshop: reproduce a complex panelled figure – IntermediaiRe: intermediate R">
 <meta property="og:description" content="Homepage for IntermediaiRe - Intermediate R programming.">
+<meta property="og:image" content="../img/03_project/fig2.png">
 <meta property="og:site_name" content="IntermediaiRe: intermediate R">
+<meta property="og:image:alt" content="Figure 2 from Ong et al. (2020): heatmap and longitudinal gene expression panels.">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -249,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/03_project.html">Project</a></li><li class="breadcrumb-item"><a href="../pages/03_project.html">Project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/03_project.html">Project</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -279,80 +301,36 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
+ <span class="menu-text">Course description</span></a>
   </div>
 </li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/00_reminders.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction and reminders</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">R Markdown</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/01_rmarkdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Markdown</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Visualization</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/02_visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/03_project.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Project</span></a>
   </div>
 </li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/about.html" class="sidebar-item-text sidebar-link">
@@ -362,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Link to shared script</span></a>
+ <span class="menu-text">–Link to shared script–</span></a>
   </div>
 </li>
     </ul>
@@ -370,16 +348,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-figure" id="toc-the-figure" class="nav-link active" data-scroll-target="#the-figure">The Figure</a></li>
+  <li><a href="#detailed-instructions" id="toc-detailed-instructions" class="nav-link" data-scroll-target="#detailed-instructions">Detailed instructions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/03_project.html">Project</a></li><li class="breadcrumb-item"><a href="../pages/03_project.html">Project</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshop</h1>
+<h1 class="title">Workshop: reproduce a complex panelled figure</h1>
 </div>
 
 
@@ -396,11 +382,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is the description of the project.</p>
+<p>In this workshop, you will reproduce <strong>Figure 2</strong> from <span class="citation" data-cites="Ong2020">(<a href="#ref-Ong2020" role="doc-biblioref">Ong et al. 2020</a>)</span> (from the cleaned data <a href="../data/covid.csv">located here</a>) and write a short report explaining your choices, results, and limitations.</p>
+<section id="the-figure" class="level2">
+<h2 class="anchored" data-anchor-id="the-figure">The Figure</h2>
+<p>Figure 2 contains three sub-panels:</p>
+<ol type="A">
+<li>a clustered heatmap with sample annotations,</li>
+<li>longitudinal expression profiles for inflammatory genes,</li>
+<li>longitudinal expression profiles for T-cell markers.</li>
+</ol>
+<p><img src="../img/03_project/fig2.png" class="img-fluid" alt="Figure 2 from Ong et al. (2020): heatmap and longitudinal gene expression panels."></p>
+</section>
+<section id="detailed-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-instructions">Detailed instructions</h2>
+<p>Work in groups of 3–4.</p>
+<p>Start with each subfigure individually to break up your workload. For example:</p>
+<ul>
+<li>create a project,</li>
+<li>save the dataset (<a href="../data/covid.csv">located here</a>) in the project’s folder and load it in the environment,</li>
+<li>reproduce first the subfigure showing the expression profile of IL1A with <code>ggplot2</code>,</li>
+<li>create a function from the previous code that takes as input the name of the gene and outputs the figure,</li>
+<li>create subpanels B and C with <code>patchwork</code>,</li>
+<li>work on reproducing the heatmap with <code>ComplexHeatmap</code>,</li>
+<li>combine everything in one big panel.</li>
+</ul>
+<p>Write your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.</p>
+<p>At the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.</p>
+</section>
+<section id="references" class="level2">
 
 
 
-</main> <!-- /main -->
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Ong2020" class="csl-entry" role="listitem">
+Ong, Eugenia Ziying, Yvonne Fu Zi Chan, Wan Ying Leong, Natalie Mei Ying Lee, Shirin Kalimuddin, Salahudeen Mohamed Haja Mohideen, Kian Sing Chan, et al. 2020. <span>“A Dynamic Immune Response Shapes COVID-19 Progression.”</span> <em>Cell Host &amp;Amp; Microbe</em> 27 (6): 879–882.e2. <a href="https://doi.org/10.1016/j.chom.2020.03.021">https://doi.org/10.1016/j.chom.2020.03.021</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

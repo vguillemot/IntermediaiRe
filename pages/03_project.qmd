@@ -1,7 +1,41 @@
 ---
-title: "Workshop"
-format: html
-logo: "../img/logos/phi.svg"
+title: "Workshop: reproduce a complex panelled figure"
+bibliography: intermediaire.bib
 ---
 
-This is the description of the project.
+In this workshop, you will reproduce **Figure 2** from [@Ong2020] (from the cleaned data [located here](../data/covid.csv)) and write a short report explaining your choices, results, and limitations.
+
+## The Figure
+
+Figure 2 contains three sub-panels:
+
+ A.  a clustered heatmap with sample annotations,
+ B.  longitudinal expression profiles for inflammatory genes,
+ C.  longitudinal expression profiles for T-cell markers.
+
+![](../img/03_project/fig2.png){fig-alt="Figure 2 from Ong et al. (2020): heatmap and longitudinal gene expression panels."}
+
+## Detailed instructions
+
+Work in groups of 3–4. 
+
+Start with each subfigure individually to break up your workload. For example:
+
+  * create a project,
+  * save the dataset ([located here](../data/covid.csv)) in the project's folder and load it in the environment,
+  * reproduce first the subfigure showing the expression profile of IL1A with `ggplot2`,
+  * create a function from the previous code that takes as input the name of the gene and outputs the figure,
+  * create subpanels B and C with `patchwork`,
+  * work on reproducing the heatmap with `ComplexHeatmap`,
+  * combine everything in one big panel.
+
+Write your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.
+
+At the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.
+
+
+## References
+
+
+
+

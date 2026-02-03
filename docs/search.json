@@ -6,7 +6,6 @@
     "section": "3 solutions in R",
     "text": "3 solutions in R\n\nHeatmap() a base R function\nPheatmap() easy heatmap\nComplex heatmap : advanced\nbuild your heatmap with ggplot: overkill\n\nother stuff",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -17,7 +16,6 @@
     "section": "Computational setup",
     "text": "Computational setup",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -28,7 +26,6 @@
     "section": "Data",
     "text": "Data",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -39,7 +36,6 @@
     "section": "data exploration",
     "text": "data exploration",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -50,7 +46,6 @@
     "section": "conclusion",
     "text": "conclusion",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -61,7 +56,6 @@
     "section": "Outcome:",
     "text": "Outcome:",
     "crumbs": [
-      "Visualization",
       "Visualization"
     ]
   },
@@ -72,7 +66,6 @@
     "section": "Recto",
     "text": "Recto",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -83,7 +76,16 @@
     "section": "Verso",
     "text": "Verso",
     "crumbs": [
-      "R Markdown",
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#r-markdown",
+    "href": "pages/01_rmarkdown.html#r-markdown",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "R Markdown",
+    "text": "R Markdown",
+    "crumbs": [
       "R Markdown"
     ]
   },
@@ -94,7 +96,6 @@
     "section": "YAML",
     "text": "YAML\n---\ntitle: \"Document title\"\nauthor: \"Lewis Forwarder\"\noutput: html_document\n---\n\nStarts with ---, ends with ---\nIntuitive syntax \\(\\rightarrow\\) field: value\nOutputs: HTML, docx, pptx, (pdf)",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -105,7 +106,6 @@
     "section": "Markdown",
     "text": "Markdown\nIntuitive language to write, in plain text, a document that is transformed into a report (in Rstudio, go to submenu “Help &gt; Markdown Quick Reference” for a quick tour).\n\nEmphasis\n*italic*   **bold**\n_italic_   __bold__\nHeaders\n# Header 1\n## Header 2\n### Header 3\n\nUnordered List\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nOrdered List\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nAnd so much more!",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -114,9 +114,8 @@
     "href": "pages/01_rmarkdown.html#r-chunks",
     "title": "Reproducible Reports with R Markdown",
     "section": "R Chunks",
-    "text": "R Chunks\n\nYour code goes in “R chunks”.\n\n```{r chunk title, echo = TRUE}\nhist(rnorm(100))\n```\n\n\n\n\n\n\n\n\nRstudio shortcut!\n\n\nBeginners: ⚙️,\nIntermediate users: go here,\nAdvanced users: Yi Hui’s website.",
+    "text": "R Chunks\nYour code goes in “R chunks”1.\n\n\n\n```{r chunk title, echo = TRUE}\nhist(rnorm(100))\n```\n\n\n\n\n\n\n\n\n\n\n\nCustomization:\n\nBeginners: ⚙️,\nIntermediate users: go here,\nAdvanced users: Yi Hui’s website.\n\n\nclick on “+c” to insert a chunk quickly",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -127,7 +126,6 @@
     "section": "Other features",
     "text": "Other features\n\nPDF: \\(\\LaTeX\\)\nMaths: \\(\\LaTeX\\)\nCustomized HTML documents: CSS (ou SCSS)\nDiagrams: mermaid or GraphViz\nOther high-level programming languages: Python, Julia, SQL\nOther: bash, Rcpp (C++), Stan (Bayesian statistics), etc.",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -138,7 +136,6 @@
     "section": "Most useful fields",
     "text": "Most useful fields\n\ntitle: title of the document\nauthor: your name\noutput:\n\nhtml_document \\(\\rightarrow\\) is the easiest to use\nword_document \\(\\rightarrow\\) is very convenient\npdf_document \\(\\rightarrow\\) requires \\(\\LaTeX\\)",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -149,7 +146,6 @@
     "section": "In Rstudio",
     "text": "In Rstudio\n\n\nFile &gt; New File &gt; R Markdown…\n\ncreate a document,\nchange the default values,\nchange\n\nheaders,\ntext,\nR code,\n\nsave document as an Rmd file.\nClick on “Knit”",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -160,7 +156,6 @@
     "section": "Exercise 1: header alone",
     "text": "Exercise 1: header alone\nCreate an R Markdown document that will create the following html output.",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -171,7 +166,6 @@
     "section": "Example",
     "text": "Example\n\n\nTwinkle **twinkle** ~little~ _star_\n\n$$y = \\frac{1}{\\sqrt{2\\pi}} e^{x^2}$$\n\n * One item\n * Two items\n\n\n\nTwinkle twinkle little star\n\\[y = \\frac{1}{2\\pi} e^{x^2}\\]\n\nOne item\nTwo items",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -182,7 +176,6 @@
     "section": "In Rstudio",
     "text": "In Rstudio\n\n\nUseful ressources:\n\nMarkdown Quick Reference Guide (\\(\\rightarrow\\))\nCheatsheet\nMarkdown Guide",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -193,7 +186,6 @@
     "section": "Exercise 2: only text",
     "text": "Exercise 2: only text\nCreate an R Markdown document that will create the following html output.",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -202,9 +194,8 @@
     "href": "pages/01_rmarkdown.html#my-advice",
     "title": "Reproducible Reports with R Markdown",
     "section": "My advice",
-    "text": "My advice\n\ncreate your chunk by clicking on the “+c” button\ncustomize its options by clicking on the wheel\nwrite your R script (execute often)\nknit often",
+    "text": "My advice\n\ncreate your chunk by clicking on the “+c” button\ncustomize its options by clicking on the wheel\nwrite your R script (execute often)\nknit often\n\n\n\n\n\n\n\n\nWarning\n\n\nYour current environment might not match the temp environment that will be created to generate the report!",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -215,7 +206,6 @@
     "section": "Exercise 3: only R",
     "text": "Exercise 3: only R\n\n\nCreate an R Markdown document that will create this (\\(\\rightarrow\\)) output.",
     "crumbs": [
-      "R Markdown",
       "R Markdown"
     ]
   },
@@ -346,8 +336,7 @@
     "section": "",
     "text": "This is the companion website for the class “IntermediaiRe”1. You will find here the objectives, schedule, slides, and other materials related to this course.",
     "crumbs": [
-      "Course information",
-      "Schedule"
+      "Course description"
     ]
   },
   {
@@ -357,18 +346,16 @@
     "section": "Footnotes",
     "text": "Footnotes\n\n\nhave you spotted this infinitely funny pun that works only in French?↩︎",
     "crumbs": [
-      "Course information",
-      "Schedule"
+      "Course description"
     ]
   },
   {
     "objectID": "pages/03_project.html",
     "href": "pages/03_project.html",
-    "title": "Workshop",
+    "title": "Workshop: reproduce a complex panelled figure",
     "section": "",
-    "text": "This is the description of the project.",
+    "text": "In this workshop, you will reproduce Figure 2 from (Ong et al. 2020) (from the cleaned data located here) and write a short report explaining your choices, results, and limitations.",
     "crumbs": [
-      "Project",
       "Project"
     ]
   },
@@ -380,6 +367,96 @@
     "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120, for inspiring us a lot with their beautiful website!\n…",
     "crumbs": [
       "About"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#summary",
+    "href": "pages/03_project.html#summary",
+    "title": "Workshop: reproduce a complex figure",
+    "section": "",
+    "text": "We want to reproduce Figure 2 from (Ong et al. 2020), and create a report to describe the sub-figures of this panel.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#the-figure",
+    "href": "pages/03_project.html#the-figure",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "The Figure",
+    "text": "The Figure\nFigure 2 contains three sub-panels:\n\na clustered heatmap with sample annotations,\nlongitudinal expression profiles for inflammatory genes,\nlongitudinal expression profiles for T-cell markers.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#detailed-intructions",
+    "href": "pages/03_project.html#detailed-intructions",
+    "title": "Workshop: reproduce a complex figure",
+    "section": "Detailed intructions",
+    "text": "Detailed intructions\nWe will create groups of students, work with your group to exchange information.\nStart with each subfigure individually to break up your workload. For example:\n\nreproduce first the subfigure showing the expression profile of IL1A,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on the complex heatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, breaking down the steps.\nAt the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. At the end of the day, we will show you our version and discuss.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#detailed-instructions",
+    "href": "pages/03_project.html#detailed-instructions",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Detailed instructions",
+    "text": "Detailed instructions\nWork in groups of 3–4.\nStart with each subfigure individually to break up your workload. For example:\n\ncreate a project,\nsave the dataset (located here) in the project’s folder and load it in the environment,\nreproduce first the subfigure showing the expression profile of IL1A with ggplot2,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on reproducing the heatmap with ComplexHeatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.\nAt the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#learning-objectives",
+    "href": "pages/03_project.html#learning-objectives",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this session, you should be able to: 1. Produce longitudinal gene-expression plots with ggplot2. 2. Write a reusable plotting function (input: gene name; output: a publication-style plot). 3. Assemble multi-panel figures using patchwork. 4. (Optional) Generate an annotated heatmap with appropriate scaling and clustering.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#deliverables",
+    "href": "pages/03_project.html#deliverables",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Deliverables",
+    "text": "Deliverables\nSubmit a rendered HTML report containing: - A short description of your approach (what you tried first, what you changed, why). - Your final plots (at least one complete subfigure). - A brief “Reflection” section: successes, difficulties, open questions.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#team-workflow",
+    "href": "pages/03_project.html#team-workflow",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Team workflow",
+    "text": "Team workflow\nWork in groups of 3–4. Suggested roles: - Data wrangler (tidy dataset, checks, joins) - Plot developer (ggplot + theme + legends) - Integrator (functions + patchwork + final layout) - Reporter (narrative + reproducibility + final knit)",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#tasks-and-milestones",
+    "href": "pages/03_project.html#tasks-and-milestones",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Tasks and milestones",
+    "text": "Tasks and milestones\n\nMilestone 1 — Start small (mandatory)\nReproduce one time-course plot (e.g., IL1A) with: - x-axis: days post illness onset - y-axis: normalized log2 counts - one line per case (1/2/3), with points\n\n\nMilestone 2 — Generalize (mandatory)\nTurn your code into a function, e.g. plot_gene_timecourse(gene_name).\n\n\nMilestone 3 — Build panels B and C (recommended)\nUse your function to generate the full set of genes shown in panels B and C, and assemble them with patchwork.\n\n\nMilestone 4 — Heatmap (stretch goal)\nReproduce panel A: - row-wise scaling (z-score) and clustering - sample annotations (healthy controls vs cases; day from onset) - clearly labeled color scale",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#reporting-guidelines",
+    "href": "pages/03_project.html#reporting-guidelines",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Reporting guidelines",
+    "text": "Reporting guidelines\nYour report should be structured and readable. Suggested sections: - Methods (data processing, scaling choices, plotting choices) - Results (final figures + short interpretation) - Reflection (what worked, what didn’t, what you would improve next)",
+    "crumbs": [
+      "Project"
     ]
   }
 ]

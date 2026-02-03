@@ -224,6 +224,10 @@ Amaury &amp; Vincent
 <h1>Essentials</h1>
 <p>YAML, Markdown and chunks</p>
 </section>
+<section id="r-markdown" class="slide level2">
+<h2>R Markdown</h2>
+
+<img data-src="../img/01_rmarkdown/summary.png" class="r-stretch"></section>
 <section id="yaml" class="slide level2">
 <h2>YAML</h2>
 <pre><code>---
@@ -266,8 +270,9 @@ _italic_   __bold__</code></pre>
 </section>
 <section id="r-chunks" class="slide level2">
 <h2>R Chunks</h2>
+<p>Your code goes in <strong>“R chunks”</strong><sup>1</sup>.</p>
 <div class="columns">
-<p>Your code goes in <strong>“R chunks”</strong>.</p><div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="in">```{r chunk title, echo = TRUE}</span></span>
 <span id="cb6-2"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
@@ -280,15 +285,17 @@ _italic_   __bold__</code></pre>
 </div>
 </div>
 </div>
-<p>Rstudio shortcut!</p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p>Customization:</p>
 <ul>
 <li>Beginners: ⚙️,</li>
 <li>Intermediate users: <a href="https://rmarkdown.rstudio.com/lesson-3.html">go here</a>,</li>
 <li>Advanced users: <a href="https://yihui.org/knitr/options/">Yi Hui’s website</a>.</li>
 </ul>
 </div></div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>click on “+c” to insert a chunk quickly</p></li></ol></aside></section>
 <section id="other-features" class="slide level2">
 <h2>Other features</h2>
 <ul>
@@ -406,6 +413,21 @@ $$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
 <li>write your R script (execute often)</li>
 <li>knit often</li>
 </ul>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Your current environment might not match the temp environment that will be created to generate the report!</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise-3-only-r" class="slide level2">
 <h2>Exercise 3: only R</h2>
@@ -423,6 +445,8 @@ $$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
 
 
 </section>
+
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../img/logos/phi.svg" class="slide-logo"></p>

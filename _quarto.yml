@@ -21,36 +21,29 @@ website:
       - icon: github
         href: https://github.com/vguillemot/IntermediaiRe
         text: "GitHub"
-
+        
     style: "docked"
     search: true
     collapse-level: 1
     contents:
-      - section: "Course information"
-        contents:
-          - href: index.qmd
-            text: Schedule
+      - href: index.qmd
+        text: Course description
       - href: pages/00_reminders.qmd
         text: Introduction and reminders
-      - section: "R Markdown"
-        contents:
-          - href: pages/01_rmarkdown.qmd
-            text: R Markdown
-      - section: "Visualization"
-        contents:
-          - href: pages/02_visualization.qmd
-            text: Visualization
-      - section: "Project"
-        contents:
-          - href: pages/03_project.qmd
-            text: Project
+      - href: pages/01_rmarkdown.qmd
+        text: R Markdown
+      - href: pages/02_visualization.qmd
+        text: Visualization
+      - href: pages/03_project.qmd
+        text: Project
       - href: pages/about.qmd
         text: About
       - href: https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing
-        text: Link to shared script
+        text: --Link to shared script--
+
+# Attention, il faut mettre à jour le lien vers le site à deux endroits : ci-dessous et ci-dessus!
 
 shared_script_url: "https://docs.google.com/document/d/10kde779rUbfv-LA2cAWe8PJZUw7E0qK0OpNP6Smw4Dk/edit?usp=sharing"
-# Attention, il faut mettre à jour le lien vers le site à deux endroits : ci-dessous et trois lignes plus haut
 
 format:
   html:
