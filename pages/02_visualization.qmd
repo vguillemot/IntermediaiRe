@@ -100,7 +100,8 @@ Rule 6: Use Color Effectively
 Rule 7: Do Not Mislead the Reader
   3. You shall name your axes and title clearly
 
-Rule 8: Avoid ‘‘Chartjunk’’
+Rule 8: Avoid ‘‘Chartjunk’’.  
+
   5. Thou shalt remove “chart junk”
 
 Rule 9: Message Trumps Beauty
@@ -118,6 +119,7 @@ They also exaplified the 9. Thou shalt ensure reproducibility with your code
 
 ## load relevant libraries
 ```{R initialise}
+#| echo:true
 library(dplyr)
 library(ggplot2)
 library(patchwork)
