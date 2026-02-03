@@ -23,30 +23,483 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Visualisation using advanced heatmaps
+## Day 2
 
-## 3 solutions in R
+### Aim of the day:
+- **Assess** the quality of a scientific plot.  
+- **Copy and improve** a graph using ggplot2.   
+- **Gather** plots using patchwork.   
+- **make** some (Complex)Heatmaps.   
+- **annotate** with statistics (ggpubr).   
+- **automate** the graphic generation.   
 
- * Heatmap() a base R function
- * Pheatmap() easy heatmap
- * Complex heatmap : advanced
- * build your heatmap with ggplot: overkill
+[//]: ================================================
+[//]: ================================================
+[//]: ================================================
+## Visualization
 
-[other stuff](https://r-graph-gallery.com/heatmap)
+### outline
 
-# Introduction
-
-## Computational setup
-## Data
-## data exploration
-
-# Heatmap: what why how when where who
+1. graphics: The good, the bad and the ugly
+2. Personalize
+3. One graphic to gather them all
+4. Adding statistics and automate graphs
 
 
-What is a heatmap ?
 
-## conclusion
 
-## Outcome:
+# graphics: The good, the bad and the ugly
+- published graphics assessment  
+- Visualisation good practices  
+- Pratice : "clean" a graph  
+
+## why ?
+- A graph is a mean of communication, not a goal.
+
+An advanced graph :
+- Conveys **complex** information **clearly**  
+- Integrates multiple layers of **information**  
+- Is **reproducible** and **adaptable** by code  
+- Is **aesthetically** pleasing and follows conventions  
+
+## Practice: Critical Analysis
+Assess the following graphs.
+
+- Is the main message clear ?
+- what are the strengths and weakness ?
+
+![](../img/02_visualization/3.ong_2020_fig2.jpg)
+
+# good and bad practices
+
+## Common Bad Practices
+- **Inaccessible colors** (problematic for people with color blindness)
+- **Chartjunk**: unnecessary decorative elements (busy backgrounds, overly prominent grids)
+- **Non-proportional axes** that mislead perception
+- **Information overload**: too much data on a single graph
+- Imprecise or missing **legends and labels**
+
+## The 10 Commandments of Good Graphs
+![](../img/02_visualization/4.10simpleRules.png)
+
+
+Rule 1: Know Your Audience
+    
+Rule 2: Identify Your Message
+    - 1 main message per graph
+Rule 3: Adapt the Figure to the Support Medium
+    - paper 
+    - conference
+    - 2. Choose the geometry that suits your message
+
+Rule 4: Captions Are Not Optional
+Rule 5: Do Not Trust the Defaults
+Rule 6: Use Color Effectively
+  4. You shall honor color accessibility (viridis)
+
+Rule 7: Do Not Mislead the Reader
+  3. You shall name your axes and title clearly
+
+Rule 8: Avoid ‘‘Chartjunk’’
+  5. Thou shalt remove “chart junk”
+
+Rule 9: Message Trumps Beauty
+  6. Thou shalt use accurate scales
+  7. Thou shalt annotate to guide the reader
+  8. Thou shalt test readability (font size)
+
+Rule 10: Get the Right Tool
+  - R
+
+They also exaplified the 9. Thou shalt ensure reproducibility with your code
+> Notes  All the figures for this article were produced using matplotlib, and figure scripts are available from https://github.com/rougier/ten-rules.
+
+10. Thou shalt seek external opinion!
+
+## load relevant libraries
+```{R initialise}
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(viridis)
+```
+
+
+## The `viridis` Palette: Queen of Accessibility
+```{R viridis demonstration}
+#| echo: true
+#| eval: true
+
+
+
+# simple graphs with different palettes
+p1 <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_viridis_c(option = "viridis") +
+  ggtitle("Viridis") +
+  theme_minimal()
+
+p2 <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_viridis_c(option = "plasma") +
+  ggtitle("Plasma") +
+  theme_minimal()
+
+p1 | p2
+```
+
+## Exercice  : cleaning"
+**Instruction** : clean the starting graph.
+
+1. Apply a minimalistic theme
+2. Use `viridis`
+3. Clarify the labels
+4. Remove useless elements 
+
+. **starting graph:**
+
+```{R basic graph to clean}
+#| echo: true
+#| eval: true
+
+# Graph with several "problems"
+p_to_improve <- mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of MPG by Cylinder",
+       x = "Cyl",
+       y = "MPG") +
+  theme_bw() + 
+  theme(plot.background = element_rect(fill = "lightgray"))
+
+p_to_improve
+```
+
+- **Possible correction**
+```{R}
+#| echo: true
+#| eval: true
+
+
+
+p_corrected <- mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot() +
+  scale_fill_viridis_d(begin = 0.3, end = 0.9) + # Palette discrète
+  labs(title = "Distribution de la consommation de carburant",
+       subtitle = "Selon le nombre de cylindres",
+       x = "Nombre de cylindres",
+       y = "Miles par gallon (US)",
+       fill = "Cylindres") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+
+p_corrected
+```
+
+## THM for part 1
+. A good graph is above an effective graph.  
+. Best practices (colors, themes, labels) can be quickly mastered.  
+. `ggplot2` gives us all the tools we need to apply them.
+
+
+[//]: ================================================
+[//]: ================================================
+[//]: ================================================
+
+## Visualization
+### outline
+
+<font color="gray">1. graphics: The good, the bad and the ugly </font>.  
+2. Personalise.  
+3. One graphic to gather them all.  
+4. Adding statistics and automate graphs.  
+
+
+## Enrichment and customization
+### Recap of best practices
+. A basic, clean chart is the foundation from which to add advanced elements.  
+. Clear themes, accessible color palettes, and informative labels are essential.  
+
+### Example: Chart enrichment
+**Aim:** Enrich a basic chart with advanced visual elements (annotations, limits, etc.)
+
+**Instruction:** Add the necessary elements to make this graph “publication-ready.”
+
+```{R}
+#| eval: true
+
+# basic plot to enrich
+p_base <- mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot() +
+  labs(title = "MPG by Cylinder", x = "Cylinders", y = "MPG") +
+  theme_minimal()
+
+p_base
+```
+
+## Possible enriched graphs
+. **Annotations:** Add annotations to guide the data interpretation.  
+
+```{R}
+
+
+p_enrich <- mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot() +
+  geom_text(aes(label = mean(mpg), y = max(mpg)), 
+            stat = "summary", fun = mean, vjust = -0.5) +
+  labs(title = "MPG by Cylinder",
+       subtitle = "with Mean MPG Annotations",
+       x = "Cylinders",
+       y = "MPG") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+p_enrich
+```
+
+. **Fine customization :** Add scales, legends and theme for a greater clarity.  
+
+```{R}
+p_enrich_custom <- mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot() +
+  geom_text(aes(label = mean(mpg), y = max(mpg)),
+            stat = "summary", fun = mean, vjust = -0.5, color = "red") +
+  scale_fill_viridis_d() +
+  labs(title = "MPG by Cylinder with Enhanced Customization",
+       subtitle = "Mean MPG in red annotations",
+       x = "Number of Cylinders",
+       y = "Miles per Gallon",
+       fill = "Cylinders") +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5, size = 10),
+        axis.title.y = element_text(angle = 0, vjust = 0.5, size = 12),
+        axis.title.x = element_text(size = 12))
+
+p_enrich_custom
+```
+
+## Comparison & Discussion
+```{R}
+p_base + p_enrich + p_enrich_custom
+```
+
+
+
+
+### Importantes Notes
+- **Always check readability:** Ensure that annotations do not obscure key information.
+- **Use distinct but accessible colours.**
+- **Captions and titles should clearly convey the main message.**
+
+[//]: ================================================
+[//]: ================================================
+[//]: ================================================
+
+## Visualization
+### outline
+
+<font color="gray">1. graphics: The good, the bad and the ugly </font>.  
+<font color="gray">2. Personalise.  </font>.  
+3. One graphic to gather them all.  
+4. Adding statistics and automate graphs.  
+
+# Assembly and Multidimensional Visualisations
+## Introduction to `patchwork`
+**Objective:** Assemble multiple graphs using the patchwork package.
+
+. **Installation and Loading:**
+```{R}
+#| echo: true
+# install.packages("patchwork")
+library(patchwork)
+```
+
+. **Basic usage:**usethis::gh_token_help()
+```{R}
+#| eval: true
+library(ggplot2)
+p1 <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
+p2 <- ggplot(mtcars, aes(x = cyl)) + geom_bar()
+
+p1 + p2  # Addition simple
+
+p1 | p2  # Disposition côte à côte
+
+p1 / p2  # Disposition en ligne
+```
+
+## Facet & Patchwork
+. **Facets: `facet_wrap` and `facet_grid`**
+```{R}
+#| eval: true
+library(ggplot2)
+
+p_facet_wrap <- ggplot(mtcars, aes(x = mpg, y = wt, color = cyl)) +
+  geom_point() +
+  facet_wrap(~ cyl)
+
+p_facet_grid <- ggplot(mtcars, aes(x = mpg, y = wt, color = cyl)) +
+  geom_point() +
+  facet_grid(cyl ~ .)
+
+p_facet_wrap
+p_facet_grid
+```
+
+. **advanced compositoon with patchwork:**
+```{R}
+#| eval: true
+library(patchwork)
+p1 <- ggplot(mtcars) + geom_point(aes(mpg, wt)) + ggtitle("MPG vs WT")
+p2 <- ggplot(mtcars) + geom_boxplot(aes(x = cyl, y = mpg)) + ggtitle("MPG by Cylinder")
+
+p1 + p2 + plot_layout(ncol = 1, heights = c(2, 1)) &
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+**Exercice: make a Multipanel Figure**
+**Consigne:** Use `patchwork` to combine several graphics in a single figure.
+
+```{R}
+#| eval: false
+# example of graphics
+p1 <- ggplot(mtcars, aes(mpg, wt)) + geom_point() + ggtitle("Graphique 1")
+p2 <- ggplot(mtcars, aes(x = cyl, y = mpg)) + geom_boxplot() + ggtitle("Graphique 2")
+
+# Assemble in a single consitent figure
+p1 + p2 + plot_layout(ncol = 1)
+```
+
+[//]: ================================================
+[//]: ================================================
+[//]: ================================================
+
+
+## Visualization
+### outline
+
+<font color="gray">1. graphics: The good, the bad and the ugly </font>.  
+<font color="gray">2. Personalise.  </font>.  
+<font color="gray">3. One graphic to gather them all.  </font>
+4. Adding statistics and automate graphs.  
+
+
+# Statistics, Finishing Touches and Automation
+## Introduction to ComplexHeatmap
+**Objective:** Create annotated and clustered heatmaps to visualise matrix data.
+
+. **Installation and Loading:**
+```{R}
+#| echo: false
+# BiocManager::install("ComplexHeatmap")
+library(ComplexHeatmap)
+```
+
+. **make a basic heatmap:**
+```{R}
+
+#| eval: true
+data(mtcars)
+heatmap_data <- as.matrix(mtcars[, c("mpg", "cyl", "disp", "hp", "drat", "wt", "qsec")])
+
+Heatmap(heatmap_data, name = "Variables")
+```
+
+. **Heatmap with Annotations:**
+```{R}
+#| eval: true
+
+heatmap_data_anno <- as.matrix(mtcars[, c("mpg", "drat")])
+
+varPerLine <- data.frame(cyl_anno=as.factor(mtcars$cyl), amt_anno=as.factor(mtcars$am))
+row_ha <- rowAnnotation(df=varPerLine)
+
+col_anno <- HeatmapAnnotation(cyl = c(1,2))
+
+Heatmap(heatmap_data_anno, name = "Variables", right_annotation = row_ha, 
+top_annotation = col_anno)
+```
+
+## Statistical Annotations with `ggpubr`
+**Objective:** Add statistical annotations to graphs.
+
+. **Installation and Loading:**
+
+```{R}
+#| echo: false
+# install.packages("ggpubr")
+library(ggpubr)
+```
+
+. **Usage example**
+```{R}
+#| eval: true
+# Load the library
+library(ggpubr)
+
+# simple example
+ggboxplot(data = mtcars, x = "cyl", y = "mpg") +
+  stat_compare_means()
+```
+
+## Mathematical Notations
+**Example:** Display mathematical notations in labels.
+
+```{R}
+#| eval: true
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  ggtitle(expression("Graphique de MPG par poids (La relation万PPD)")) +
+  xlab(expression("Poids (log10(Wt))")) +
+  ylab(expression("Consommation"))
+```
+## Summary Tables with `gtsummary`
+**Objective:** Generate baseline characteristic tables in a reproducible manner.
+
+. **Installation and Loading:**
+```{R}
+#| echo: false
+# install.packages("gtsummary")
+library(gtsummary)
+```
+. **Example:** Descriptive summary table of the characteristics of `mtcars`.
+```{R}
+#| eval: true
+# data
+tbl <- mtcars %>% 
+  tbl_summary(by = cyl,
+              statistic = list(all_continuous() ~ "{min}, {mean} ({sd}), {median}, {max}"),
+              digits = all_continuous() ~ 2)
+
+# display table
+print(tbl)
+```
+
+[//]: ================================================
+[//]: ================================================
+[//]: ================================================
+
+## Visualization
+### outline
+
+<font color="gray">1. graphics: The good, the bad and the ugly </font>.  
+<font color="gray">2. Personalise.  </font>.  
+<font color="gray">3. One graphic to gather them all.  </font>
+<font color="gray">4. Adding statistics and automate graphs.   </font>
+
+### Conclusion of the Day
+. You have mastered the creation of advanced graphics: from critique to publication.
+. Tools such as `patchwork`, `ComplexHeatmap`, and `ggpubr` now allow you to multiply your analysis and presentation capabilities.
 
 
