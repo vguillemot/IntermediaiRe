@@ -1,11 +1,9 @@
 {
-  "hash": "bd5b769cce8e228473af34b9d3f45b0b",
+  "hash": "1368bda185609e010d283f7e75dd1535",
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: \"Visualization\"\nsubtitle: \"Intermediate level R heatmap\"\nauthor: \"Amaury & Vincent\"\nfooter: \"[Home](../index.qmd)\"\nlogo: \"../img/logos/phi.svg\"\nformat: \n  revealjs:\n    theme: ../slides.scss\n    transition: none\n    slide-number: true\nexecute:\n  freeze: auto\n---\n\n\n\n# Visualisation using advanced heatmaps\n\n## 3 solutions in R\n\n * Heatmap() a base R function\n * Pheatmap() easy heatmap\n * Complex heatmap : advanced\n * build your heatmap with ggplot: overkill\n\n[other stuff](https://r-graph-gallery.com/heatmap)\n\n# Introduction\n\n## Computational setup\n## Data\n## data exploration\n\n# Heatmap: what why how when where who\n\n\nWhat is a heatmap ?\n\n## conclusion\n\n## Outcome:\n\n\n",
-    "supporting": [
-      "02_visualization_files"
-    ],
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
