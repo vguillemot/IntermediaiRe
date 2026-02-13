@@ -1,0 +1,120 @@
+---
+title: "Great Tables"
+author: "Amaury & Vincent"
+footer: "[Home](../index.qmd)"
+logo: "../img/logos/phi.svg"
+format: 
+  revealjs:
+    theme: ../slides.scss
+    transition: none
+    slide-number: true
+execute:
+  freeze: auto
+---
+
+```{r}
+#| label: setup
+
+library(dplyr)
+library(ggplot2)
+library(gtsummary)
+
+theme_set(theme_bw(base_size = 14))
+theme_gtsummary_journal(
+  journal = "lancet",
+  set_theme = TRUE
+)
+
+```
+
+
+## Dimensions
+
+::: {.small}
+
+Object | Dimensions | Properties
+---|---|---
+`vector` | 1 | General
+`factor` | 1 | Categorical data
+`list` | 1 ? | Anything
+`function` | No | Computes
+`matrix` | 2 | Only one type of data
+`data-frame` | 2 | One type per column
+`tibble` | 2 | id.
+`array` | $[1, +\infty[$ | Only one type of data
+
+:::
+
+## Printing tabular data
+
+Each object has a `print` function:
+
+  * in the console,
+  * in a document....
+  
+Short exercise: imagine what the components of a table are?  
+
+## Great tables
+
+![Source: https://gt.rstudio.com/](../img/02_gt/gt_parts_of_a_table.svg)
+
+## Simulated example
+
+
+```{r}
+#| label: example data
+#| echo: true
+set.seed(73)
+dat.ex <- tibble(
+  x = rnorm(100),
+  f = gl(n = 2, k = 50, labels = c("A", "B")),
+  y = -5*x + 10*as.numeric(f) + rnorm(100)
+)
+```
+
+
+## Using `gt` with `gtsummary`  
+
+
+
+
+:::::: {.columns}
+
+::: {.column width = "45%"}
+
+```{r}
+#| echo: true
+tbl_summary(dat.ex, by = f)
+```
+
+:::
+
+::: {.column width = "5%"}
+
+:::
+
+::: {.column width = "45%"}
+
+```{r}
+#| echo: true
+tbl_regression(
+  lm(y ~ x * f,
+     data = dat.ex))
+```
+
+:::
+
+::::::
+
+## Exercise level 1
+
+  1. Create your own toy dataset.
+  2. Use `gt` and/or `gtsummary` to create tables on your toy dataset.
+  3. Create a short R Markdown report with your data, a plot, and a beautiful table.
+
+## Level Up!
+
+Now, you are ready to include a `Great Table` in your R Markdown report on the COVID data.
+
+
+

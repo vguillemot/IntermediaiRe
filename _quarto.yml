@@ -32,6 +32,8 @@ website:
         text: Introduction and reminders
       - href: pages/01_rmarkdown.qmd
         text: R Markdown
+      - href: pages/02_gt.qmd
+        text: (Great) Tables
       - href: pages/02_visualization.qmd
         text: Visualization
       - href: pages/03_project.qmd
