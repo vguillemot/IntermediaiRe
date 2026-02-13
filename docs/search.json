@@ -1,60 +1,120 @@
 [
   {
-    "objectID": "pages/02_visualization.html#solutions-in-r",
-    "href": "pages/02_visualization.html#solutions-in-r",
+    "objectID": "pages/02_visualization.html#day-2-visualization",
+    "href": "pages/02_visualization.html#day-2-visualization",
     "title": "Visualization",
-    "section": "3 solutions in R",
-    "text": "3 solutions in R\n\nHeatmap() a base R function\nPheatmap() easy heatmap\nComplex heatmap : advanced\nbuild your heatmap with ggplot: overkill\n\nother stuff",
+    "section": "Day 2 Visualization",
+    "text": "Day 2 Visualization\nAim of the day:\n  Provisional list   - Assess the quality of a scientific plot.\n- Copy and improve a graph using ggplot2.\n- Gather plots using patchwork.\n- make some (Complex)Heatmaps.\n- annotate with statistics (ggpubr).\n- automate the graphic generation.",
     "crumbs": [
       "Visualization"
     ]
   },
   {
-    "objectID": "pages/02_visualization.html#computational-setup",
-    "href": "pages/02_visualization.html#computational-setup",
+    "objectID": "pages/02_visualization.html#outline",
+    "href": "pages/02_visualization.html#outline",
     "title": "Visualization",
-    "section": "Computational setup",
-    "text": "Computational setup",
+    "section": "Outline",
+    "text": "Outline\n\ngraphics: The good, the bad and the ugly\nPersonalize\nOne graphic to gather them all\nAdding statistics and automate graphs",
     "crumbs": [
       "Visualization"
     ]
   },
   {
-    "objectID": "pages/02_visualization.html#data",
-    "href": "pages/02_visualization.html#data",
+    "objectID": "pages/02_visualization.html#what-and-why",
+    "href": "pages/02_visualization.html#what-and-why",
     "title": "Visualization",
-    "section": "Data",
-    "text": "Data",
+    "section": "What and why ?",
+    "text": "What and why ?\nA scientific visualization is a graphical interface between people and data.\n- There are many possible graphics for the same data.\n- Different people perceive theses graphics differently.\n An advanced graph :\n- Conveys complex information clearly\n- Integrates multiple layers of information\n- Is reproducible and adaptable by code\n- Is aesthetically pleasing and follows conventions",
     "crumbs": [
       "Visualization"
     ]
   },
   {
-    "objectID": "pages/02_visualization.html#data-exploration",
-    "href": "pages/02_visualization.html#data-exploration",
+    "objectID": "pages/02_visualization.html#the-10-rules-of-good-graphs",
+    "href": "pages/02_visualization.html#the-10-rules-of-good-graphs",
     "title": "Visualization",
-    "section": "data exploration",
-    "text": "data exploration",
+    "section": "The 10 rules of good graphs",
+    "text": "The 10 rules of good graphs\n\n\n\nRule 1: Know your audience. (collaborators, journal readers …).\nRule 2: Identify the role of the figure (⇒ geometry).\nRule 3: Adapt to the medium (paper, poster, projection screen …).\nRule 4: Captions are not optional.\nRule 5: never trust the defaults (size, font, colors …): good enough for any, best for none.\n\nRule 6: Use color effectively & only when needed.\nRule 7: Do Not Mislead the Reader (see examples below).\n- As a rule of thumb, use the simplest type of plots\nRule 8: Avoid “Chartjunk” (see examples below).\n  Rule 9: Message trumps beauty.\nRule 10: Get the right tool (here R + tidyverse + ggplot)\n\nAdditionally:\n- seek external opinion.\n- ensure reproducibility with your code.\n- know the domain’s best practices.",
     "crumbs": [
       "Visualization"
     ]
   },
   {
-    "objectID": "pages/02_visualization.html#conclusion",
-    "href": "pages/02_visualization.html#conclusion",
+    "objectID": "pages/02_visualization.html#common-pitfalls.",
+    "href": "pages/02_visualization.html#common-pitfalls.",
     "title": "Visualization",
-    "section": "conclusion",
-    "text": "conclusion",
+    "section": "Common pitfalls.",
+    "text": "Common pitfalls.\n\nA good source of reflexions on graphical representation is:",
     "crumbs": [
       "Visualization"
     ]
   },
   {
-    "objectID": "pages/02_visualization.html#outcome",
-    "href": "pages/02_visualization.html#outcome",
+    "objectID": "pages/02_visualization.html#common-pitfalls-15",
+    "href": "pages/02_visualization.html#common-pitfalls-15",
     "title": "Visualization",
-    "section": "Outcome:",
-    "text": "Outcome:",
+    "section": "Common pitfalls 1/5",
+    "text": "Common pitfalls 1/5\n\n\n\n\n\n\n\nInaccessible colors (here for color blind people)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-25",
+    "href": "pages/02_visualization.html#common-pitfalls-25",
+    "title": "Visualization",
+    "section": "Common pitfalls 2/5",
+    "text": "Common pitfalls 2/5\n\n\nChart junk.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-35",
+    "href": "pages/02_visualization.html#common-pitfalls-35",
+    "title": "Visualization",
+    "section": "Common pitfalls 3/5",
+    "text": "Common pitfalls 3/5\n\n\nMisleading axes.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-45",
+    "href": "pages/02_visualization.html#common-pitfalls-45",
+    "title": "Visualization",
+    "section": "Common pitfalls 4/5",
+    "text": "Common pitfalls 4/5",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-55",
+    "href": "pages/02_visualization.html#common-pitfalls-55",
+    "title": "Visualization",
+    "section": "Common pitfalls 5/5",
+    "text": "Common pitfalls 5/5\n \n\nWrong geometry (for what you show)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#reminder-on-how-to-make-the-graphs",
+    "href": "pages/02_visualization.html#reminder-on-how-to-make-the-graphs",
+    "title": "Visualization",
+    "section": "reminder on how to make the graphs",
+    "text": "reminder on how to make the graphs",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#load-relevant-libraries",
+    "href": "pages/02_visualization.html#load-relevant-libraries",
+    "title": "Visualization",
+    "section": "load relevant libraries",
+    "text": "load relevant libraries",
     "crumbs": [
       "Visualization"
     ]
@@ -210,6 +270,56 @@
     ]
   },
   {
+    "objectID": "pages/03_project.html",
+    "href": "pages/03_project.html",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "",
+    "text": "In this workshop, you will reproduce Figure 2 from (Ong et al. 2020) (from the cleaned data located here) and write a short report explaining your choices, results, and limitations.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#the-figure",
+    "href": "pages/03_project.html#the-figure",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "The Figure",
+    "text": "The Figure\nFigure 2 contains three sub-panels:\n\na clustered heatmap with sample annotations,\nlongitudinal expression profiles for inflammatory genes,\nlongitudinal expression profiles for T-cell markers.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "pages/03_project.html#detailed-instructions",
+    "href": "pages/03_project.html#detailed-instructions",
+    "title": "Workshop: reproduce a complex panelled figure",
+    "section": "Detailed instructions",
+    "text": "Detailed instructions\nWork in groups of 3–4.\nStart with each subfigure individually to break up your workload. For example:\n\ncreate a project,\nsave the dataset (located here) in the project’s folder and load it in the environment,\nreproduce first the subfigure showing the expression profile of IL1A with ggplot2,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on reproducing the heatmap with ComplexHeatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.\nAt the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.",
+    "crumbs": [
+      "Project"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IntermediaiRe",
+    "section": "",
+    "text": "This is the companion website for the class “IntermediaiRe”1. You will find here the objectives, schedule, slides, and other materials related to this course.",
+    "crumbs": [
+      "Course description"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "IntermediaiRe",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhave you spotted this infinitely funny pun that works only in French?↩︎",
+    "crumbs": [
+      "Course description"
+    ]
+  },
+  {
     "objectID": "pages/00_reminders.html#schedule-language-etc",
     "href": "pages/00_reminders.html#schedule-language-etc",
     "title": "Introduction and Reminders",
@@ -330,53 +440,73 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "IntermediaiRe",
-    "section": "",
-    "text": "This is the companion website for the class “IntermediaiRe”1. You will find here the objectives, schedule, slides, and other materials related to this course.",
+    "objectID": "pages/02_gt.html#dimensions",
+    "href": "pages/02_gt.html#dimensions",
+    "title": "Great Tables",
+    "section": "Dimensions",
+    "text": "Dimensions\n\n\n\n\nObject\nDimensions\nProperties\n\n\n\n\nvector\n1\nGeneral\n\n\nfactor\n1\nCategorical data\n\n\nlist\n1 ?\nAnything\n\n\nfunction\nNo\nComputes\n\n\nmatrix\n2\nOnly one type of data\n\n\ndata-frame\n2\nOne type per column\n\n\ntibble\n2\nid.\n\n\narray\n\\([1, +\\infty[\\)\nOnly one type of data",
     "crumbs": [
-      "Course description"
+      "(Great) Tables"
     ]
   },
   {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "IntermediaiRe",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhave you spotted this infinitely funny pun that works only in French?↩︎",
+    "objectID": "pages/02_gt.html#printing-tabular-data",
+    "href": "pages/02_gt.html#printing-tabular-data",
+    "title": "Great Tables",
+    "section": "Printing tabular data",
+    "text": "Printing tabular data\nEach object has a print function:\n\nin the console,\nin a document….\n\nShort exercise: imagine what the components of a table are?",
     "crumbs": [
-      "Course description"
+      "(Great) Tables"
     ]
   },
   {
-    "objectID": "pages/03_project.html",
-    "href": "pages/03_project.html",
-    "title": "Workshop: reproduce a complex panelled figure",
-    "section": "",
-    "text": "In this workshop, you will reproduce Figure 2 from (Ong et al. 2020) (from the cleaned data located here) and write a short report explaining your choices, results, and limitations.",
+    "objectID": "pages/02_gt.html#great-tables",
+    "href": "pages/02_gt.html#great-tables",
+    "title": "Great Tables",
+    "section": "Great tables",
+    "text": "Great tables\n\nSource: https://gt.rstudio.com/",
     "crumbs": [
-      "Project"
+      "(Great) Tables"
     ]
   },
   {
-    "objectID": "pages/03_project.html#the-figure",
-    "href": "pages/03_project.html#the-figure",
-    "title": "Workshop: reproduce a complex panelled figure",
-    "section": "The Figure",
-    "text": "The Figure\nFigure 2 contains three sub-panels:\n\na clustered heatmap with sample annotations,\nlongitudinal expression profiles for inflammatory genes,\nlongitudinal expression profiles for T-cell markers.",
+    "objectID": "pages/02_gt.html#simulated-example",
+    "href": "pages/02_gt.html#simulated-example",
+    "title": "Great Tables",
+    "section": "Simulated example",
+    "text": "Simulated example\n\nset.seed(73)\ndat.ex &lt;- tibble(\n  x = rnorm(100),\n  f = gl(n = 2, k = 50, labels = c(\"A\", \"B\")),\n  y = -5*x + 10*as.numeric(f) + rnorm(100)\n)",
     "crumbs": [
-      "Project"
+      "(Great) Tables"
     ]
   },
   {
-    "objectID": "pages/03_project.html#detailed-instructions",
-    "href": "pages/03_project.html#detailed-instructions",
-    "title": "Workshop: reproduce a complex panelled figure",
-    "section": "Detailed instructions",
-    "text": "Detailed instructions\nWork in groups of 3–4.\nStart with each subfigure individually to break up your workload. For example:\n\ncreate a project,\nsave the dataset (located here) in the project’s folder and load it in the environment,\nreproduce first the subfigure showing the expression profile of IL1A with ggplot2,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on reproducing the heatmap with ComplexHeatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.\nAt the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.",
+    "objectID": "pages/02_gt.html#using-gt-with-gtsummary",
+    "href": "pages/02_gt.html#using-gt-with-gtsummary",
+    "title": "Great Tables",
+    "section": "Using gt with gtsummary",
+    "text": "Using gt with gtsummary\n\n\n\ntbl_summary(dat.ex, by = f)\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nA\nN = 501\nB\nN = 501\n\n\n\n\nx\n0·38 (-0·37 – 1·09)\n-0·42 (-1·27 – 0·58)\n\n\ny\n8 (4 – 11)\n22 (17 – 26)\n\n\n\n1 Median (IQR)\n\n\n\n\n\n\n\n\n\n\n\n\ntbl_regression(\n  lm(y ~ x * f,\n     data = dat.ex))\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nBeta\n95% CI\np-value\n\n\n\n\nx\n-4·9\n-5·2 to -4·7\n&lt;0·0001\n\n\nf\n\n\n\n\n\n\n\n\n    A\n—\n—\n\n\n\n\n    B\n10\n9·6 to 10\n&lt;0·0001\n\n\nx * f\n\n\n\n\n\n\n\n\n    x * B\n-0·03\n-0·38 to 0·32\n0·88\n\n\n\nAbbreviation: CI = Confidence Interval",
     "crumbs": [
-      "Project"
+      "(Great) Tables"
+    ]
+  },
+  {
+    "objectID": "pages/02_gt.html#exercise-level-1",
+    "href": "pages/02_gt.html#exercise-level-1",
+    "title": "Great Tables",
+    "section": "Exercise level 1",
+    "text": "Exercise level 1\n\nCreate your own toy dataset.\nUse gt and/or gtsummary to create tables on your toy dataset.\nCreate a short R Markdown report with your data, a plot, and a beautiful table.",
+    "crumbs": [
+      "(Great) Tables"
+    ]
+  },
+  {
+    "objectID": "pages/02_gt.html#level-up",
+    "href": "pages/02_gt.html#level-up",
+    "title": "Great Tables",
+    "section": "Level Up!",
+    "text": "Level Up!\nNow, you are ready to include a Great Table in your R Markdown report on the COVID data.",
+    "crumbs": [
+      "(Great) Tables"
     ]
   },
   {
@@ -388,284 +518,5 @@
     "crumbs": [
       "About"
     ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#day-2",
-    "href": "pages/02_visualization.html#day-2",
-    "title": "Visualization",
-    "section": "Day 2",
-    "text": "Day 2\nAim of the day:\n\nAssess the quality of a scientific plot.\n\nCopy and improve a graph using ggplot2.\n\nGather plots using patchwork.\n\nmake some (Complex)Heatmaps.\n\nannotate with statistics (ggpubr).\n\nautomate the graphic generation.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#visualization",
-    "href": "pages/02_visualization.html#visualization",
-    "title": "Visualization",
-    "section": "Visualization",
-    "text": "Visualization\noutline\n\ngraphics: The good, the bad and the ugly\nPersonalize\nOne graphic to gather them all\nAdding statistics and automate graphs",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#why",
-    "href": "pages/02_visualization.html#why",
-    "title": "Visualization",
-    "section": "why ?",
-    "text": "why ?\n\nA graph is a mean of communication, not a goal.\n\nAn advanced graph : - Conveys complex information clearly\n- Integrates multiple layers of information\n- Is reproducible and adaptable by code\n- Is aesthetically pleasing and follows conventions",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#practice-critical-analysis",
-    "href": "pages/02_visualization.html#practice-critical-analysis",
-    "title": "Visualization",
-    "section": "Practice: Critical Analysis",
-    "text": "Practice: Critical Analysis\nAssess the following graphs.\n\nIs the main message clear ?\nwhat are the strengths and weakness ?",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#common-bad-practices",
-    "href": "pages/02_visualization.html#common-bad-practices",
-    "title": "Visualization",
-    "section": "Common Bad Practices",
-    "text": "Common Bad Practices\n\nInaccessible colors (problematic for people with color blindness)\nChartjunk: unnecessary decorative elements (busy backgrounds, overly prominent grids)\nNon-proportional axes that mislead perception\nInformation overload: too much data on a single graph\nImprecise or missing legends and labels",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#the-10-commandments-of-good-graphs",
-    "href": "pages/02_visualization.html#the-10-commandments-of-good-graphs",
-    "title": "Visualization",
-    "section": "The 10 Commandments of Good Graphs",
-    "text": "The 10 Commandments of Good Graphs\n\nRule 1: Know Your Audience\nRule 2: Identify Your Message - 1 main message per graph Rule 3: Adapt the Figure to the Support Medium - paper - conference - 2. Choose the geometry that suits your message\nRule 4: Captions Are Not Optional Rule 5: Do Not Trust the Defaults Rule 6: Use Color Effectively 4. You shall honor color accessibility (viridis)\nRule 7: Do Not Mislead the Reader 3. You shall name your axes and title clearly\nRule 8: Avoid ‘‘Chartjunk’’ 5. Thou shalt remove “chart junk”\nRule 9: Message Trumps Beauty 6. Thou shalt use accurate scales 7. Thou shalt annotate to guide the reader 8. Thou shalt test readability (font size)\nRule 10: Get the Right Tool - R\nThey also exaplified the 9. Thou shalt ensure reproducibility with your code &gt; Notes All the figures for this article were produced using matplotlib, and figure scripts are available from https://github.com/rougier/ten-rules.\n\nThou shalt seek external opinion!",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#load-relevant-libraries",
-    "href": "pages/02_visualization.html#load-relevant-libraries",
-    "title": "Visualization",
-    "section": "load relevant libraries",
-    "text": "load relevant libraries",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#the-viridis-palette-queen-of-accessibility",
-    "href": "pages/02_visualization.html#the-viridis-palette-queen-of-accessibility",
-    "title": "Visualization",
-    "section": "The viridis Palette: Queen of Accessibility",
-    "text": "The viridis Palette: Queen of Accessibility\n\n# simple graphs with different palettes\np1 &lt;- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +\n  geom_tile() +\n  scale_fill_viridis_c(option = \"viridis\") +\n  ggtitle(\"Viridis\") +\n  theme_minimal()\n\np2 &lt;- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +\n  geom_tile() +\n  scale_fill_viridis_c(option = \"plasma\") +\n  ggtitle(\"Plasma\") +\n  theme_minimal()\n\np1 | p2",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#exercice-cleaning",
-    "href": "pages/02_visualization.html#exercice-cleaning",
-    "title": "Visualization",
-    "section": "Exercice : cleaning”",
-    "text": "Exercice : cleaning”\nInstruction : clean the starting graph.\n\nApply a minimalistic theme\nUse viridis\nClarify the labels\nRemove useless elements\n\n. starting graph:\n\n# Graph with several \"problems\"\np_to_improve &lt;- mtcars %&gt;%\n  mutate(cyl = as.factor(cyl)) %&gt;%\n  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of MPG by Cylinder\",\n       x = \"Cyl\",\n       y = \"MPG\") +\n  theme_bw() + \n  theme(plot.background = element_rect(fill = \"lightgray\"))\n\np_to_improve\n\n\n\n\n\n\n\n\n\nPossible correction\n\n\np_corrected &lt;- mtcars %&gt;%\n  mutate(cyl = as.factor(cyl)) %&gt;%\n  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +\n  geom_boxplot() +\n  scale_fill_viridis_d(begin = 0.3, end = 0.9) + # Palette discrète\n  labs(title = \"Distribution de la consommation de carburant\",\n       subtitle = \"Selon le nombre de cylindres\",\n       x = \"Nombre de cylindres\",\n       y = \"Miles par gallon (US)\",\n       fill = \"Cylindres\") +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"top\")\n\np_corrected",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#thm-for-part-1",
-    "href": "pages/02_visualization.html#thm-for-part-1",
-    "title": "Visualization",
-    "section": "THM for part 1",
-    "text": "THM for part 1\n. A good graph is above an effective graph.\n. Best practices (colors, themes, labels) can be quickly mastered.\n. ggplot2 gives us all the tools we need to apply them.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#visualization-1",
-    "href": "pages/02_visualization.html#visualization-1",
-    "title": "Visualization",
-    "section": "Visualization",
-    "text": "Visualization\noutline\n1. graphics: The good, the bad and the ugly .\n2. Personalise.\n3. One graphic to gather them all.\n4. Adding statistics and automate graphs.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#enrichment-and-customization",
-    "href": "pages/02_visualization.html#enrichment-and-customization",
-    "title": "Visualization",
-    "section": "Enrichment and customization",
-    "text": "Enrichment and customization\nRecap of best practices\n. A basic, clean chart is the foundation from which to add advanced elements.\n. Clear themes, accessible color palettes, and informative labels are essential.\nExample: Chart enrichment\nAim: Enrich a basic chart with advanced visual elements (annotations, limits, etc.)\nInstruction: Add the necessary elements to make this graph “publication-ready.”",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#possible-enriched-graphs",
-    "href": "pages/02_visualization.html#possible-enriched-graphs",
-    "title": "Visualization",
-    "section": "Possible enriched graphs",
-    "text": "Possible enriched graphs\n. Annotations: Add annotations to guide the data interpretation.\n\n\n\n\n\n\n\n\n\n. Fine customization : Add scales, legends and theme for a greater clarity.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#comparison-discussion",
-    "href": "pages/02_visualization.html#comparison-discussion",
-    "title": "Visualization",
-    "section": "Comparison & Discussion",
-    "text": "Comparison & Discussion\n\nImportantes Notes\n\nAlways check readability: Ensure that annotations do not obscure key information.\nUse distinct but accessible colours.\nCaptions and titles should clearly convey the main message.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#visualization-2",
-    "href": "pages/02_visualization.html#visualization-2",
-    "title": "Visualization",
-    "section": "Visualization",
-    "text": "Visualization\noutline\n1. graphics: The good, the bad and the ugly .\n2. Personalise. .\n3. One graphic to gather them all.\n4. Adding statistics and automate graphs.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#introduction-to-patchwork",
-    "href": "pages/02_visualization.html#introduction-to-patchwork",
-    "title": "Visualization",
-    "section": "Introduction to patchwork",
-    "text": "Introduction to patchwork\nObjective: Assemble multiple graphs using the patchwork package.\n. Installation and Loading:\n\n# install.packages(\"patchwork\")\nlibrary(patchwork)\n\n. Basic usage:usethis::gh_token_help()",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#facet-patchwork",
-    "href": "pages/02_visualization.html#facet-patchwork",
-    "title": "Visualization",
-    "section": "Facet & Patchwork",
-    "text": "Facet & Patchwork\n. Facets: facet_wrap and facet_grid\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. advanced compositoon with patchwork:\n\n\n\n\n\n\n\n\n\nExercice: make a Multipanel Figure Consigne: Use patchwork to combine several graphics in a single figure.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#visualization-3",
-    "href": "pages/02_visualization.html#visualization-3",
-    "title": "Visualization",
-    "section": "Visualization",
-    "text": "Visualization\noutline\n1. graphics: The good, the bad and the ugly .\n2. Personalise. .\n3. One graphic to gather them all.  4. Adding statistics and automate graphs.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#introduction-to-complexheatmap",
-    "href": "pages/02_visualization.html#introduction-to-complexheatmap",
-    "title": "Visualization",
-    "section": "Introduction to ComplexHeatmap",
-    "text": "Introduction to ComplexHeatmap\nObjective: Create annotated and clustered heatmaps to visualise matrix data.\n. Installation and Loading:\n. make a basic heatmap:\n\n\n\n\n\n\n\n\n\n. Heatmap with Annotations:",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#statistical-annotations-with-ggpubr",
-    "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr",
-    "title": "Visualization",
-    "section": "Statistical Annotations with ggpubr",
-    "text": "Statistical Annotations with ggpubr\nObjective: Add statistical annotations to graphs.\n. Installation and Loading:\n. Usage example",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#mathematical-notations",
-    "href": "pages/02_visualization.html#mathematical-notations",
-    "title": "Visualization",
-    "section": "Mathematical Notations",
-    "text": "Mathematical Notations\nExample: Display mathematical notations in labels.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#summary-tables-with-gtsummary",
-    "href": "pages/02_visualization.html#summary-tables-with-gtsummary",
-    "title": "Visualization",
-    "section": "Summary Tables with gtsummary",
-    "text": "Summary Tables with gtsummary\nObjective: Generate baseline characteristic tables in a reproducible manner.\n. Installation and Loading:\n. Example: Descriptive summary table of the characteristics of mtcars.\n\n\n&lt;div id=\"gvdyarqjni\" style=\"padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;\"&gt;\n  &lt;style&gt;#gvdyarqjni table {\n  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n#gvdyarqjni thead, #gvdyarqjni tbody, #gvdyarqjni tfoot, #gvdyarqjni tr, #gvdyarqjni td, #gvdyarqjni th {\n  border-style: none;\n}\n\n#gvdyarqjni p {\n  margin: 0;\n  padding: 0;\n}\n\n#gvdyarqjni .gt_table {\n  display: table;\n  border-collapse: collapse;\n  line-height: normal;\n  margin-left: auto;\n  margin-right: auto;\n  color: #333333;\n  font-size: 16px;\n  font-weight: normal;\n  font-style: normal;\n  background-color: #FFFFFF;\n  width: auto;\n  border-top-style: solid;\n  border-top-width: 2px;\n  border-top-color: #A8A8A8;\n  border-right-style: none;\n  border-right-width: 2px;\n  border-right-color: #D3D3D3;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #A8A8A8;\n  border-left-style: none;\n  border-left-width: 2px;\n  border-left-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_caption {\n  padding-top: 4px;\n  padding-bottom: 4px;\n}\n\n#gvdyarqjni .gt_title {\n  color: #333333;\n  font-size: 125%;\n  font-weight: initial;\n  padding-top: 4px;\n  padding-bottom: 4px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border-bottom-color: #FFFFFF;\n  border-bottom-width: 0;\n}\n\n#gvdyarqjni .gt_subtitle {\n  color: #333333;\n  font-size: 85%;\n  font-weight: initial;\n  padding-top: 3px;\n  padding-bottom: 5px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border-top-color: #FFFFFF;\n  border-top-width: 0;\n}\n\n#gvdyarqjni .gt_heading {\n  background-color: #FFFFFF;\n  text-align: center;\n  border-bottom-color: #FFFFFF;\n  border-left-style: none;\n  border-left-width: 1px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 1px;\n  border-right-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_bottom_border {\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_col_headings {\n  border-top-style: solid;\n  border-top-width: 2px;\n  border-top-color: #D3D3D3;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  border-left-style: none;\n  border-left-width: 1px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 1px;\n  border-right-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_col_heading {\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: normal;\n  text-transform: inherit;\n  border-left-style: none;\n  border-left-width: 1px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 1px;\n  border-right-color: #D3D3D3;\n  vertical-align: bottom;\n  padding-top: 5px;\n  padding-bottom: 6px;\n  padding-left: 5px;\n  padding-right: 5px;\n  overflow-x: hidden;\n}\n\n#gvdyarqjni .gt_column_spanner_outer {\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: normal;\n  text-transform: inherit;\n  padding-top: 0;\n  padding-bottom: 0;\n  padding-left: 4px;\n  padding-right: 4px;\n}\n\n#gvdyarqjni .gt_column_spanner_outer:first-child {\n  padding-left: 0;\n}\n\n#gvdyarqjni .gt_column_spanner_outer:last-child {\n  padding-right: 0;\n}\n\n#gvdyarqjni .gt_column_spanner {\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  vertical-align: bottom;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  overflow-x: hidden;\n  display: inline-block;\n  width: 100%;\n}\n\n#gvdyarqjni .gt_spanner_row {\n  border-bottom-style: hidden;\n}\n\n#gvdyarqjni .gt_group_heading {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: initial;\n  text-transform: inherit;\n  border-top-style: solid;\n  border-top-width: 2px;\n  border-top-color: #D3D3D3;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  border-left-style: none;\n  border-left-width: 1px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 1px;\n  border-right-color: #D3D3D3;\n  vertical-align: middle;\n  text-align: left;\n}\n\n#gvdyarqjni .gt_empty_group_heading {\n  padding: 0.5px;\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: initial;\n  border-top-style: solid;\n  border-top-width: 2px;\n  border-top-color: #D3D3D3;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  vertical-align: middle;\n}\n\n#gvdyarqjni .gt_from_md &gt; :first-child {\n  margin-top: 0;\n}\n\n#gvdyarqjni .gt_from_md &gt; :last-child {\n  margin-bottom: 0;\n}\n\n#gvdyarqjni .gt_row {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n  margin: 10px;\n  border-top-style: solid;\n  border-top-width: 1px;\n  border-top-color: #D3D3D3;\n  border-left-style: none;\n  border-left-width: 1px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 1px;\n  border-right-color: #D3D3D3;\n  vertical-align: middle;\n  overflow-x: hidden;\n}\n\n#gvdyarqjni .gt_stub {\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: initial;\n  text-transform: inherit;\n  border-right-style: solid;\n  border-right-width: 2px;\n  border-right-color: #D3D3D3;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n#gvdyarqjni .gt_stub_row_group {\n  color: #333333;\n  background-color: #FFFFFF;\n  font-size: 100%;\n  font-weight: initial;\n  text-transform: inherit;\n  border-right-style: solid;\n  border-right-width: 2px;\n  border-right-color: #D3D3D3;\n  padding-left: 5px;\n  padding-right: 5px;\n  vertical-align: top;\n}\n\n#gvdyarqjni .gt_row_group_first td {\n  border-top-width: 2px;\n}\n\n#gvdyarqjni .gt_row_group_first th {\n  border-top-width: 2px;\n}\n\n#gvdyarqjni .gt_summary_row {\n  color: #333333;\n  background-color: #FFFFFF;\n  text-transform: inherit;\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n#gvdyarqjni .gt_first_summary_row {\n  border-top-style: solid;\n  border-top-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_first_summary_row.thick {\n  border-top-width: 2px;\n}\n\n#gvdyarqjni .gt_last_summary_row {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_grand_summary_row {\n  color: #333333;\n  background-color: #FFFFFF;\n  text-transform: inherit;\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n#gvdyarqjni .gt_first_grand_summary_row {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border-top-style: double;\n  border-top-width: 6px;\n  border-top-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_last_grand_summary_row_top {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border-bottom-style: double;\n  border-bottom-width: 6px;\n  border-bottom-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_striped {\n  background-color: rgba(128, 128, 128, 0.05);\n}\n\n#gvdyarqjni .gt_table_body {\n  border-top-style: solid;\n  border-top-width: 2px;\n  border-top-color: #D3D3D3;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_footnotes {\n  color: #333333;\n  background-color: #FFFFFF;\n  border-bottom-style: none;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  border-left-style: none;\n  border-left-width: 2px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 2px;\n  border-right-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_footnote {\n  margin: 0px;\n  font-size: 90%;\n  padding-top: 4px;\n  padding-bottom: 4px;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n#gvdyarqjni .gt_sourcenotes {\n  color: #333333;\n  background-color: #FFFFFF;\n  border-bottom-style: none;\n  border-bottom-width: 2px;\n  border-bottom-color: #D3D3D3;\n  border-left-style: none;\n  border-left-width: 2px;\n  border-left-color: #D3D3D3;\n  border-right-style: none;\n  border-right-width: 2px;\n  border-right-color: #D3D3D3;\n}\n\n#gvdyarqjni .gt_sourcenote {\n  font-size: 90%;\n  padding-top: 4px;\n  padding-bottom: 4px;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n#gvdyarqjni .gt_left {\n  text-align: left;\n}\n\n#gvdyarqjni .gt_center {\n  text-align: center;\n}\n\n#gvdyarqjni .gt_right {\n  text-align: right;\n  font-variant-numeric: tabular-nums;\n}\n\n#gvdyarqjni .gt_font_normal {\n  font-weight: normal;\n}\n\n#gvdyarqjni .gt_font_bold {\n  font-weight: bold;\n}\n\n#gvdyarqjni .gt_font_italic {\n  font-style: italic;\n}\n\n#gvdyarqjni .gt_super {\n  font-size: 65%;\n}\n\n#gvdyarqjni .gt_footnote_marks {\n  font-size: 75%;\n  vertical-align: 0.4em;\n  position: initial;\n}\n\n#gvdyarqjni .gt_asterisk {\n  font-size: 100%;\n  vertical-align: 0;\n}\n\n#gvdyarqjni .gt_indent_1 {\n  text-indent: 5px;\n}\n\n#gvdyarqjni .gt_indent_2 {\n  text-indent: 10px;\n}\n\n#gvdyarqjni .gt_indent_3 {\n  text-indent: 15px;\n}\n\n#gvdyarqjni .gt_indent_4 {\n  text-indent: 20px;\n}\n\n#gvdyarqjni .gt_indent_5 {\n  text-indent: 25px;\n}\n\n#gvdyarqjni .katex-display {\n  display: inline-flex !important;\n  margin-bottom: 0.75em !important;\n}\n\n#gvdyarqjni div.Reactable &gt; div.rt-table &gt; div.rt-thead &gt; div.rt-tr.rt-tr-group-header &gt; div.rt-th-group:after {\n  height: 0px !important;\n}\n&lt;/style&gt;\n  &lt;table class=\"gt_table\" data-quarto-disable-processing=\"false\" data-quarto-bootstrap=\"false\"&gt;\n  &lt;thead&gt;\n    &lt;tr class=\"gt_col_headings\"&gt;\n      &lt;th class=\"gt_col_heading gt_columns_bottom_border gt_left\" rowspan=\"1\" colspan=\"1\" scope=\"col\" id=\"label\"&gt;&lt;span data-qmd-base64=\"KipDaGFyYWN0ZXJpc3RpYyoq\"&gt;&lt;span class='gt_from_md'&gt;&lt;strong&gt;Characteristic&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/th&gt;\n      &lt;th class=\"gt_col_heading gt_columns_bottom_border gt_center\" rowspan=\"1\" colspan=\"1\" scope=\"col\" id=\"stat_1\"&gt;&lt;span data-qmd-base64=\"Kio0KiogIApOID0gMTE=\"&gt;&lt;span class='gt_from_md'&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;br /&gt;\nN = 11&lt;/span&gt;&lt;/span&gt;&lt;span class=\"gt_footnote_marks\" style=\"white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;\"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;&lt;/th&gt;\n      &lt;th class=\"gt_col_heading gt_columns_bottom_border gt_center\" rowspan=\"1\" colspan=\"1\" scope=\"col\" id=\"stat_2\"&gt;&lt;span data-qmd-base64=\"Kio2KiogIApOID0gNw==\"&gt;&lt;span class='gt_from_md'&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;br /&gt;\nN = 7&lt;/span&gt;&lt;/span&gt;&lt;span class=\"gt_footnote_marks\" style=\"white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;\"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;&lt;/th&gt;\n      &lt;th class=\"gt_col_heading gt_columns_bottom_border gt_center\" rowspan=\"1\" colspan=\"1\" scope=\"col\" id=\"stat_3\"&gt;&lt;span data-qmd-base64=\"Kio4KiogIApOID0gMTQ=\"&gt;&lt;span class='gt_from_md'&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;br /&gt;\nN = 14&lt;/span&gt;&lt;/span&gt;&lt;span class=\"gt_footnote_marks\" style=\"white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;\"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody class=\"gt_table_body\"&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;mpg&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;21.40, 26.66 (4.51), 26.00, 33.90&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;17.80, 19.74 (1.45), 19.70, 21.40&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;10.40, 15.10 (2.56), 15.20, 19.20&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;disp&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;71.10, 105.14 (26.87), 108.00, 146.70&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;145.00, 183.31 (41.56), 167.60, 258.00&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;275.80, 353.10 (67.77), 350.50, 472.00&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;hp&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;52.00, 82.64 (20.93), 91.00, 113.00&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;105.00, 122.29 (24.26), 110.00, 175.00&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;150.00, 209.21 (50.98), 192.50, 335.00&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;drat&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;3.69, 4.07 (0.37), 4.08, 4.93&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;2.76, 3.59 (0.48), 3.90, 3.92&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;2.76, 3.23 (0.37), 3.12, 4.22&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;wt&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;1.51, 2.29 (0.57), 2.20, 3.19&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;2.62, 3.12 (0.36), 3.22, 3.46&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;3.17, 4.00 (0.76), 3.76, 5.42&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;qsec&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;16.70, 19.14 (1.68), 18.90, 22.90&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;15.50, 17.98 (1.71), 18.30, 20.22&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;14.50, 16.77 (1.20), 17.18, 18.00&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;vs&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;10 (91%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;4 (57%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;am&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;8 (73%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;3 (43%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;2 (14%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;gear&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    3&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;1 (9.1%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;2 (29%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;12 (86%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    4&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;8 (73%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;4 (57%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    5&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;2 (18%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;1 (14%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;2 (14%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;carb&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;&lt;br /&gt;&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    1&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;5 (45%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;2 (29%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    2&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;6 (55%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;4 (29%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    3&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;3 (21%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    4&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;4 (57%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;6 (43%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    6&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;1 (14%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td headers=\"label\" class=\"gt_row gt_left\"&gt;    8&lt;/td&gt;\n&lt;td headers=\"stat_1\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_2\" class=\"gt_row gt_center\"&gt;0 (0%)&lt;/td&gt;\n&lt;td headers=\"stat_3\" class=\"gt_row gt_center\"&gt;1 (7.1%)&lt;/td&gt;&lt;/tr&gt;\n  &lt;/tbody&gt;\n  &lt;tfoot&gt;\n    &lt;tr class=\"gt_footnotes\"&gt;\n      &lt;td class=\"gt_footnote\" colspan=\"4\"&gt;&lt;span class=\"gt_footnote_marks\" style=\"white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;\"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt; &lt;span data-qmd-base64=\"TWluLCBNZWFuIChTRCksIE1lZGlhbiwgTWF4OyBuICglKQ==\"&gt;&lt;span class='gt_from_md'&gt;Min, Mean (SD), Median, Max; n (%)&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n&lt;/div&gt;",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_visualization.html#visualization-4",
-    "href": "pages/02_visualization.html#visualization-4",
-    "title": "Visualization",
-    "section": "Visualization",
-    "text": "Visualization\noutline\n1. graphics: The good, the bad and the ugly .\n2. Personalise. .\n3. One graphic to gather them all.  4. Adding statistics and automate graphs. \nConclusion of the Day\n. You have mastered the creation of advanced graphics: from critique to publication. . Tools such as patchwork, ComplexHeatmap, and ggpubr now allow you to multiply your analysis and presentation capabilities.",
-    "crumbs": [
-      "Visualization"
-    ]
-  },
-  {
-    "objectID": "pages/02_gt.html#dimensions",
-    "href": "pages/02_gt.html#dimensions",
-    "title": "Great Tables",
-    "section": "Dimensions",
-    "text": "Dimensions\n\n\n\n\nObject\nDimensions\nProperties\n\n\n\n\nvector\n1\nGeneral\n\n\nfactor\n1\nCategorical data\n\n\nlist\n1 ?\nAnything\n\n\nfunction\nNo\nComputes\n\n\nmatrix\n2\nOnly one type of data\n\n\ndata-frame\n2\nOne type per column\n\n\ntibble\n2\nid.\n\n\narray\n\\([1, +\\infty[\\)\nOnly one type of data"
-  },
-  {
-    "objectID": "pages/02_gt.html#printing-tabular-data",
-    "href": "pages/02_gt.html#printing-tabular-data",
-    "title": "Great Tables",
-    "section": "Printing tabular data",
-    "text": "Printing tabular data\nEach object has a print function:\n\nin the console,\nin a document….\n\nShort exercise: imagine what the components of a table are?"
-  },
-  {
-    "objectID": "pages/02_gt.html#great-tables",
-    "href": "pages/02_gt.html#great-tables",
-    "title": "Great Tables",
-    "section": "Great tables",
-    "text": "Great tables\n\nSource: https://gt.rstudio.com/"
-  },
-  {
-    "objectID": "pages/02_gt.html#using-gt-with-gtsummary",
-    "href": "pages/02_gt.html#using-gt-with-gtsummary",
-    "title": "Great Tables",
-    "section": "Using gt with gtsummary",
-    "text": "Using gt with gtsummary\n\n\n\ntbl_summary(dat.ex, by = f)\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nA\nN = 501\nB\nN = 501\n\n\n\n\nx\n0·38 (-0·37 – 1·09)\n-0·42 (-1·27 – 0·58)\n\n\ny\n8 (4 – 11)\n22 (17 – 26)\n\n\n\n1 Median (IQR)\n\n\n\n\n\n\n\n\n\n\n\n\ntbl_regression(\n  lm(y ~ x * f,\n     data = dat.ex))\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nBeta\n95% CI\np-value\n\n\n\n\nx\n-4·9\n-5·2 to -4·7\n&lt;0·0001\n\n\nf\n\n\n\n\n\n\n\n\n    A\n—\n—\n\n\n\n\n    B\n10\n9·6 to 10\n&lt;0·0001\n\n\nx * f\n\n\n\n\n\n\n\n\n    x * B\n-0·03\n-0·38 to 0·32\n0·88\n\n\n\nAbbreviation: CI = Confidence Interval"
-  },
-  {
-    "objectID": "pages/02_gt.html#simulated-example",
-    "href": "pages/02_gt.html#simulated-example",
-    "title": "Great Tables",
-    "section": "Simulated example",
-    "text": "Simulated example\n\nset.seed(73)\ndat.ex &lt;- tibble(\n  x = rnorm(100),\n  f = gl(n = 2, k = 50, labels = c(\"A\", \"B\")),\n  y = -5*x + 10*as.numeric(f) + rnorm(100)\n)"
-  },
-  {
-    "objectID": "pages/02_gt.html#exercise-level-1",
-    "href": "pages/02_gt.html#exercise-level-1",
-    "title": "Great Tables",
-    "section": "Exercise level 1",
-    "text": "Exercise level 1\n\nCreate your own toy dataset.\nUse gt and/or gtsummary to create tables on your toy dataset.\nCreate a short R Markdown report with your data, a plot, and a beautiful table."
-  },
-  {
-    "objectID": "pages/02_gt.html#level-up",
-    "href": "pages/02_gt.html#level-up",
-    "title": "Great Tables",
-    "section": "Level Up!",
-    "text": "Level Up!\nNow, you are ready to include a Great Table in your R Markdown report on the COVID data."
   }
 ]
