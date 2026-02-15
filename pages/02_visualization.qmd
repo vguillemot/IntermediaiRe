@@ -11,6 +11,16 @@ format:
     slide-number: true
     center-title-slide: true
 
+include-in-header:
+  - text: |
+      <style>
+      .reveal .custom_smallOutput > div.column:first-child {
+        width: 60%;
+      }
+      .reveal .custom_smallOutput div.column:not(:first-child) {
+        width: 40%;
+      }
+      </style>
 execute:
   freeze: auto
 ---
@@ -225,6 +235,7 @@ Correct this code to get this graphic
 ```{r exercise_wrong_graph .small}
 #| echo: TRUE
 #| eval: FALSE
+#| code-overflow: wrap
 
 g <- mtcars %>%
   mutate(cyl = as.factor(cyl)) %>%
@@ -284,29 +295,42 @@ g
 - **compute comparisons and display the p-values**
 ```{r }
 #| eval: true
-#| echo: false
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
 
-
-# Load the library
 # install.packages("ggpubr")
 library(ggpubr)
 
-# data("ToothGrowth")
-# ggplot(ToothGrowth, aes(x=as.factor(dose), y=len, fill = as.factor(dose))) + 
-#   geom_boxplot() +
-#   stat_compare_means() +
-#   theme_classic2()
-
-ggplot(mtcars, aes(x=as.factor(cyl), y=mpg, fill = as.factor(cyl))) + 
+ggplot(
+   mtcars, 
+   aes(
+     x=as.factor(cyl), 
+     y=mpg, 
+     fill = as.factor(cyl)
+   )
+ ) + 
    geom_boxplot() +
    stat_compare_means() +
    theme_classic2()
 ```
 
+<!--
+# data("ToothGrowth")
+# ggplot(ToothGrowth, aes(x=as.factor(dose), y=len, fill = as.factor(dose))) + 
+#   geom_boxplot() +
+#   stat_compare_means() +
+#   theme_classic2()
+-->
+
 ## Statistical Annotations with `ggpubr`
 
 - **compute comparisons and display the p-values**
 ```{r }
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
+
 msleep %>%
   group_by(order) %>% 
   filter(n()>=6) %>%
@@ -320,8 +344,12 @@ ggplot( aes(order, sleep_total, fill = order)) +
     ), label = "p.signif")  + 
   theme_classic2()
 
-# list(   c("Artiodactyla", "Carnivora"), c("Primates", "Carnivora"), c("Artiodactyla", "Primates"),c("Rodentia", "Primates"), c("Rodentia", "Carnivora"), c("Rodentia", "Artiodactyla")    )
+
 ```
+<!--
+# list(   c("Artiodactyla", "Carnivora"), c("Primates", "Carnivora"), c("Artiodactyla", "Primates"),c("Rodentia", "Primates"), c("Rodentia", "Carnivora"), c("Rodentia", "Artiodactyla")    )
+-->
+
 
 ## Exercice
 
@@ -333,6 +361,10 @@ ggplot( aes(order, sleep_total, fill = order)) +
 
 - **Display p-value from another test procedure**
 ```{r signif, warning=FALSE, fig.height=4}
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
+
 myTests <- data.frame(
               group1 = c("Artiodactyla", "Primates" , "Artiodactyla", "Rodentia", "Rodentia",  "Rodentia") ,
               group2 = c("Carnivora"   , "Carnivora", "Primates"    , "Primates", "Carnivora", "Artiodactyla"), 
@@ -357,7 +389,9 @@ ggplot( aes(order, sleep_total, fill = order)) +
 
 ## Add (mathematical) expressions
 ```{r}
-#| eval: true
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
 
 ggplot(mtcars, aes(x = wt, y = mpg)) +
     geom_point() +
@@ -372,20 +406,21 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
                )+
 
         theme_classic()
-        
-#  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
-        
 ```
-
+<!--
+#  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
+-->
 
 ## exercice
 - start with this plot
-- use the Mathematical Annotations listed [here](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/plotmath.html)
+- use the Mathematical Annotations listed in `?plotmath`
 - Correct the axis label and add the regression formula
 
 ```{r}
 #| eval: TRUE
-#| echo: TRUE
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
 
 ChickWeight %>%
   filter(Diet==4) %>%
@@ -416,9 +451,800 @@ ggplot( aes(x = Time, y = weight^(1/3))) +
         theme_classic() 
 ```
 
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+
+# Visualization
+<font color="gray">1. graphics: Good & bad practices</font>  
+<font color="gray">2. individual graphics with ggplot</font>  
+<font style="color:blue; font-weight:bold;">3. Focus on heatmaps</font>  
+<font color="gray">4. Plot composition</font>  
+<font color="gray">5. some level of automation</font>  
+ 
+
+
+## Complex heatmap {.small}
+* specific plots like heatmap often have dedicated packages
+* here we choose the heatmap since
+  - it is widely used
+  - we will use it tomorrow in the main exercise.  
+![](../img/02_visualization/3.ong_2020_fig2.jpg){ height=400  } 
+
+## Complex heatmap package
+
+* A bioconductor package
+```{r}
+#| echo: TRUE
+#| eval: TRUE
+#| code-overflow: wrap
+
+#BiocManager::install("ComplexHeatmap")
+library(ComplexHeatmap)
+```
+
+* with an extensive documentation
+  - available [here](https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html)
+  - or by
+ 
+```{r}
+#| echo: TRUE
+#| eval: FALSE
+#| code-overflow: wrap
+
+#BiocManager::install("ComplexHeatmap")
+vignette("complex_heatmap")
+```
+
+## Heatmap structure
+:::::: {.columns }
+::: {.column style="width='25%'"}
+![](../img/02_visualization/heatmap_structure.png){height=400}
+:::  
+::: {.column style="width='75%'"}
+
+![](../img/02_visualization/heatmap_example.png){height=500}
+:::
+::::::
+
+## data for the heatmap:
+- Let's make a mock dataset 
+
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+
+set.seed(123)
+mat = matrix(rnorm(120), 10)
+
+rownames(mat) = paste0("R", 1:10)
+colnames(mat) = paste0("C", 1:12)
+
+row_info <- data.frame(cond=rnorm(10) < 0, score=runif(10))
+column_info <- data.frame(order=1:12, category=rep(0:2,4) )
+
+```
+
+
+## make a basic heatmap
+```{r}
+#| echo: TRUE
+#| eval: true
+
+Heatmap(mat, 
+        name="my heatmap", 
+        column_title = "column maybe genes", 
+        row_title = "row maybe samples")
+```
+
+Basic layout includes  
+
+- the heatmap.  
+- the row and column labels.  
+- a default clustering.   
+
+## complete the heatmap: add annotations
+- using a dataframe directly give and overview
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        row_title = "row maybe samples" , 
+        top_annotation = HeatmapAnnotation(df=column_info),
+        left_annotation = HeatmapAnnotation(df=row_info, which = "row")
+)
+```
+
+## complete the heatmap: add annotations {.smaller}
+We have more control by selecting each annotations to be displayed separately
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+column_annot <- HeatmapAnnotation(
+                 order=anno_barplot(column_info$order), 
+                 category=column_info$category)
+row_annot <- HeatmapAnnotation(
+                  score=anno_barplot(row_info$score),
+                  cond=row_info$cond, which = "row")
+
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        row_title = "row maybe samples" , 
+        top_annotation = column_annot,
+        left_annotation = row_annot
+)
+```
+
+## customise colors : main {.smaller}
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+main_col_fun = circlize::colorRamp2(
+                   c(-2, 0, 2),
+                   c("darkblue", "white", "orangered"))
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        row_title = "row maybe samples" , 
+        top_annotation = column_annot,
+        left_annotation = row_annot,
+        col = main_col_fun
+)
+
+```
+
+- you set the limits of the colors yourself
+- &rArr; enables you to compare heatmaps 
+
+<!--
+I don't speak about NA values nore the options
+- border_gp = gpar(col = "black", lty = 2)
+- rect_gp = gpar(col = "white", lwd = 2)
+--> 
+
+## customise colors : annotations {.smaller}
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+column_annot <- HeatmapAnnotation(
+                 order=anno_barplot(column_info$order), 
+                 category=column_info$category,
+                 col=list(category=c("0"="#AAE89CFF", "1"="#79DB6BFF", "2"="#32CD32FF"))
+                  
+                 )
+row_annot <- HeatmapAnnotation(
+                  score=anno_barplot(row_info$score),
+                  cond=row_info$cond, which = "row",
+                  col=list(cond=c("TRUE"="black", "FALSE"="white"))
+                  )
+
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        row_title = "row maybe samples" , 
+        top_annotation = column_annot,
+        left_annotation = row_annot,
+        col = main_col_fun
+)
+
+```
+
+## customise colors : titles {.smaller}
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        column_title_gp = gpar(fill = "grey", col = "white", border = "blue"),
+        row_title = "row maybe samples" , 
+        top_annotation = column_annot,
+        left_annotation = row_annot,
+        col = main_col_fun
+)
+```
+
+<!--
+ht_opt$TITLE_PADDING = unit(c(8.5, 8.5), "points")
+ht_opt(RESET = TRUE)
+-->
+
+## customise positions
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+Heatmap(mat, 
+        name="my heatmap",
+        column_title = "column maybe genes", 
+        column_title_side ="bottom",
+        row_title = "row maybe samples" , 
+        row_title_side ="right",
+        bottom_annotation = column_annot,
+        right_annotation = row_annot,
+        col = main_col_fun
+)
+```
+
+## exercise
+- take the heatmap we are building
+- split the row annotation on each side
+- split the columns annotation on each side
+
+
+## customise clustering
+- either use or remove the clusetering 
+
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE) 
+```
+
+## customise clustering
+- either use or remove the clusetering 
+
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+basic_ht <- Heatmap(mat, name = "mat") 
+row_order(basic_ht)
+column_order(basic_ht)
+
+Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE) 
+```
+
+
+## customise clustering
+- We can change the display of the dendrogram
+```{r}
+#| echo: TRUE
+#| eval: true
+#| output-location: column
+#| code-overflow: wrap
+
+Heatmap(mat, 
+    name = "mat",
+    row_dend_width = unit(4, "cm"),
+    row_dend_side = "right",
+    column_dend_height = unit(4, "cm"),
+    column_dend_side = "bottom"
+  )
+```
+
+
+## customise clustering
+- We can change the parameters as in `hclut`
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+Heatmap(mat, 
+       name = "mat", 
+       clustering_distance_rows = "pearson",
+       column_title = "pre-defined distance method (1 - pearson)"
+       )
+```
+
+## customise clustering
+- We can give a already made dendrogram
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+row_dend = as.dendrogram(hclust(dist(mat)))
+row_dend = dendextend::color_branches	(row_dend, k = 2) 
+Heatmap(mat, 
+        name = "mat", 
+        cluster_rows = row_dend
+        )
+
+```
+
+
+## split heatmap
+- by clustering using `row_km`/`column_km` or `column_split` /`row_split`
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+Heatmap(mat, name = "mat", cluster_rows = row_dend, row_split = 2, column_split = 3)
+```
+
+## split heatmap
+- by categorical variables
+```{r}
+#| echo: TRUE
+#| eval: true
+#| code-overflow: wrap
+
+Heatmap(mat, 
+        name = "mat", 
+        row_split = row_info$cond
+      )
+```
+
+
+
+## Exercise
+- take a previous heatmap with the annotations
+- change the clustering parameters
+- split the heatmap according to the clustering
+- recover the row labels in the order of the clustering
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--
 ================================================================================================
 ================================================================================================
 ================================================================================================
 -->
+# Visualization
+<font color="gray">1. graphics: Good & bad practices</font>  
+<font color="gray">2. individual graphics with ggplot</font>  
+<font color="gray">3. Focus on heatmaps</font>  
+<font style="color:blue; font-weight:bold;">4. Plot composition</font>  
+<font color="gray">5. some level of automation</font>  
+
+## 3 kind of plot composition
+* Split a plot by conditions: `facet`
+* Make one plot from several: `aplot`
+* Put together several plots: `ggarrange` and `patchwork`
+
+
+
+
+## Split a plot by conditions: `facet`
+- See the course for R beginners
+
+```{r}
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+
+ChickWeight %>%
+  filter(Diet==4) %>%
+  ggplot( aes(x = Time, y = weight^(1/3))) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    labs(
+          title = "Cube root of weight according to time",
+          x = "Time",
+          y="Cube root of weight"
+    ) +
+    theme_classic() 
+```
+
+
+
+## Split a plot by conditions: `facet`
+- See the course for R beginners
+
+```{r}
+#| eval: TRUE
+#| echo: true
+#| code-overflow: wrap
+
+p <- ChickWeight %>% 
+  ggplot( aes(x = Time, y = weight^(1/3))) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    labs(
+          title = "Cube root of weight according to time",
+          x = "Time",
+          y="Cube root of weight"
+    ) +
+    theme_classic() 
+```
+## Split a plot by conditions: `facet`
+```{r}
+#| eval: TRUE
+#| echo: true
+#| code-overflow: wrap
+
+p + facet_wrap( ~ Diet) 
+```
+ 
+## Split a plot by conditions: `facet`
+```{r}
+#| eval: TRUE
+#| echo: true
+#| code-overflow: wrap
+
+p + facet_grid( Diet ~ .) 
+```
+
+
+## Make one plot from several: `aplot`
+- Real life example
+
+![](../img/02_visualization/aplot.png){height=500}
+
+
+## Make one plot from several: `aplot`
+- Working code example
+```{r}
+#| eval: TRUE
+#| echo: true
+#| code-overflow: wrap
+
+library(aplot)
+
+p <- ggplot(mtcars, aes(mpg, disp)) + geom_point()
+p2 <- ggplot(mtcars, aes(mpg)) + 
+    geom_density(fill='steelblue', alpha=.5) + 
+        ggfun::theme_noxaxis()
+p3 <- ggplot(mtcars, aes(x=1, y=disp)) + 
+    geom_boxplot(fill='firebrick', alpha=.5) + 
+    theme_void()
+p %>% 
+    insert_top(p2, height=.3) %>% 
+    insert_right(p3, width=.1)
+
+```
+
+
+## Put together several plots with `patchwork`
+
+`ggarrange` and `patchwork` are ways to assemble several plots in a single figure. For `ggarrange` se the beginner R course
+
+`patchwork` defines. or augments 6 opreator on plots: `+ - / | * &` the most user friendly ones are `+ |` and `/`
+
+
+```{R}
+#| echo: true
+#| code-overflow: wrap
+
+# install.packages("patchwork")
+library(patchwork)
+```
+
+## `patchwork`  **example data**
+We will combine thoses 3 plots:
+```{R}
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+
+p1 <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
+p2 <- ggplot(mtcars, aes(x = cyl)) + geom_bar()
+p3 <-  ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
+```
+
+## `patchwork`  **Basic usage**
+`+` group the plots
+```{r}
+#| eval: true
+#| echo: true
+#| fig-height: 2
+
+p1 + p2  + p3 
+```
+
+## `patchwork` **Basic usage**
+`|`  put the plots side by side
+```{r}
+#| eval: true
+#| echo: true
+#| fig-height: 2
+
+p1 + p2  | p3
+```
+
+## `patchwork` **Basic usage**
+`/` stack the plots together
+```{R}
+#| eval: true
+#| echo: true
+
+p1 / p2  # Disposition en ligne
+```
+
+## `patchwork` **set the layouts**
+`plot_layout` give a finer control over the resulting plot
+```{R}
+#| eval: true
+#| echo: true
+
+p1 + p2 + p3 + plot_layout(ncol = 1)
+
+```
+
+## `patchwork` **set the layouts**
+`plot_layout` give a finer control over the resulting plot
+```{R}
+#| eval: true
+#| echo: true
+
+p1 | p2 + p3 + plot_layout(ncol = 1)
+
+```
+
+## `patchwork` **set the layouts**
+```{R}
+#| eval: true
+#| echo: true
+
+p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))
+```
+
+## `patchwork` **nesting levels**
+```{R}
+#| eval: true
+#| echo: true
+
+(p1 + ( p2 + p3)) + plot_layout(ncol = 1, heights = c(2, 1))
+```
+
+## `patchwork` **Add other customisation**
+```{R}
+#| eval: true
+#| echo: true
+
+p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) + theme_bw()
+
+```
+
+## `patchwork` **Add other customisation**
+```{R}
+#| eval: true
+#| echo: true
+
+p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))  & theme_bw()
+
+```
+
+## `patchwork` **Add other customisation**
+```{R}
+#| eval: true
+#| echo: true
+
+(p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) ) & theme_bw()
+
+```
+
+## Exercice: make a Multipanel Figure
+- Take any 3 graphics generated today
+- Use `patchwork` to combine them in a single figure.
+
+<!--
+## Figure annotations
+
+ggplot2::annotate
+ggplot2::annotation_custom
+ggpubr::annotate_figure	
+
+-->
+
+
+
+
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+
+# Visualization
+<font color="gray">1. graphics: Good & bad practices</font>  
+<font color="gray">2. individual graphics with ggplot</font>  
+<font color="gray">3. Focus on heatmaps</font>  
+<font color="gray">4. Plot composition</font>  
+<font style="color:blue; font-weight:bold;">5. some level of automation</font>  
+
+## functions 
+A function in R is 2 things
+
+:::::: {.columns }
+::: {.column style="width='50%'"}
+- a block of code stored and executed when called.
+:::
+::: {.column style="width='50%'"}
+- an object composed of   
+
+|component|accessed using|
+|-|-|
+|arguments|`formals()`|
+|body|`body()`|
+|environment|`environment()`|
+
+:::
+::: {.column style="width='30%'"}
+:::
+::::::
+
+A function can be created in two ways  
+
+- use a function that creates specific functions like `colorRamp2()`  
+- use the function `function()`  
+
+
+
+## functions: example
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-overflow: wrap
+
+# Pval_Pyramids
+# Indicates the number of pvalues in each categories according to the hard coded threshold
+# args: pvals: a vector of numeric values assumed to be pvalues
+# return: a dataframe with columns interval and nb
+Pval_Pyramids <- function(pvals){
+  breaksForCut <- c(-1, 0, 1e-300, 1e-200, 1e-100, 1e-50, 1e-10, 1e-5, 1e-4, 1e-3, 1e-2, 5e-2, 1)
+  labelsForCut <- c("p=0", "0<p<=1e-300", "1e-300<p<=1e-200", "1e-200<p<=1e-100", "1e-100<p<=1e-50", "1e-50<p<=1e-10", "1e-10<p<=1e-05", "1e-05<p<=1e-4", "1e-4<p<=0.001", "0.001<p<=0.01", "0.01<p<=0.05", "0.05<p<=1")
+  Ppyram <- pvals %>% 
+              cut(breaks=breaksForCut, labels=labelsForCut)  %>% 
+              table() %>% as.data.frame() %>% 
+              rename(interval=1, nb=Freq)
+  return(Ppyram)
+}
+
+```
+
+## functions: exercise 
+
+- take any code for a plot and make a fucntion of it
+- apply this function on other data
+
+
+
+## for loops
+- most used kind of loops (in our experience)
+- principle define an object that will take different values succesively 
+- repeat the same process on this object `for` each value
+
+```{r for syntax}
+#| classes: custom_smallOutput
+#| eval: TRUE
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
+
+iteration <- c("toto", "titi", "tata")
+
+for(i in iteration){
+  print(i)
+}
+```
+
+<font color=red> &#9888; loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)</font>
+
+## for loops: example
+- test several split of cluters
+```{r}
+#| eval: false
+#| echo: true
+#| code-overflow: wrap
+
+for(k in 2:4) {
+  htmp <- Heatmap(mat, name = "mat", row_km = k, row_title = "cluster_%s")  
+  print(htmp)
+}
+```
+
+```{r}
+#| eval: true
+#| echo: false
+
+h2 <- Heatmap(mat, name = "mat", row_km = 2, row_title = "cluster_%s")  
+h3 <- Heatmap(mat, name = "mat", row_km = 3, row_title = "cluster_%s")  
+h4 <- Heatmap(mat, name = "mat", row_km = 4, row_title = "cluster_%s")  
+```
+## for loops: example
+
+:::::: {.columns }
+::: {.column style="width='30%'"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 6
+#| fig-height: 3
+h2
+```
+:::
+::: {.column style="width='30%'"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 6
+#| fig-height: 3
+h3
+```
+:::
+::: {.column style="width='30%'"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 6
+#| fig-height: 3
+h4
+```
+:::
+::::::
+
+## for loops: exercise 
+- correct this loop
+- keep the different heatmaps in a list
+- print them outside this loop
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-overflow: wrap
+
+for(k in 2:4) {
+  Heatmap(mat, name = "mat", row_km = i, row_title = "cluster_%s")  
+}
+```
+
+
+```{r}
+#| eval: false
+#| echo: false
+
+list_hmtp <- list()
+for(k in 2:4) {
+  htmp <- Heatmap(mat, name = "mat", row_km = k, row_title = "cluster_%s")  
+  list_hmtp <- append(list_hmtp,htmp)
+}
+list_hmtp
+```
+
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+# End of day disucssion
+Do you have any question or remarks on any of the points we discussed ?  
+
+1. graphics: Good & bad practices
+2. individual graphics with ggplot
+3. Focus on heatmaps
+4. Plot composition
+5. Some level of automation
