@@ -34,7 +34,7 @@
     "href": "pages/02_visualization.html#the-10-rules-of-good-graphs",
     "title": "Visualization",
     "section": "The 10 rules of good graphs",
-    "text": "The 10 rules of good graphs\n\n\n\nRule 1: Know your audience. (collaborators, journal readers …).\nRule 2: Identify the role of the figure (⇒ geometry).\nRule 3: Adapt to the medium (paper, poster, projection screen …).\nRule 4: Captions are not optional.\nRule 5: never trust the defaults (size, font, colors …): good enough for any, best for none.\n\nRule 6: Use color effectively & only when needed.\nRule 7: Do Not Mislead the Reader (see examples below).\n- As a rule of thumb, use the simplest type of plots\nRule 8: Avoid “Chartjunk” (see examples below).\n  Rule 9: Message trumps beauty.\nRule 10: Get the right tool (here R + tidyverse + ggplot)\n\nAdditionally:\n- seek external opinion.\n- ensure reproducibility with your code.\n- know the domain’s best practices.",
+    "text": "The 10 rules of good graphs",
     "crumbs": [
       "Visualization"
     ]
@@ -244,7 +244,7 @@
     "href": "pages/01_rmarkdown.html#exercise-2-only-text",
     "title": "Reproducible Reports with R Markdown",
     "section": "Exercise 2: only text",
-    "text": "Exercise 2: only text\nCreate an R Markdown document that will create the following html output.",
+    "text": "Exercise 2: only text\nCreate an R Markdown document that will create the following html output.\n\n\n\n\n\n\n\n\nWarning\n\n\nThere is no YAML header!",
     "crumbs": [
       "R Markdown"
     ]
@@ -254,7 +254,7 @@
     "href": "pages/01_rmarkdown.html#my-advice",
     "title": "Reproducible Reports with R Markdown",
     "section": "My advice",
-    "text": "My advice\n\ncreate your chunk by clicking on the “+c” button\ncustomize its options by clicking on the wheel\nwrite your R script (execute often)\nknit often\n\n\n\n\n\n\n\n\nWarning\n\n\nYour current environment might not match the temp environment that will be created to generate the report!",
+    "text": "My advice\n\ncreate your chunk by clicking on the “+c” button\ncustomize its options by clicking on the wheel\nwrite your R script (execute often)\nknit often\n\n\n\n\n\n\n\n\nWarning\n\n\nYour current environment is different from the temp environment that is created to generate the report!",
     "crumbs": [
       "R Markdown"
     ]
@@ -444,7 +444,7 @@
     "href": "pages/02_gt.html#dimensions",
     "title": "Great Tables",
     "section": "Dimensions",
-    "text": "Dimensions\n\n\n\n\nObject\nDimensions\nProperties\n\n\n\n\nvector\n1\nGeneral\n\n\nfactor\n1\nCategorical data\n\n\nlist\n1 ?\nAnything\n\n\nfunction\nNo\nComputes\n\n\nmatrix\n2\nOnly one type of data\n\n\ndata-frame\n2\nOne type per column\n\n\ntibble\n2\nid.\n\n\narray\n\\([1, +\\infty[\\)\nOnly one type of data",
+    "text": "Dimensions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObject\n\n\nDimensions\n\n\nProperties\n\n\n\n\n\n\nvector\n\n\n1\n\n\nGeneral\n\n\n\n\nfactor\n\n\n1\n\n\nCategorical data\n\n\n\n\nlist\n\n\n1 ?\n\n\nAnything\n\n\n\n\nfunction\n\n\nNo\n\n\nComputes\n\n\n\n\nmatrix\n\n\n2\n\n\nOnly one type of data\n\n\n\n\ndata-frame\n\n\n2\n\n\nOne type per column\n\n\n\n\ntibble\n\n\n2\n\n\nid.\n\n\n\n\narray\n\n\n\\([1, +\\infty[\\)\n\n\nOnly one type of data",
     "crumbs": [
       "(Great) Tables"
     ]
@@ -517,6 +517,196 @@
     "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120, for inspiring us a lot with their beautiful website!\n…",
     "crumbs": [
       "About"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#the-10-rules-of-good-graphs-1",
+    "href": "pages/02_visualization.html#the-10-rules-of-good-graphs-1",
+    "title": "Visualization",
+    "section": "The 10 rules of good graphs",
+    "text": "The 10 rules of good graphs\n\n\n\nRule 1: Know your audience. (collaborators, journal readers …).\nRule 2: Identify the role of the figure (⇒ geometry).\nRule 3: Adapt to the medium (paper, poster, projection screen …).\nRule 4: Captions are not optional.\nRule 5: never trust the defaults (size, font, colors …): good enough for any, best for none.\n\nRule 6: Use color effectively & only when needed.\nRule 7: Do Not Mislead the Reader (see examples below).\n- As a rule of thumb, use the simplest type of plots\nRule 8: Avoid “Chartjunk” (see examples below).\n  Rule 9: Message trumps beauty.\nRule 10: Get the right tool (here R + tidyverse + ggplot)\n\nAdditionally:\n- seek external opinion.\n- ensure reproducibility with your code.\n- know the domain’s best practices.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#grammar-of-graphics",
+    "href": "pages/02_visualization.html#grammar-of-graphics",
+    "title": "Visualization",
+    "section": "Grammar of Graphics",
+    "text": "Grammar of Graphics\n\nLayered grammar of graphics in ggplot2 (as described in wikipedia)\n\n\n\nDefaults: consists of data and mapping.\n\nData: dataset\nMapping: aesthetic mappings\n\n\n\n\nLayer: consists of data, mapping, geom, stat, and position\n\nData: dataset, or inherit from defaults\nMapping: aesthetic mappings, or inherit from defaults\nGeom: geometric object\nStat: statistical transformation\nPosition: position adjustment\n\n\n\n\nScale: mapping of data to aesthetic attributes\nCoord: mapping of data to the plane of the plot\nFacet: split up the data\n\n\n⇒ See also the DebuteR training",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#the-exercise-we-gave-you",
+    "href": "pages/02_visualization.html#the-exercise-we-gave-you",
+    "title": "Visualization",
+    "section": "The exercise we gave you",
+    "text": "The exercise we gave you\nAll elements of this grammar of graphics is illustrated by the exercise we gave you by e-mail\n\n\n\n\n# A tibble: 6 × 2\n  weight genotype\n   &lt;dbl&gt; &lt;chr&gt;   \n1   0.23 WT      \n2   0.31 WT      \n3   0.28 WT      \n4   0.23 WT      \n5   0.19 WT      \n6   0.21 WT",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercise",
+    "href": "pages/02_visualization.html#exercise",
+    "title": "Visualization",
+    "section": "exercise:",
+    "text": "exercise:\nCorrect this code to get this graphic\n\n(hint, we use viridis)\n\n\n\n\n\ng &lt;- mtcars %&gt;%\n  mutate(cyl = as.factor(cyl)) %&gt;%\n  ggplot(\n    aes(x = cyl, \n        y = mpg, \n        fill = cyl)) +\n  geom_boxplot() +\n  labs(\n    title = \"Boxplot of MPG by Cylinder\",\n    x = \"Cyl\",\n    y = \"MPG\") +\n  theme_bw() + \n  theme(plot.background = element_rect(fill = \"lightgray\"))\n\ng",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#other-often-use-improvement",
+    "href": "pages/02_visualization.html#other-often-use-improvement",
+    "title": "Visualization",
+    "section": "Other often use improvement:",
+    "text": "Other often use improvement:\nStatistical annotation and expression\n\nReal world example",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#statistical-annotations-with-ggpubr",
+    "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr",
+    "title": "Visualization",
+    "section": "Statistical Annotations with ggpubr",
+    "text": "Statistical Annotations with ggpubr\n\ncompute comparisons and display the p-values",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#statistical-annotations-with-ggpubr-1",
+    "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr-1",
+    "title": "Visualization",
+    "section": "Statistical Annotations with ggpubr",
+    "text": "Statistical Annotations with ggpubr\n\ncompute comparisons and display the p-values",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercice",
+    "href": "pages/02_visualization.html#exercice",
+    "title": "Visualization",
+    "section": "Exercice",
+    "text": "Exercice\n\ntake the code above\nchange the statistical procedure used by stat_compare_means\ndisplay the formatted p value of every significant comparison",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#statistical-annotations-with-ggpubr-2",
+    "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr-2",
+    "title": "Visualization",
+    "section": "Statistical Annotations with ggpubr",
+    "text": "Statistical Annotations with ggpubr\n\nDisplay p-value from another test procedure",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercice-1",
+    "href": "pages/02_visualization.html#exercice-1",
+    "title": "Visualization",
+    "section": "Exercice",
+    "text": "Exercice\n\nuse the data(\"ToothGrowth\")\nmake the violin plot of teeth length according to the dose of vitamin C\nAdd the pairwise-pvalues",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#add-mathematical-expressions",
+    "href": "pages/02_visualization.html#add-mathematical-expressions",
+    "title": "Visualization",
+    "section": "Add (mathematical) expressions",
+    "text": "Add (mathematical) expressions",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercice-2",
+    "href": "pages/02_visualization.html#exercice-2",
+    "title": "Visualization",
+    "section": "exercice",
+    "text": "exercice\n\nstart with this plot\nuse the Mathematical Annotations listed here\nCorrect the axis label and add the regression formula\n\n\nChickWeight %&gt;%\n  filter(Diet==4) %&gt;%\n  ggplot( aes(x = Time, y = weight^(1/3))) +\n    geom_point() +\n    geom_smooth(method = \"lm\", se = TRUE) +\n    labs(\n          title = \"Cube root of weight according to time\",\n          x = \"Time\",\n          y=\"Cube root of weight\"\n    ) +\n    theme_classic()",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#yet-another-markdown-language",
+    "href": "pages/01_rmarkdown.html#yet-another-markdown-language",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "[Y]et [A]nother [M]arkdown [L]anguage",
+    "text": "[Y]et [A]nother [M]arkdown [L]anguage\n---\ntitle: \"This should be a useful title\"\nauthor: \"Pr Jean Bon\"\noutput: pdf_document\n---\n\nStarts with ---, ends with ---\nIntuitive syntax \\(\\rightarrow\\) field: value\nOutputs: HTML, docx, pptx, (pdf)\nAlso: it is optional!",
+    "crumbs": [
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/02_gt.html#test",
+    "href": "pages/02_gt.html#test",
+    "title": "Great Tables",
+    "section": "Test",
+    "text": "Test\n\n\n\n\nObject\n\n\nDimensions\n\n\nProperties\n\n\n\n\n\n\nvector\n\n\n1\n\n\nGeneral\n\n\n\n\nfactor\n\n\n1\n\n\nCategorical data\n\n\n\n\nlist\n\n\n1 ?\n\n\nAnything\n\n\n\n\nfunction\n\n\nNo\n\n\nComputes\n\n\n\n\nmatrix\n\n\n2\n\n\nOnly one type of data\n\n\n\n\ndata-frame\n\n\n2\n\n\nOne type per column\n\n\n\n\ntibble\n\n\n2\n\n\nid.\n\n\n\n\narray\n\n\n\\([1, +\\infty[\\)\n\n\nOnly one type of data",
+    "crumbs": [
+      "(Great) Tables"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#examples",
+    "href": "pages/01_rmarkdown.html#examples",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Examples",
+    "text": "Examples\n\n\n\nTwinkle **twinkle** ~little~ _star_\n\n\n$$ y = \\frac{1}{2\\pi} e^{x^2} $$\n\n\n\n\n\n* One item\n* Two items\n\n\n\nTwinkle twinkle little star\n\n\n\\[\ny = \\frac{1}{2\\pi} e^{x^2}\n\\]\n\n\n\nOne item\nTwo items",
+    "crumbs": [
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#test",
+    "href": "pages/01_rmarkdown.html#test",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Test",
+    "text": "Test\n\n\n\nTwinkle **twinkle** ~little~ _star_\n\n\n$$ y = \\frac{1}{2\\pi} e^{x^2} $$\n\n\n\n\n* One item\n* Two items\n\n\n\nTwinkle twinkle little star\n\n\n\\[\ny = \\frac{1}{2\\pi} e^{x^2}\n\\]\n\n\n\nOne item\nTwo items",
+    "crumbs": [
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#exercise-3-yaml-markdown-r",
+    "href": "pages/01_rmarkdown.html#exercise-3-yaml-markdown-r",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Exercise 3: YAML + Markdown + R",
+    "text": "Exercise 3: YAML + Markdown + R\n\n\nCreate an R Markdown document that will create this (\\(\\rightarrow\\)) output.",
+    "crumbs": [
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#regular-chunk",
+    "href": "pages/01_rmarkdown.html#regular-chunk",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Regular chunk",
+    "text": "Regular chunk",
+    "crumbs": [
+      "R Markdown"
+    ]
+  },
+  {
+    "objectID": "pages/01_rmarkdown.html#setup-chunk",
+    "href": "pages/01_rmarkdown.html#setup-chunk",
+    "title": "Reproducible Reports with R Markdown",
+    "section": "Setup chunk",
+    "text": "Setup chunk",
+    "crumbs": [
+      "R Markdown"
     ]
   }
 ]

@@ -27,21 +27,70 @@ theme_gtsummary_journal(
 
 ```
 
+# Reminders and more
+
+::: {.incremental}
+
+  * objects sometimes have dimensions
+  * many `print` functions (hidden)
+  * some objects have `attributes` (column names, row names, etc)
+  * In R Markdown: `knit_print`
+
+:::
+
 
 ## Dimensions
 
 ::: {.small}
 
-Object | Dimensions | Properties
----|---|---
-`vector` | 1 | General
-`factor` | 1 | Categorical data
-`list` | 1 ? | Anything
-`function` | No | Computes
-`matrix` | 2 | Only one type of data
-`data-frame` | 2 | One type per column
-`tibble` | 2 | id.
-`array` | $[1, +\infty[$ | Only one type of data
+<!-- Object | Dimensions | Properties -->
+<!-- ---|---|--- -->
+<!-- `vector` | 1 | General -->
+<!-- `factor` | 1 | Categorical data -->
+<!-- `list` | 1 ? | Anything -->
+<!-- `function` | No | Computes -->
+<!-- `matrix` | 2 | Only one type of data -->
+<!-- `data-frame` | 2 | One type per column -->
+<!-- `tibble` | 2 | id. -->
+<!-- `array` | $[1, +\infty[$ | Only one type of data -->
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Dimensions</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="fragment">
+      <td><code>vector</code></td><td>1</td><td>General</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>factor</code></td><td>1</td><td>Categorical data</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>list</code></td><td>1 ?</td><td>Anything</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>function</code></td><td>No</td><td>Computes</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>matrix</code></td><td>2</td><td>Only one type of data</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>data-frame</code></td><td>2</td><td>One type per column</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>tibble</code></td><td>2</td><td>id.</td>
+    </tr>
+    <tr class="fragment">
+      <td><code>array</code></td><td>$[1, +\infty[$</td><td>Only one type of data</td>
+    </tr>
+  </tbody>
+</table>
 
 :::
 

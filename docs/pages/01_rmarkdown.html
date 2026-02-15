@@ -312,6 +312,20 @@ _italic_   __bold__</code></pre>
 <h1>YAML</h1>
 
 </section>
+<section id="yet-another-markdown-language" class="slide level2">
+<h2><strong>[Y]</strong>et <strong>[A]</strong>nother <strong>[M]</strong>arkdown <strong>[L]</strong>anguage</h2>
+<pre><code>---
+title: "This should be a useful title"
+author: "Pr Jean Bon"
+output: pdf_document
+---</code></pre>
+<ul>
+<li>Starts with <code>---</code>, ends with <code>---</code></li>
+<li>Intuitive syntax <span class="math inline">\(\rightarrow\)</span> <code>field: value</code></li>
+<li>Outputs: HTML, docx, pptx, (pdf)</li>
+<li>Also: it is <em>optional</em>!</li>
+</ul>
+</section>
 <section id="most-useful-fields" class="slide level2">
 <h2>Most useful fields</h2>
 <ul>
@@ -358,38 +372,51 @@ _italic_   __bold__</code></pre>
 <h1>Markdown</h1>
 
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
-<pre><code>Twinkle **twinkle** ~little~ _star_
+<div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<p><code>Twinkle **twinkle** ~little~ _star_</code></p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<pre><code>$$ y = \frac{1}{2\pi} e^{x^2} $$</code></pre>
+</div>
+<div class="fragment" data-fragment-index="3">
+<pre><code>
 
-$$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
 
- * One item
- * Two items</code></pre>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
+* One item
+* Two items</code></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
 <p>Twinkle <strong>twinkle</strong> <sub>little</sub> <em>star</em></p>
-<p><span class="math display">\[y = \frac{1}{2\pi} e^{x^2}\]</span></p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p><span class="math display">\[
+y = \frac{1}{2\pi} e^{x^2}
+\]</span></p>
+</div>
+<div class="fragment" data-fragment-index="3">
 <ul>
 <li>One item</li>
 <li>Two items</li>
 </ul>
+</div>
 </div></div>
 </section>
 <section id="in-rstudio-1" class="slide level2">
 <h2>In Rstudio</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:60%;">
 <p>Useful ressources:</p>
 <ul>
 <li>Markdown Quick Reference Guide (<span class="math inline">\(\rightarrow\)</span>)</li>
 <li>Cheatsheet</li>
 <li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
 </ul>
-</div><div class="column" style="width:5%;">
+</div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:30%;">
 <p><img data-src="../img/01_rmarkdown/rstudio_menu_quick_guide.png"></p>
@@ -399,12 +426,35 @@ $$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
 <h2>Exercise 2: only text</h2>
 <p>Create an R Markdown document that will create the following html output.</p>
 
-<img data-src="../img/01_rmarkdown/exo2.png" class="r-stretch"></section></section>
+<img data-src="../img/01_rmarkdown/exo2.png" class="r-stretch"><div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>There is no YAML header!</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="r-chunks-1" class="title-slide slide level1 center">
 <h1>R Chunks</h1>
 
 </section>
+<section id="regular-chunk" class="slide level2">
+<h2>Regular chunk</h2>
+
+<img data-src="../img/01_rmarkdown/chunk.png" class="r-stretch"></section>
+<section id="setup-chunk" class="slide level2">
+<h2>Setup chunk</h2>
+
+<img data-src="../img/01_rmarkdown/setup-chunk.png" class="r-stretch"></section>
 <section id="my-advice" class="slide level2">
 <h2>My advice</h2>
 <ul>
@@ -423,14 +473,14 @@ $$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Your current environment might not match the temp environment that will be created to generate the report!</p>
+<p>Your current environment is different from the temp environment that is created to generate the report!</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-3-only-r" class="slide level2">
-<h2>Exercise 3: only R</h2>
+<section id="exercise-3-yaml-markdown-r" class="slide level2">
+<h2>Exercise 3: YAML + Markdown + R</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p>Create an R Markdown document that will create this (<span class="math inline">\(\rightarrow\)</span>) output.</p>

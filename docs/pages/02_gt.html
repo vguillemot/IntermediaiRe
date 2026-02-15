@@ -206,57 +206,131 @@ Amaury &amp; Vincent
 </div>
 
 </section>
+<section>
+<section id="reminders-and-more" class="title-slide slide level1 center">
+<h1>Reminders and more</h1>
+<ul>
+<li class="fragment">objects sometimes have dimensions</li>
+<li class="fragment">many <code>print</code> functions (hidden)</li>
+<li class="fragment">some objects have <code>attributes</code> (column names, row names, etc)</li>
+<li class="fragment">In R Markdown: <code>knit_print</code></li>
+</ul>
+</section>
 <section id="dimensions" class="slide level2">
 <h2>Dimensions</h2>
 <div class="small">
-<table class="caption-top">
+<!-- Object | Dimensions | Properties -->
+<!-- ---|---|--- -->
+<!-- `vector` | 1 | General -->
+<!-- `factor` | 1 | Categorical data -->
+<!-- `list` | 1 ? | Anything -->
+<!-- `function` | No | Computes -->
+<!-- `matrix` | 2 | Only one type of data -->
+<!-- `data-frame` | 2 | One type per column -->
+<!-- `tibble` | 2 | id. -->
+<!-- `array` | $[1, +\infty[$ | Only one type of data -->
+<table>
 <thead>
-<tr class="header">
-<th>Object</th>
-<th>Dimensions</th>
-<th>Properties</th>
+<tr>
+<th>
+Object
+</th>
+<th>
+Dimensions
+</th>
+<th>
+Properties
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><code>vector</code></td>
-<td>1</td>
-<td>General</td>
+<tr class="fragment">
+<td>
+<code>vector</code>
+</td>
+<td>
+1
+</td>
+<td>
+General
+</td>
 </tr>
-<tr class="even">
-<td><code>factor</code></td>
-<td>1</td>
-<td>Categorical data</td>
+<tr class="fragment">
+<td>
+<code>factor</code>
+</td>
+<td>
+1
+</td>
+<td>
+Categorical data
+</td>
 </tr>
-<tr class="odd">
-<td><code>list</code></td>
-<td>1 ?</td>
-<td>Anything</td>
+<tr class="fragment">
+<td>
+<code>list</code>
+</td>
+<td>
+1 ?
+</td>
+<td>
+Anything
+</td>
 </tr>
-<tr class="even">
-<td><code>function</code></td>
-<td>No</td>
-<td>Computes</td>
+<tr class="fragment">
+<td>
+<code>function</code>
+</td>
+<td>
+No
+</td>
+<td>
+Computes
+</td>
 </tr>
-<tr class="odd">
-<td><code>matrix</code></td>
-<td>2</td>
-<td>Only one type of data</td>
+<tr class="fragment">
+<td>
+<code>matrix</code>
+</td>
+<td>
+2
+</td>
+<td>
+Only one type of data
+</td>
 </tr>
-<tr class="even">
-<td><code>data-frame</code></td>
-<td>2</td>
-<td>One type per column</td>
+<tr class="fragment">
+<td>
+<code>data-frame</code>
+</td>
+<td>
+2
+</td>
+<td>
+One type per column
+</td>
 </tr>
-<tr class="odd">
-<td><code>tibble</code></td>
-<td>2</td>
-<td>id.</td>
+<tr class="fragment">
+<td>
+<code>tibble</code>
+</td>
+<td>
+2
+</td>
+<td>
+id.
+</td>
 </tr>
-<tr class="even">
-<td><code>array</code></td>
-<td><span class="math inline">\([1, +\infty[\)</span></td>
-<td>Only one type of data</td>
+<tr class="fragment">
+<td>
+<code>array</code>
+</td>
+<td>
+<span class="math inline">\([1, +\infty[\)</span>
+</td>
+<td>
+Only one type of data
+</td>
 </tr>
 </tbody>
 </table>
@@ -1323,7 +1397,7 @@ N = 50<span class="gt_footnote_marks" style="white-space:nowrap;font-style:itali
 <p>Now, you are ready to include a <code>Great Table</code> in your R Markdown report on the COVID data.</p>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../img/logos/phi.svg" class="slide-logo"></p>

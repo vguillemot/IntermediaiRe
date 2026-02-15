@@ -158,6 +158,21 @@ Customization:
 
 # YAML
 
+## **[Y]**et **[A]**nother **[M]**arkdown **[L]**anguage
+
+```
+---
+title: "This should be a useful title"
+author: "Pr Jean Bon"
+output: pdf_document
+---
+```
+
+ * Starts with `---`, ends with `---`
+ * Intuitive syntax $\rightarrow$ `field: value`
+ * Outputs: HTML, docx, pptx, (pdf)
+ * Also: it is *optional*!
+
 ## Most useful fields
 
   * `title`: title of the document
@@ -207,46 +222,64 @@ Create an R Markdown document that will create the following html output.
 
 # Markdown
 
-## Example
+## Examples
 
 :::::: {.columns}
 
-::: {.column width= "45%"}
+::: {.column width="50%"}
 
+<div class="fragment" data-fragment-index="1">
+`Twinkle **twinkle** ~little~ _star_`
+</div>
+
+<div class="fragment" data-fragment-index="2">
 ```
+$$ y = \frac{1}{2\pi} e^{x^2} $$
+```
+</div>
+
+<div class="fragment" data-fragment-index="3">
+```
+
+
+
+* One item
+* Two items
+```
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+<div class="fragment" data-fragment-index="1">
 Twinkle **twinkle** ~little~ _star_
+</div>
 
-$$y = \frac{1}{\sqrt{2\pi}} e^{x^2}$$
+<div class="fragment" data-fragment-index="2">
+$$
+y = \frac{1}{2\pi} e^{x^2}
+$$
+</div>
 
+<div class="fragment" data-fragment-index="3">
  * One item
  * Two items
-```
+</div>
+
 
 :::
 
+::::
 
-::: {.column width= "5%"}
 
-:::
-
-::: {.column width= "45%"}
-
-Twinkle **twinkle** ~little~ _star_
-
-$$y = \frac{1}{2\pi} e^{x^2}$$
-
- * One item
- * Two items
-:::
-
-::::::
 
 ## In Rstudio
 
 
 :::::: {.columns}
 
-::: {.column width="30%"}
+::: {.column width="60%"}
 
 Useful ressources:
 
@@ -257,7 +290,7 @@ Useful ressources:
 
 :::
 
-::: {.column width="5%"}
+::: {.column width="10%"}
 
 :::
 
@@ -277,7 +310,23 @@ Create an R Markdown document that will create the following html output.
 
 ![](../img/01_rmarkdown/exo2.png)
 
+
+. . .
+
+
+::: {.callout-warning}
+There is no YAML header!
+:::
+
 # R Chunks
+
+## Regular chunk
+
+![](../img/01_rmarkdown/chunk.png)
+
+## Setup chunk
+
+![](../img/01_rmarkdown/setup-chunk.png)
 
 ## My advice
 
@@ -289,11 +338,11 @@ Create an R Markdown document that will create the following html output.
 . . .
 
 ::: {.callout-warning}
-Your current environment might not match the temp environment that will be created to generate the report!
+Your current environment is different from the temp environment that is created to generate the report!
 :::
 
 
-## Exercise 3: only R
+## Exercise 3: YAML + Markdown + R
 
 
 :::::: {.columns}
