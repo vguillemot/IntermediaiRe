@@ -45,7 +45,7 @@ knitr::opts_chunk$set(
 <!--
 - published graphics assessment  
 - Visualisation good practices  
-- Pratice: "clean" a graph 
+- Pratice : "clean" a graph 
 -->
  
 
@@ -54,7 +54,7 @@ A scientific visualization is a graphical interface between **people** and **dat
 - There are **many** possible graphics for the **same** data.  
 - Different **people** perceive theses graphics differently.  
 <br />
-An advanced graph:  
+An advanced graph :  
 - Conveys **complex** information **clearly**  
 - Integrates multiple layers of **information**  
 - Is **reproducible** and **adaptable** by code  
@@ -81,7 +81,7 @@ An advanced graph:
 - As a rule of thumb, use the simplest type of plots   
 *Rule 8:* Avoid "[Chartjunk](https://www.junkcharts.com/about/)" (see examples below).  
 <!-- any decorations that do not tell the viewer something new must be banned --> 
-<!-- Stephen Few: graphs should ideally ‘‘represent all the data that is needed to see and understand what’s meaningful.’’ --> 
+<!-- Stephen Few : graphs should ideally ‘‘represent all the data that is needed to see and understand what’s meaningful.’’ --> 
 *Rule 9:* **Message** trumps beauty.  
 *Rule 10:* Get the right **tool** (here `R` + `tidyverse` + `ggplot`)
 
@@ -100,7 +100,7 @@ Additionally:
 - A good source of reflexions on graphical representation is:   
 ![](../img/02_visualization/5.data-to-viz-caveats.png)
 
-## Common pitfalls 1/4
+## Common pitfalls 1/5
 :::::: {.columns }
 ::: {.column style="width='50%'"}
 ![](../img/02_visualization/6.a.heatmap_pb.png)
@@ -112,20 +112,20 @@ Additionally:
 - **Inaccessible colors** (here for color blind people)
 
 
-## Common pitfalls 2/4
+## Common pitfalls 2/5
 ![](../img/02_visualization/chartJunk.png)  
 
 - **Chart junk**.  
 
-## Common pitfalls 3/4
+## Common pitfalls 3/5
 ![](../img/02_visualization/misleadingaxes.png){  height=500 }   
 
 - **Misleading axes**.  
 
-## Common pitfalls 4/4
+## Common pitfalls 4/5
 ![](../img/02_visualization/pie_charts.png){ width="840" height=200 margin=0} 
 
-## Common pitfalls 4/4
+## Common pitfalls 5/5
 ![](../img/02_visualization/pie_charts.png){ width="840" height=200 margin=0} 
 ![](../img/02_visualization/pie_charts_correct.png){ width="840" height=200  margin=0}
 
@@ -221,7 +221,7 @@ g
 :::
 ::::::
 
-## Exercise: {.smaller}
+## exercise: {.smaller}
 Correct this code to get this graphic 
 
 ::: {.small}
@@ -285,14 +285,14 @@ g
 ::::::
 
 
-## Other often use improvement: {.smaller}
-### Statistical annotation and expression 
-Real world example 
+## Other often use improvement: 
+### Statistical annotation and expression {.small}
+- Real world example 
 ![](../img/02_visualization/together_group_test.png)
 
 
 ## Statistical Annotations with `ggpubr` {.smaller}
-- **Compute comparisons and display the p-values**
+- **compute comparisons and display the p-values**
 ```{r }
 #| eval: true
 #| echo: true
@@ -325,7 +325,7 @@ ggplot(
 
 ## Statistical Annotations with `ggpubr` {.smaller}
 
-- **Compute comparisons and display the p-values**
+- **compute comparisons and display the p-values**
 ```{r }
 #| echo: true
 #| output-location: column
@@ -351,10 +351,11 @@ ggplot( aes(order, sleep_total, fill = order)) +
 -->
 
 
-## Exercise
-- Take the code above
-- Change the statistical procedure used by `stat_compare_means`
-- Display the formatted p value of every significant comparison
+## Exercice
+
+- take the code above
+- change the statistical procedure used by `stat_compare_means`
+- display the formatted p value of every significant comparison
 
 ## Statistical Annotations with `ggpubr` {.smaller}
 
@@ -380,9 +381,9 @@ ggplot( aes(order, sleep_total, fill = order)) +
   theme_classic2()
 ```
 
-## Exercise
-- Use the `data("ToothGrowth")`
-- Make the violin plot of teeth length according to the dose of vitamin C 
+## Exercice
+- use the `data("ToothGrowth")`
+- make the violin plot of teeth length according to the dose of vitamin C 
 - Add the pairwise-pvalues
 
 
@@ -410,9 +411,9 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 #  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
 -->
 
-## Exercise {.smaller}
-- Start with this plot
-- Use the Mathematical Annotations listed in `?plotmath`
+## exercice {.smaller}
+- start with this plot
+- use the Mathematical Annotations listed in `?plotmath`
 - Correct the axis label and add the regression formula
 
 ```{r}
@@ -466,10 +467,10 @@ ggplot( aes(x = Time, y = weight^(1/3))) +
 
 
 ## Complex heatmap {.small}
-* Specific plots like heatmap often have dedicated packages
-* Here we choose the heatmap since
+* specific plots like heatmap often have dedicated packages
+* here we choose the heatmap since
   - it is widely used
-  - we will use it tomorrow in the project.  
+  - we will use it tomorrow in the main exercise.  
 ![](../img/02_visualization/3.ong_2020_fig2.jpg){ height=400  } 
 
 ## Complex heatmap package
@@ -508,7 +509,7 @@ vignette("complex_heatmap")
 :::
 ::::::
 
-## Data for the heatmap:
+## data for the heatmap:
 - Let's make a mock dataset 
 
 ```{r}
@@ -529,7 +530,7 @@ column_info <- data.frame(order=1:12, category=rep(0:2,4) )
 ```
 
 
-## Make a basic heatmap {.smaller}
+## make a basic heatmap {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -542,13 +543,12 @@ Heatmap(mat,
 
 Basic layout includes  
 
-- The heatmap.  
-- The row and column labels.  
-- A default clustering.   
+- the heatmap.  
+- the row and column labels.  
+- a default clustering.   
 
-## Complete the heatmap: {.smaller}
-### Add annotations 
-Using a dataframe directly give and overview
+## complete the heatmap: add annotations {.smaller}
+- using a dataframe directly give and overview
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -564,8 +564,7 @@ Heatmap(mat,
 )
 ```
 
-## Complete the heatmap: {.smaller}
-### Add annotations 
+## complete the heatmap: add annotations {.smaller}
 We have more control by selecting each annotations to be displayed separately
 ```{r}
 #| echo: TRUE
@@ -589,8 +588,7 @@ Heatmap(mat,
 )
 ```
 
-## Customise colors: {.smaller}
-### The heatmap part
+## customise colors : main {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -611,8 +609,8 @@ Heatmap(mat,
 
 ```
 
-- We set the limits of the colors ourselves
-- &rArr; Make comparable heatmaps
+- you set the limits of the colors yourself
+- &rArr; enables you to compare heatmaps 
 
 <!--
 I don't speak about NA values nore the options
@@ -620,9 +618,7 @@ I don't speak about NA values nore the options
 - rect_gp = gpar(col = "white", lwd = 2)
 --> 
 
-## Customise colors: {.smaller}
-### Annotations
-
+## customise colors : annotations {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -652,9 +648,7 @@ Heatmap(mat,
 
 ```
 
-## customise colors: {.smaller}
-### Titles
-
+## customise colors : titles {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -677,7 +671,7 @@ ht_opt$TITLE_PADDING = unit(c(8.5, 8.5), "points")
 ht_opt(RESET = TRUE)
 -->
 
-## Customise positions  {.smaller}
+## customise positions  {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -696,14 +690,14 @@ Heatmap(mat,
 )
 ```
 
-## Exercise
-- Take the heatmap we are building
-- Split the row annotation on each side
-- Split the columns annotation on each side
+## exercise
+- take the heatmap we are building
+- split the row annotation on each side
+- split the columns annotation on each side
 
 
-## Customise clustering {.smaller}
-- Either use or remove the clustering 
+## customise clustering {.smaller}
+- either use or remove the clusetering 
 
 ```{r}
 #| echo: TRUE
@@ -713,8 +707,8 @@ Heatmap(mat,
 Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE) 
 ```
 
-## Customise clustering {.smaller}
-- Either use or remove the clustering 
+## customise clustering {.smaller}
+- either use or remove the clusetering 
 
 ```{r}
 #| echo: TRUE
@@ -729,7 +723,7 @@ Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE)
 ```
 
 
-## Customise clustering {.smaller}
+## customise clustering {.smaller}
 - We can change the display of the dendrogram
 ```{r}
 #| echo: TRUE
@@ -747,8 +741,8 @@ Heatmap(mat,
 ```
 
 
-## Customise clustering {.smaller}
-- We can change the clustering methods parameters as in `hclust`
+## customise clustering {.smaller}
+- We can change the parameters as in `hclut`
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -761,7 +755,7 @@ Heatmap(mat,
        )
 ```
 
-## Customise clustering {.smaller}
+## customise clustering {.smaller}
 - We can give a already made dendrogram
 ```{r}
 #| echo: TRUE
@@ -778,9 +772,8 @@ Heatmap(mat,
 ```
 
 
-## Split heatmap {.smaller}
-### by clustering
-- using `row_km`/`column_km` or `column_split` /`row_split`
+## split heatmap {.smaller}
+- by clustering using `row_km`/`column_km` or `column_split` /`row_split`
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -789,8 +782,8 @@ Heatmap(mat,
 Heatmap(mat, name = "mat", cluster_rows = row_dend, row_split = 2, column_split = 3)
 ```
 
-## Split heatmap {.smaller}
-### by categorical variables
+## split heatmap {.smaller}
+- by categorical variables
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -805,10 +798,10 @@ Heatmap(mat,
 
 
 ## Exercise
-- Take a previous heatmap with the annotations
-- Change the clustering parameters
-- Split the heatmap according to the clustering
-- Recover the row labels in the order of the clustering
+- take a previous heatmap with the annotations
+- change the clustering parameters
+- split the heatmap according to the clustering
+- recover the row labels in the order of the clustering
 
 <!--
 ================================================================================================
@@ -850,7 +843,7 @@ ChickWeight %>%
 
 
 
-## Split a plot by conditions: `facet` {.smaller}
+## Split a plot by conditions: `facet` 
 - See the course for R beginners
 
 ```{r}
@@ -889,7 +882,7 @@ p + facet_grid( Diet ~ .)
 ```
 
 
-## Make one plot from several: `aplot` {.smaller}
+## Make one plot from several: `aplot`
 - Real life example
 
 ![](../img/02_visualization/aplot.png){height=500}
@@ -918,11 +911,11 @@ p %>%
 ```
 
 
-## Put together several plots with `patchwork`  {.smaller}
+## Put together several plots with `patchwork`
 
 `ggarrange` and `patchwork` are ways to assemble several plots in a single figure. For `ggarrange` se the beginner R course
 
-`patchwork` defines. or augments 6 operators on plots: `+ - / | * &` the most user friendly ones are `+ |` and `/`
+`patchwork` defines. or augments 6 opreator on plots: `+ - / | * &` the most user friendly ones are `+ |` and `/`
 
 
 ```{R}
@@ -971,10 +964,10 @@ p1 + p2  | p3
 #| eval: true
 #| echo: true
 
-p1 / p2
+p1 / p2  # Disposition en ligne
 ```
 
-## `patchwork` **Set the layouts** {.smaller}
+## `patchwork` **set the layouts** {.smaller}
 `plot_layout` give a finer control over the resulting plot
 ```{R}
 #| eval: true
@@ -984,7 +977,7 @@ p1 + p2 + p3 + plot_layout(ncol = 1)
 
 ```
 
-## `patchwork` **Set the layouts** {.smaller}
+## `patchwork` **set the layouts** {.smaller}
 `plot_layout` give a finer control over the resulting plot
 ```{R}
 #| eval: true
@@ -994,8 +987,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1)
 
 ```
 
-## `patchwork` **Set the layouts** {.smaller}
-`plot_layout` give a finer control over the resulting plot
+## `patchwork` **set the layouts** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1003,7 +995,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1)
 p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))
 ```
 
-## `patchwork` **Nesting levels** {.smaller}
+## `patchwork` **nesting levels** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1012,7 +1004,6 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))
 ```
 
 ## `patchwork` **Add other customisation** {.smaller}
-Example with `theme_...`
 ```{R}
 #| eval: true
 #| echo: true
@@ -1022,7 +1013,6 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) + theme_bw()
 ```
 
 ## `patchwork` **Add other customisation** {.smaller}
-Example with `theme_...`
 ```{R}
 #| eval: true
 #| echo: true
@@ -1032,7 +1022,6 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))  & theme_bw()
 ```
 
 ## `patchwork` **Add other customisation** {.smaller}
-Example with `theme_...`
 ```{R}
 #| eval: true
 #| echo: true
@@ -1041,7 +1030,7 @@ Example with `theme_...`
 
 ```
 
-## Exercise: make a Multipanel Figure
+## Exercice: make a Multipanel Figure
 - Take any 3 graphics generated today
 - Use `patchwork` to combine them in a single figure.
 
@@ -1070,16 +1059,16 @@ ggpubr::annotate_figure
 <font color="gray">4. Plot composition</font>  
 <font style="color:blue; font-weight:bold;">5. some level of automation</font>  
 
-## Functions 
+## functions 
 :::::::::::::::::: {.r-fit-text }
 A function in R is 2 things
 
 :::::: {.columns }
 ::: {.column style="width='50%'"}
-- A block of code stored and executed when called.
+- a block of code stored and executed when called.
 :::
 ::: {.column style="width='50%'"}
-- An object composed of   
+- an object composed of   
 
 |component|accessed using|
 |-|-|
@@ -1094,12 +1083,12 @@ A function in R is 2 things
 
 A function can be created in two ways  
 
-- Use a function that creates specific functions like `colorRamp2()`  
-- Use the function `function()`  
+- use a function that creates specific functions like `colorRamp2()`  
+- use the function `function()`  
 
 ::::::::::::::::::
 
-## Functions: example {.smaller}
+## functions: example
 
 ```{r}
 #| echo: true
@@ -1122,17 +1111,17 @@ Pval_Pyramids <- function(pvals){
 
 ```
 
-## Functions: exercise 
+## functions: exercise 
 
-- Take any code for a plot and make a fucntion of it
-- Apply this function (on other data)
+- take any code for a plot and make a fucntion of it
+- apply this function on other data
 
 
 
-## `for` loops {.smaller}
-- Most used kind of loops (in our experience)
-- Principle: define an object that will take different values successively 
-- Repeat the same process on this object `for` each value
+## for loops {.smaller}
+- most used kind of loops (in our experience)
+- principle define an object that will take different values succesively 
+- repeat the same process on this object `for` each value
 
 ```{r for syntax}
 #| classes: custom_smallOutput
@@ -1150,8 +1139,8 @@ for(i in iteration){
 
 <font color=red> &#9888; loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)</font>
 
-## `for` loops: example {.smaller}
-- Test several splits of cluters
+## for loops: example
+- test several split of cluters
 ```{r}
 #| eval: false
 #| echo: true
@@ -1163,8 +1152,6 @@ for(k in 2:4) {
 }
 ```
 
-## `for` loops: example {.smaller}
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -1173,6 +1160,8 @@ h2 <- Heatmap(mat, name = "mat", row_km = 2, row_title = "cluster_%s")
 h3 <- Heatmap(mat, name = "mat", row_km = 3, row_title = "cluster_%s")  
 h4 <- Heatmap(mat, name = "mat", row_km = 4, row_title = "cluster_%s")  
 ```
+
+## for loops: example {.smaller}
 :::::: {.columns }
 ::: {.column style="width='30%'"}
 ```{r}
@@ -1203,21 +1192,17 @@ h4
 :::
 ::::::
 
-## `for` loops: exercise 
-- Correct this loop  
-
-(if it is easy:
-
-- Keep the different heatmaps in a list
-- Print them outside this loop  
-)
+## for loops: exercise 
+- correct this loop
+- keep the different heatmaps in a list
+- print them outside this loop
 
 ```{r}
 #| eval: false
 #| echo: true
 #| code-overflow: wrap
 
-for(k is 2:4) {
+for(k in 2:4) {
   Heatmap(mat, name = "mat", row_km = i, row_title = "cluster_%s")  
 }
 ```
@@ -1240,7 +1225,7 @@ list_hmtp
 ================================================================================================
 ================================================================================================
 -->
-# End of day discussion
+# End of day disucssion
 Do you have any question or remarks on any of the points we discussed ?  
 
 1. graphics: Good & bad practices

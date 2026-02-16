@@ -226,7 +226,7 @@ Amaury &amp; Vincent
 <!--
 - published graphics assessment  
 - Visualisation good practices  
-- Pratice : "clean" a graph 
+- Pratice: "clean" a graph 
 -->
 </section>
 <section id="what-and-why" class="slide level2">
@@ -234,7 +234,7 @@ Amaury &amp; Vincent
 <p>A scientific visualization is a graphical interface between <strong>people</strong> and <strong>data</strong>.<br>
 - There are <strong>many</strong> possible graphics for the <strong>same</strong> data.<br>
 - Different <strong>people</strong> perceive theses graphics differently.<br>
-<br> An advanced graph :<br>
+<br> An advanced graph:<br>
 - Conveys <strong>complex</strong> information <strong>clearly</strong><br>
 - Integrates multiple layers of <strong>information</strong><br>
 - Is <strong>reproducible</strong> and <strong>adaptable</strong> by code<br>
@@ -259,7 +259,7 @@ Amaury &amp; Vincent
 <em>Rule 7:</em> Do Not <strong>Mislead</strong> the Reader (see examples below).<br>
 - As a rule of thumb, use the simplest type of plots<br>
 <em>Rule 8:</em> Avoid “<a href="https://www.junkcharts.com/about/">Chartjunk</a>” (see examples below).<br>
-<!-- any decorations that do not tell the viewer something new must be banned --> <!-- Stephen Few : graphs should ideally ‘‘represent all the data that is needed to see and understand what’s meaningful.’’ --> <em>Rule 9:</em> <strong>Message</strong> trumps beauty.<br>
+<!-- any decorations that do not tell the viewer something new must be banned --> <!-- Stephen Few: graphs should ideally ‘‘represent all the data that is needed to see and understand what’s meaningful.’’ --> <em>Rule 9:</em> <strong>Message</strong> trumps beauty.<br>
 <em>Rule 10:</em> Get the right <strong>tool</strong> (here <code>R</code> + <code>tidyverse</code> + <code>ggplot</code>)</p>
 </div></div>
 <p>Additionally:<br>
@@ -275,8 +275,8 @@ Amaury &amp; Vincent
 <img data-src="../img/02_visualization/5.data-to-viz-caveats.png"></li>
 </ul>
 </section>
-<section id="common-pitfalls-15" class="slide level2">
-<h2>Common pitfalls 1/5</h2>
+<section id="common-pitfalls-14" class="slide level2">
+<h2>Common pitfalls 1/4</h2>
 <div class="columns">
 <div class="column" style="width='50%'">
 <p><img data-src="../img/02_visualization/6.a.heatmap_pb.png"></p>
@@ -287,26 +287,26 @@ Amaury &amp; Vincent
 <li><strong>Inaccessible colors</strong> (here for color blind people)</li>
 </ul>
 </section>
-<section id="common-pitfalls-25" class="slide level2">
-<h2>Common pitfalls 2/5</h2>
+<section id="common-pitfalls-24" class="slide level2">
+<h2>Common pitfalls 2/4</h2>
 
 <img data-src="../img/02_visualization/chartJunk.png" class="r-stretch"><ul>
 <li><strong>Chart junk</strong>.</li>
 </ul>
 </section>
-<section id="common-pitfalls-35" class="slide level2">
-<h2>Common pitfalls 3/5</h2>
+<section id="common-pitfalls-34" class="slide level2">
+<h2>Common pitfalls 3/4</h2>
 <p><img data-src="../img/02_visualization/misleadingaxes.png" height="500"></p>
 <ul>
 <li><strong>Misleading axes</strong>.</li>
 </ul>
 </section>
-<section id="common-pitfalls-45" class="slide level2">
-<h2>Common pitfalls 4/5</h2>
+<section id="common-pitfalls-44" class="slide level2">
+<h2>Common pitfalls 4/4</h2>
 <p><img data-src="../img/02_visualization/pie_charts.png" data-margin="0" width="840" height="200"></p>
 </section>
-<section id="common-pitfalls-55" class="slide level2">
-<h2>Common pitfalls 5/5</h2>
+<section id="common-pitfalls-44-1" class="slide level2">
+<h2>Common pitfalls 4/4</h2>
 <p><img data-src="../img/02_visualization/pie_charts.png" data-margin="0" width="840" height="200"> <img data-src="../img/02_visualization/pie_charts_correct.png" data-margin="0" width="840" height="200"></p>
 <ul>
 <li><strong>Wrong geometry</strong> (for what you show)</li>
@@ -391,7 +391,7 @@ Amaury &amp; Vincent
 </div></div>
 </section>
 <section id="exercise" class="slide level2 smaller">
-<h2>exercise:</h2>
+<h2>Exercise:</h2>
 <p>Correct this code to get this graphic</p>
 <div class="small">
 <p>(hint, we use <code>viridis</code>)</p>
@@ -429,17 +429,15 @@ Amaury &amp; Vincent
 </div>
 </div></div>
 </section>
-<section id="other-often-use-improvement" class="slide level2">
+<section id="other-often-use-improvement" class="slide level2 smaller">
 <h2>Other often use improvement:</h2>
-<h3 class="small" id="statistical-annotation-and-expression">Statistical annotation and expression</h3>
-<ul>
-<li>Real world example <img data-src="../img/02_visualization/together_group_test.png"></li>
-</ul>
+<h3 id="statistical-annotation-and-expression">Statistical annotation and expression</h3>
+<p>Real world example <img data-src="../img/02_visualization/together_group_test.png"></p>
 </section>
 <section id="statistical-annotations-with-ggpubr" class="slide level2 smaller">
 <h2>Statistical Annotations with <code>ggpubr</code></h2>
 <ul>
-<li><strong>compute comparisons and display the p-values</strong></li>
+<li><strong>Compute comparisons and display the p-values</strong></li>
 </ul>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
@@ -477,7 +475,7 @@ Amaury &amp; Vincent
 <section id="statistical-annotations-with-ggpubr-1" class="slide level2 smaller">
 <h2>Statistical Annotations with <code>ggpubr</code></h2>
 <ul>
-<li><strong>compute comparisons and display the p-values</strong></li>
+<li><strong>Compute comparisons and display the p-values</strong></li>
 </ul>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
@@ -506,12 +504,12 @@ Amaury &amp; Vincent
 # list(   c("Artiodactyla", "Carnivora"), c("Primates", "Carnivora"), c("Artiodactyla", "Primates"),c("Rodentia", "Primates"), c("Rodentia", "Carnivora"), c("Rodentia", "Artiodactyla")    )
 -->
 </section>
-<section id="exercice" class="slide level2">
-<h2>Exercice</h2>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
 <ul>
-<li>take the code above</li>
-<li>change the statistical procedure used by <code>stat_compare_means</code></li>
-<li>display the formatted p value of every significant comparison</li>
+<li>Take the code above</li>
+<li>Change the statistical procedure used by <code>stat_compare_means</code></li>
+<li>Display the formatted p value of every significant comparison</li>
 </ul>
 </section>
 <section id="statistical-annotations-with-ggpubr-2" class="slide level2 smaller">
@@ -545,11 +543,11 @@ Amaury &amp; Vincent
 </div>
 </div></div>
 </section>
-<section id="exercice-1" class="slide level2">
-<h2>Exercice</h2>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
 <ul>
-<li>use the <code>data("ToothGrowth")</code></li>
-<li>make the violin plot of teeth length according to the dose of vitamin C</li>
+<li>Use the <code>data("ToothGrowth")</code></li>
+<li>Make the violin plot of teeth length according to the dose of vitamin C</li>
 <li>Add the pairwise-pvalues</li>
 </ul>
 </section>
@@ -583,11 +581,11 @@ Amaury &amp; Vincent
 #  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
 -->
 </section>
-<section id="exercice-2" class="slide level2 smaller">
-<h2>exercice</h2>
+<section id="exercise-3" class="slide level2 smaller">
+<h2>Exercise</h2>
 <ul>
-<li>start with this plot</li>
-<li>use the Mathematical Annotations listed in <code>?plotmath</code></li>
+<li>Start with this plot</li>
+<li>Use the Mathematical Annotations listed in <code>?plotmath</code></li>
 <li>Correct the axis label and add the regression formula</li>
 </ul>
 <div class="cell columns column-output-location" data-layout-align="center">
@@ -630,11 +628,11 @@ Amaury &amp; Vincent
 <section id="complex-heatmap" class="slide level2 small">
 <h2>Complex heatmap</h2>
 <ul>
-<li>specific plots like heatmap often have dedicated packages</li>
-<li>here we choose the heatmap since
+<li>Specific plots like heatmap often have dedicated packages</li>
+<li>Here we choose the heatmap since
 <ul>
 <li>it is widely used</li>
-<li>we will use it tomorrow in the main exercise.<br>
+<li>we will use it tomorrow in the project.<br>
 <img data-src="../img/02_visualization/3.ong_2020_fig2.jpg" height="400"></li>
 </ul></li>
 </ul>
@@ -670,7 +668,7 @@ Amaury &amp; Vincent
 </div></div>
 </section>
 <section id="data-for-the-heatmap" class="slide level2">
-<h2>data for the heatmap:</h2>
+<h2>Data for the heatmap:</h2>
 <ul>
 <li>Let’s make a mock dataset</li>
 </ul>
@@ -686,7 +684,7 @@ Amaury &amp; Vincent
 </div>
 </section>
 <section id="make-a-basic-heatmap" class="slide level2 smaller">
-<h2>make a basic heatmap</h2>
+<h2>Make a basic heatmap</h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
 <span id="cb11-2"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>, </span>
@@ -696,18 +694,17 @@ Amaury &amp; Vincent
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"><p>Basic layout includes</p>
 <ul>
-<li>the heatmap.<br>
+<li>The heatmap.<br>
 </li>
-<li>the row and column labels.<br>
+<li>The row and column labels.<br>
 </li>
-<li>a default clustering.</li>
+<li>A default clustering.</li>
 </ul>
 </section>
-<section id="complete-the-heatmap-add-annotations" class="slide level2 smaller">
-<h2>complete the heatmap: add annotations</h2>
-<ul>
-<li>using a dataframe directly give and overview</li>
-</ul>
+<section id="complete-the-heatmap" class="slide level2 smaller">
+<h2>Complete the heatmap:</h2>
+<h3 id="add-annotations">Add annotations</h3>
+<p>Using a dataframe directly give and overview</p>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
@@ -727,8 +724,9 @@ Amaury &amp; Vincent
 </div>
 </div></div>
 </section>
-<section id="complete-the-heatmap-add-annotations-1" class="slide level2 smaller">
-<h2>complete the heatmap: add annotations</h2>
+<section id="complete-the-heatmap-1" class="slide level2 smaller">
+<h2>Complete the heatmap:</h2>
+<h3 id="add-annotations-1">Add annotations</h3>
 <p>We have more control by selecting each annotations to be displayed separately</p>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
@@ -756,8 +754,9 @@ Amaury &amp; Vincent
 </div>
 </div></div>
 </section>
-<section id="customise-colors-main" class="slide level2 smaller">
-<h2>customise colors : main</h2>
+<section id="customise-colors" class="slide level2 smaller">
+<h2>Customise colors:</h2>
+<h3 id="the-heatmap-part">The heatmap part</h3>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>main_col_fun <span class="ot">=</span> circlize<span class="sc">::</span><span class="fu">colorRamp2</span>(</span>
@@ -781,8 +780,8 @@ Amaury &amp; Vincent
 </div>
 </div></div>
 <ul>
-<li>you set the limits of the colors yourself</li>
-<li>⇒ enables you to compare heatmaps</li>
+<li>We set the limits of the colors ourselves</li>
+<li>⇒ Make comparable heatmaps</li>
 </ul>
 <!--
 I don't speak about NA values nore the options
@@ -790,8 +789,9 @@ I don't speak about NA values nore the options
 - rect_gp = gpar(col = "white", lwd = 2)
 -->
 </section>
-<section id="customise-colors-annotations" class="slide level2 smaller">
-<h2>customise colors : annotations</h2>
+<section id="customise-colors-1" class="slide level2 smaller">
+<h2>Customise colors:</h2>
+<h3 id="annotations">Annotations</h3>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>column_annot <span class="ot">&lt;-</span> <span class="fu">HeatmapAnnotation</span>(</span>
@@ -824,8 +824,9 @@ I don't speak about NA values nore the options
 </div>
 </div></div>
 </section>
-<section id="customise-colors-titles" class="slide level2 smaller">
-<h2>customise colors : titles</h2>
+<section id="customise-colors-2" class="slide level2 smaller">
+<h2>customise colors:</h2>
+<h3 id="titles">Titles</h3>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
@@ -852,7 +853,7 @@ ht_opt(RESET = TRUE)
 -->
 </section>
 <section id="customise-positions" class="slide level2 smaller">
-<h2>customise positions</h2>
+<h2>Customise positions</h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
@@ -875,18 +876,18 @@ ht_opt(RESET = TRUE)
 </div>
 </div></div>
 </section>
-<section id="exercise-1" class="slide level2">
-<h2>exercise</h2>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise</h2>
 <ul>
-<li>take the heatmap we are building</li>
-<li>split the row annotation on each side</li>
-<li>split the columns annotation on each side</li>
+<li>Take the heatmap we are building</li>
+<li>Split the row annotation on each side</li>
+<li>Split the columns annotation on each side</li>
 </ul>
 </section>
 <section id="customise-clustering" class="slide level2 smaller">
-<h2>customise clustering</h2>
+<h2>Customise clustering</h2>
 <ul>
-<li>either use or remove the clusetering</li>
+<li>Either use or remove the clustering</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_columns =</span> <span class="cn">FALSE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -894,9 +895,9 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="customise-clustering-1" class="slide level2 smaller">
-<h2>customise clustering</h2>
+<h2>Customise clustering</h2>
 <ul>
-<li>either use or remove the clusetering</li>
+<li>Either use or remove the clustering</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>basic_ht <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>) </span>
@@ -913,7 +914,7 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="customise-clustering-2" class="slide level2 smaller">
-<h2>customise clustering</h2>
+<h2>Customise clustering</h2>
 <ul>
 <li>We can change the display of the dendrogram</li>
 </ul>
@@ -937,9 +938,9 @@ ht_opt(RESET = TRUE)
 </div></div>
 </section>
 <section id="customise-clustering-3" class="slide level2 smaller">
-<h2>customise clustering</h2>
+<h2>Customise clustering</h2>
 <ul>
-<li>We can change the parameters as in <code>hclut</code></li>
+<li>We can change the clustering methods parameters as in <code>hclust</code></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
@@ -951,7 +952,7 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="customise-clustering-4" class="slide level2 smaller">
-<h2>customise clustering</h2>
+<h2>Customise clustering</h2>
 <ul>
 <li>We can give a already made dendrogram</li>
 </ul>
@@ -966,9 +967,10 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="split-heatmap" class="slide level2 smaller">
-<h2>split heatmap</h2>
+<h2>Split heatmap</h2>
+<h3 id="by-clustering">by clustering</h3>
 <ul>
-<li>by clustering using <code>row_km</code>/<code>column_km</code> or <code>column_split</code> /<code>row_split</code></li>
+<li>using <code>row_km</code>/<code>column_km</code> or <code>column_split</code> /<code>row_split</code></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">cluster_rows =</span> row_dend, <span class="at">row_split =</span> <span class="dv">2</span>, <span class="at">column_split =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -976,10 +978,8 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="split-heatmap-1" class="slide level2 smaller">
-<h2>split heatmap</h2>
-<ul>
-<li>by categorical variables</li>
-</ul>
+<h2>Split heatmap</h2>
+<h3 id="by-categorical-variables">by categorical variables</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
 <span id="cb28-2"><a></a>        <span class="at">name =</span> <span class="st">"mat"</span>, </span>
@@ -988,13 +988,13 @@ ht_opt(RESET = TRUE)
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
-<section id="exercise-2" class="slide level2">
+<section id="exercise-5" class="slide level2">
 <h2>Exercise</h2>
 <ul>
-<li>take a previous heatmap with the annotations</li>
-<li>change the clustering parameters</li>
-<li>split the heatmap according to the clustering</li>
-<li>recover the row labels in the order of the clustering</li>
+<li>Take a previous heatmap with the annotations</li>
+<li>Change the clustering parameters</li>
+<li>Split the heatmap according to the clustering</li>
+<li>Recover the row labels in the order of the clustering</li>
 </ul>
 <!--
 ================================================================================================
@@ -1039,7 +1039,7 @@ ht_opt(RESET = TRUE)
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
-<section id="split-a-plot-by-conditions-facet-1" class="slide level2">
+<section id="split-a-plot-by-conditions-facet-1" class="slide level2 smaller">
 <h2>Split a plot by conditions: <code>facet</code></h2>
 <ul>
 <li>See the course for R beginners</li>
@@ -1071,7 +1071,7 @@ ht_opt(RESET = TRUE)
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
-<section id="make-one-plot-from-several-aplot" class="slide level2">
+<section id="make-one-plot-from-several-aplot" class="slide level2 smaller">
 <h2>Make one plot from several: <code>aplot</code></h2>
 <ul>
 <li>Real life example</li>
@@ -1099,10 +1099,10 @@ ht_opt(RESET = TRUE)
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
-<section id="put-together-several-plots-with-patchwork" class="slide level2">
+<section id="put-together-several-plots-with-patchwork" class="slide level2 smaller">
 <h2>Put together several plots with <code>patchwork</code></h2>
 <p><code>ggarrange</code> and <code>patchwork</code> are ways to assemble several plots in a single figure. For <code>ggarrange</code> se the beginner R course</p>
-<p><code>patchwork</code> defines. or augments 6 opreator on plots: <code>+ - / | * &amp;</code> the most user friendly ones are <code>+ |</code> and <code>/</code></p>
+<p><code>patchwork</code> defines. or augments 6 operators on plots: <code>+ - / | * &amp;</code> the most user friendly ones are <code>+ |</code> and <code>/</code></p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># install.packages("patchwork")</span></span>
 <span id="cb34-2"><a></a><span class="fu">library</span>(patchwork)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1137,12 +1137,12 @@ ht_opt(RESET = TRUE)
 <h2><code>patchwork</code> <strong>Basic usage</strong></h2>
 <p><code>/</code> stack the plots together</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>p1 <span class="sc">/</span> p2  <span class="co"># Disposition en ligne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>p1 <span class="sc">/</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-33-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-set-the-layouts" class="slide level2 smaller">
-<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<h2><code>patchwork</code> <strong>Set the layouts</strong></h2>
 <p><code>plot_layout</code> give a finer control over the resulting plot</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1150,7 +1150,7 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-set-the-layouts-1" class="slide level2 smaller">
-<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<h2><code>patchwork</code> <strong>Set the layouts</strong></h2>
 <p><code>plot_layout</code> give a finer control over the resulting plot</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1158,14 +1158,15 @@ ht_opt(RESET = TRUE)
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-set-the-layouts-2" class="slide level2 smaller">
-<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<h2><code>patchwork</code> <strong>Set the layouts</strong></h2>
+<p><code>plot_layout</code> give a finer control over the resulting plot</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-nesting-levels" class="slide level2 smaller">
-<h2><code>patchwork</code> <strong>nesting levels</strong></h2>
+<h2><code>patchwork</code> <strong>Nesting levels</strong></h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>(p1 <span class="sc">+</span> ( p2 <span class="sc">+</span> p3)) <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -1173,6 +1174,7 @@ ht_opt(RESET = TRUE)
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-37-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-add-other-customisation" class="slide level2 smaller">
 <h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<p>Example with <code>theme_...</code></p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -1180,6 +1182,7 @@ ht_opt(RESET = TRUE)
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-38-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-add-other-customisation-1" class="slide level2 smaller">
 <h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<p>Example with <code>theme_...</code></p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))  <span class="sc">&amp;</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -1187,13 +1190,14 @@ ht_opt(RESET = TRUE)
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-39-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="patchwork-add-other-customisation-2" class="slide level2 smaller">
 <h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<p>Example with <code>theme_...</code></p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>(p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)) ) <span class="sc">&amp;</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-40-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
-<section id="exercice-make-a-multipanel-figure" class="slide level2">
-<h2>Exercice: make a Multipanel Figure</h2>
+<section id="exercise-make-a-multipanel-figure" class="slide level2">
+<h2>Exercise: make a Multipanel Figure</h2>
 <ul>
 <li>Take any 3 graphics generated today</li>
 <li>Use <code>patchwork</code> to combine them in a single figure.</li>
@@ -1222,17 +1226,17 @@ ggpubr::annotate_figure
 <font style="color:blue; font-weight:bold;">5. some level of automation</font></p>
 </section>
 <section id="functions" class="slide level2">
-<h2>functions</h2>
+<h2>Functions</h2>
 <div class="r-fit-text">
 <p>A function in R is 2 things</p>
 <div class="columns">
 <div class="column" style="width='50%'">
 <ul>
-<li>a block of code stored and executed when called.</li>
+<li>A block of code stored and executed when called.</li>
 </ul>
 </div><div class="column" style="width='50%'">
 <ul>
-<li>an object composed of</li>
+<li>An object composed of</li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -1261,14 +1265,14 @@ ggpubr::annotate_figure
 </div></div>
 <p>A function can be created in two ways</p>
 <ul>
-<li>use a function that creates specific functions like <code>colorRamp2()</code><br>
+<li>Use a function that creates specific functions like <code>colorRamp2()</code><br>
 </li>
-<li>use the function <code>function()</code></li>
+<li>Use the function <code>function()</code></li>
 </ul>
 </div>
 </section>
-<section id="functions-example" class="slide level2">
-<h2>functions: example</h2>
+<section id="functions-example" class="slide level2 smaller">
+<h2>Functions: example</h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Pval_Pyramids</span></span>
 <span id="cb46-2"><a></a><span class="co"># Indicates the number of pvalues in each categories according to the hard coded threshold</span></span>
@@ -1286,18 +1290,18 @@ ggpubr::annotate_figure
 </div>
 </section>
 <section id="functions-exercise" class="slide level2">
-<h2>functions: exercise</h2>
+<h2>Functions: exercise</h2>
 <ul>
-<li>take any code for a plot and make a fucntion of it</li>
-<li>apply this function on other data</li>
+<li>Take any code for a plot and make a fucntion of it</li>
+<li>Apply this function (on other data)</li>
 </ul>
 </section>
 <section id="for-loops" class="slide level2 smaller">
-<h2>for loops</h2>
+<h2><code>for</code> loops</h2>
 <ul>
-<li>most used kind of loops (in our experience)</li>
-<li>principle define an object that will take different values succesively</li>
-<li>repeat the same process on this object <code>for</code> each value</li>
+<li>Most used kind of loops (in our experience)</li>
+<li>Principle: define an object that will take different values successively</li>
+<li>Repeat the same process on this object <code>for</code> each value</li>
 </ul>
 <div class="cell custom_smallOutput columns column-output-location" data-layout-align="center">
 <div class="column">
@@ -1315,10 +1319,10 @@ ggpubr::annotate_figure
 </div></div>
 <p><font color="red"> ⚠ loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)</font></p>
 </section>
-<section id="for-loops-example" class="slide level2">
-<h2>for loops: example</h2>
+<section id="for-loops-example" class="slide level2 smaller">
+<h2><code>for</code> loops: example</h2>
 <ul>
-<li>test several split of cluters</li>
+<li>Test several splits of cluters</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
@@ -1328,7 +1332,7 @@ ggpubr::annotate_figure
 </div>
 </section>
 <section id="for-loops-example-1" class="slide level2 smaller">
-<h2>for loops: example</h2>
+<h2><code>for</code> loops: example</h2>
 <div class="columns">
 <div class="column" style="width='30%'">
 <div class="cell" data-layout-align="center">
@@ -1363,14 +1367,18 @@ ggpubr::annotate_figure
 </div></div>
 </section>
 <section id="for-loops-exercise" class="slide level2">
-<h2>for loops: exercise</h2>
+<h2><code>for</code> loops: exercise</h2>
 <ul>
-<li>correct this loop</li>
-<li>keep the different heatmaps in a list</li>
-<li>print them outside this loop</li>
+<li>Correct this loop</li>
+</ul>
+<p>(if it is easy:</p>
+<ul>
+<li>Keep the different heatmaps in a list</li>
+<li>Print them outside this loop<br>
+)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="cf">for</span>(k is <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
 <span id="cb50-2"><a></a>  <span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">row_km =</span> i, <span class="at">row_title =</span> <span class="st">"cluster_%s"</span>)  </span>
 <span id="cb50-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1380,8 +1388,8 @@ ggpubr::annotate_figure
 ================================================================================================
 -->
 </section></section>
-<section id="end-of-day-disucssion" class="title-slide slide level1 center">
-<h1>End of day disucssion</h1>
+<section id="end-of-day-discussion" class="title-slide slide level1 center">
+<h1>End of day discussion</h1>
 <p>Do you have any question or remarks on any of the points we discussed ?</p>
 <ol type="1">
 <li>graphics: Good &amp; bad practices</li>

@@ -4,7 +4,7 @@
     "href": "pages/02_visualization.html#what-and-why",
     "title": "Visualization",
     "section": "What and why ?",
-    "text": "What and why ?\nA scientific visualization is a graphical interface between people and data.\n- There are many possible graphics for the same data.\n- Different people perceive theses graphics differently.\n An advanced graph :\n- Conveys complex information clearly\n- Integrates multiple layers of information\n- Is reproducible and adaptable by code\n- Is aesthetically pleasing and follows conventions",
+    "text": "What and why ?\nA scientific visualization is a graphical interface between people and data.\n- There are many possible graphics for the same data.\n- Different people perceive theses graphics differently.\n An advanced graph:\n- Conveys complex information clearly\n- Integrates multiple layers of information\n- Is reproducible and adaptable by code\n- Is aesthetically pleasing and follows conventions",
     "crumbs": [
       "Visualization"
     ]
@@ -113,8 +113,8 @@
     "objectID": "pages/02_visualization.html#exercise",
     "href": "pages/02_visualization.html#exercise",
     "title": "Visualization",
-    "section": "exercise:",
-    "text": "exercise:\nCorrect this code to get this graphic\n\n(hint, we use viridis)\n\n\n\n\n\ng &lt;- mtcars %&gt;%\n  mutate(cyl = as.factor(cyl)) %&gt;%\n  ggplot(\n    aes(x = cyl, \n        y = mpg, \n        fill = cyl)) +\n  geom_boxplot() +\n  labs(\n    title = \"Boxplot of MPG by Cylinder\",\n    x = \"Cyl\",\n    y = \"MPG\") +\n  theme_bw() + \n  theme(plot.background = element_rect(fill = \"lightgray\"))\n\ng",
+    "section": "Exercise:",
+    "text": "Exercise:\nCorrect this code to get this graphic\n\n(hint, we use viridis)\n\n\n\n\n\ng &lt;- mtcars %&gt;%\n  mutate(cyl = as.factor(cyl)) %&gt;%\n  ggplot(\n    aes(x = cyl, \n        y = mpg, \n        fill = cyl)) +\n  geom_boxplot() +\n  labs(\n    title = \"Boxplot of MPG by Cylinder\",\n    x = \"Cyl\",\n    y = \"MPG\") +\n  theme_bw() + \n  theme(plot.background = element_rect(fill = \"lightgray\"))\n\ng",
     "crumbs": [
       "Visualization"
     ]
@@ -124,7 +124,7 @@
     "href": "pages/02_visualization.html#other-often-use-improvement",
     "title": "Visualization",
     "section": "Other often use improvement:",
-    "text": "Other often use improvement:\nStatistical annotation and expression\n\nReal world example",
+    "text": "Other often use improvement:\nStatistical annotation and expression\nReal world example",
     "crumbs": [
       "Visualization"
     ]
@@ -134,7 +134,7 @@
     "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr",
     "title": "Visualization",
     "section": "Statistical Annotations with ggpubr",
-    "text": "Statistical Annotations with ggpubr\n\ncompute comparisons and display the p-values\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nggplot(\n   mtcars, \n   aes(\n     x=as.factor(cyl), \n     y=mpg, \n     fill = as.factor(cyl)\n   )\n ) + \n   geom_boxplot() +\n   stat_compare_means() +\n   theme_classic2()",
+    "text": "Statistical Annotations with ggpubr\n\nCompute comparisons and display the p-values\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nggplot(\n   mtcars, \n   aes(\n     x=as.factor(cyl), \n     y=mpg, \n     fill = as.factor(cyl)\n   )\n ) + \n   geom_boxplot() +\n   stat_compare_means() +\n   theme_classic2()",
     "crumbs": [
       "Visualization"
     ]
@@ -144,7 +144,7 @@
     "href": "pages/02_visualization.html#statistical-annotations-with-ggpubr-1",
     "title": "Visualization",
     "section": "Statistical Annotations with ggpubr",
-    "text": "Statistical Annotations with ggpubr\n\ncompute comparisons and display the p-values\n\n\n\nmsleep %&gt;%\n  group_by(order) %&gt;% \n  filter(n()&gt;=6) %&gt;%\nggplot( aes(order, sleep_total, fill = order)) + \n  geom_boxplot() +\n  stat_compare_means(label.y = 22) +\n  stat_compare_means(comparisons = list( \n     c(\"Artiodactyla\", \"Carnivora\"), \n     c(\"Artiodactyla\", \"Primates\"),\n    c(\"Artiodactyla\", \"Rodentia\")\n    ), label = \"p.signif\")  + \n  theme_classic2()",
+    "text": "Statistical Annotations with ggpubr\n\nCompute comparisons and display the p-values\n\n\n\nmsleep %&gt;%\n  group_by(order) %&gt;% \n  filter(n()&gt;=6) %&gt;%\nggplot( aes(order, sleep_total, fill = order)) + \n  geom_boxplot() +\n  stat_compare_means(label.y = 22) +\n  stat_compare_means(comparisons = list( \n     c(\"Artiodactyla\", \"Carnivora\"), \n     c(\"Artiodactyla\", \"Primates\"),\n    c(\"Artiodactyla\", \"Rodentia\")\n    ), label = \"p.signif\")  + \n  theme_classic2()",
     "crumbs": [
       "Visualization"
     ]
@@ -204,7 +204,7 @@
     "href": "pages/02_visualization.html#complex-heatmap",
     "title": "Visualization",
     "section": "Complex heatmap",
-    "text": "Complex heatmap\n\nspecific plots like heatmap often have dedicated packages\nhere we choose the heatmap since\n\nit is widely used\nwe will use it tomorrow in the main exercise.",
+    "text": "Complex heatmap\n\nSpecific plots like heatmap often have dedicated packages\nHere we choose the heatmap since\n\nit is widely used\nwe will use it tomorrow in the project.",
     "crumbs": [
       "Visualization"
     ]
@@ -233,8 +233,8 @@
     "objectID": "pages/02_visualization.html#data-for-the-heatmap",
     "href": "pages/02_visualization.html#data-for-the-heatmap",
     "title": "Visualization",
-    "section": "data for the heatmap:",
-    "text": "data for the heatmap:\n\nLet’s make a mock dataset\n\n\nset.seed(123)\nmat = matrix(rnorm(120), 10)\n\nrownames(mat) = paste0(\"R\", 1:10)\ncolnames(mat) = paste0(\"C\", 1:12)\n\nrow_info &lt;- data.frame(cond=rnorm(10) &lt; 0, score=runif(10))\ncolumn_info &lt;- data.frame(order=1:12, category=rep(0:2,4) )",
+    "section": "Data for the heatmap:",
+    "text": "Data for the heatmap:\n\nLet’s make a mock dataset\n\n\nset.seed(123)\nmat = matrix(rnorm(120), 10)\n\nrownames(mat) = paste0(\"R\", 1:10)\ncolnames(mat) = paste0(\"C\", 1:12)\n\nrow_info &lt;- data.frame(cond=rnorm(10) &lt; 0, score=runif(10))\ncolumn_info &lt;- data.frame(order=1:12, category=rep(0:2,4) )",
     "crumbs": [
       "Visualization"
     ]
@@ -243,8 +243,8 @@
     "objectID": "pages/02_visualization.html#make-a-basic-heatmap",
     "href": "pages/02_visualization.html#make-a-basic-heatmap",
     "title": "Visualization",
-    "section": "make a basic heatmap",
-    "text": "make a basic heatmap\n\nHeatmap(mat, \n        name=\"my heatmap\", \n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\")\n\n\nBasic layout includes\n\nthe heatmap.\n\nthe row and column labels.\n\na default clustering.",
+    "section": "Make a basic heatmap",
+    "text": "Make a basic heatmap\n\nHeatmap(mat, \n        name=\"my heatmap\", \n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\")\n\n\nBasic layout includes\n\nThe heatmap.\n\nThe row and column labels.\n\nA default clustering.",
     "crumbs": [
       "Visualization"
     ]
@@ -303,8 +303,8 @@
     "objectID": "pages/02_visualization.html#customise-positions",
     "href": "pages/02_visualization.html#customise-positions",
     "title": "Visualization",
-    "section": "customise positions",
-    "text": "customise positions\n\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        column_title_side =\"bottom\",\n        row_title = \"row maybe samples\" , \n        row_title_side =\"right\",\n        bottom_annotation = column_annot,\n        right_annotation = row_annot,\n        col = main_col_fun\n)",
+    "section": "Customise positions",
+    "text": "Customise positions\n\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        column_title_side =\"bottom\",\n        row_title = \"row maybe samples\" , \n        row_title_side =\"right\",\n        bottom_annotation = column_annot,\n        right_annotation = row_annot,\n        col = main_col_fun\n)",
     "crumbs": [
       "Visualization"
     ]
@@ -313,8 +313,8 @@
     "objectID": "pages/02_visualization.html#exercise-1",
     "href": "pages/02_visualization.html#exercise-1",
     "title": "Visualization",
-    "section": "exercise",
-    "text": "exercise\n\ntake the heatmap we are building\nsplit the row annotation on each side\nsplit the columns annotation on each side",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake the code above\nChange the statistical procedure used by stat_compare_means\nDisplay the formatted p value of every significant comparison",
     "crumbs": [
       "Visualization"
     ]
@@ -323,8 +323,8 @@
     "objectID": "pages/02_visualization.html#customise-clustering",
     "href": "pages/02_visualization.html#customise-clustering",
     "title": "Visualization",
-    "section": "customise clustering",
-    "text": "customise clustering\n\neither use or remove the clusetering\n\n\nHeatmap(mat, name = \"mat\", cluster_rows = FALSE, cluster_columns = FALSE)",
+    "section": "Customise clustering",
+    "text": "Customise clustering\n\nEither use or remove the clustering\n\n\nHeatmap(mat, name = \"mat\", cluster_rows = FALSE, cluster_columns = FALSE)",
     "crumbs": [
       "Visualization"
     ]
@@ -333,8 +333,8 @@
     "objectID": "pages/02_visualization.html#customise-clustering-1",
     "href": "pages/02_visualization.html#customise-clustering-1",
     "title": "Visualization",
-    "section": "customise clustering",
-    "text": "customise clustering\n\neither use or remove the clusetering\n\n\nbasic_ht &lt;- Heatmap(mat, name = \"mat\") \nrow_order(basic_ht)\n\n [1]  6  3  4  5  1  9  2 10  7  8\n\ncolumn_order(basic_ht)\n\n [1] 10  2  4  1  8  6  5 12  9  7 11  3\n\nHeatmap(mat, name = \"mat\", cluster_rows = FALSE, cluster_columns = FALSE)",
+    "section": "Customise clustering",
+    "text": "Customise clustering\n\nEither use or remove the clustering\n\n\nbasic_ht &lt;- Heatmap(mat, name = \"mat\") \nrow_order(basic_ht)\n\n [1]  6  3  4  5  1  9  2 10  7  8\n\ncolumn_order(basic_ht)\n\n [1] 10  2  4  1  8  6  5 12  9  7 11  3\n\nHeatmap(mat, name = \"mat\", cluster_rows = FALSE, cluster_columns = FALSE)",
     "crumbs": [
       "Visualization"
     ]
@@ -343,8 +343,8 @@
     "objectID": "pages/02_visualization.html#customise-clustering-2",
     "href": "pages/02_visualization.html#customise-clustering-2",
     "title": "Visualization",
-    "section": "customise clustering",
-    "text": "customise clustering\n\nWe can change the display of the dendrogram\n\n\n\nHeatmap(mat, \n    name = \"mat\",\n    row_dend_width = unit(4, \"cm\"),\n    row_dend_side = \"right\",\n    column_dend_height = unit(4, \"cm\"),\n    column_dend_side = \"bottom\"\n  )",
+    "section": "Customise clustering",
+    "text": "Customise clustering\n\nWe can change the display of the dendrogram\n\n\n\nHeatmap(mat, \n    name = \"mat\",\n    row_dend_width = unit(4, \"cm\"),\n    row_dend_side = \"right\",\n    column_dend_height = unit(4, \"cm\"),\n    column_dend_side = \"bottom\"\n  )",
     "crumbs": [
       "Visualization"
     ]
@@ -353,8 +353,8 @@
     "objectID": "pages/02_visualization.html#customise-clustering-3",
     "href": "pages/02_visualization.html#customise-clustering-3",
     "title": "Visualization",
-    "section": "customise clustering",
-    "text": "customise clustering\n\nWe can change the parameters as in hclut\n\n\nHeatmap(mat, \n       name = \"mat\", \n       clustering_distance_rows = \"pearson\",\n       column_title = \"pre-defined distance method (1 - pearson)\"\n       )",
+    "section": "Customise clustering",
+    "text": "Customise clustering\n\nWe can change the clustering methods parameters as in hclust\n\n\nHeatmap(mat, \n       name = \"mat\", \n       clustering_distance_rows = \"pearson\",\n       column_title = \"pre-defined distance method (1 - pearson)\"\n       )",
     "crumbs": [
       "Visualization"
     ]
@@ -363,8 +363,8 @@
     "objectID": "pages/02_visualization.html#customise-clustering-4",
     "href": "pages/02_visualization.html#customise-clustering-4",
     "title": "Visualization",
-    "section": "customise clustering",
-    "text": "customise clustering\n\nWe can give a already made dendrogram\n\n\nrow_dend = as.dendrogram(hclust(dist(mat)))\nrow_dend = dendextend::color_branches   (row_dend, k = 2) \nHeatmap(mat, \n        name = \"mat\", \n        cluster_rows = row_dend\n        )",
+    "section": "Customise clustering",
+    "text": "Customise clustering\n\nWe can give a already made dendrogram\n\n\nrow_dend = as.dendrogram(hclust(dist(mat)))\nrow_dend = dendextend::color_branches   (row_dend, k = 2) \nHeatmap(mat, \n        name = \"mat\", \n        cluster_rows = row_dend\n        )",
     "crumbs": [
       "Visualization"
     ]
@@ -373,8 +373,8 @@
     "objectID": "pages/02_visualization.html#split-heatmap",
     "href": "pages/02_visualization.html#split-heatmap",
     "title": "Visualization",
-    "section": "split heatmap",
-    "text": "split heatmap\n\nby clustering using row_km/column_km or column_split /row_split\n\n\nHeatmap(mat, name = \"mat\", cluster_rows = row_dend, row_split = 2, column_split = 3)",
+    "section": "Split heatmap",
+    "text": "Split heatmap\nby clustering\n\nusing row_km/column_km or column_split /row_split\n\n\nHeatmap(mat, name = \"mat\", cluster_rows = row_dend, row_split = 2, column_split = 3)",
     "crumbs": [
       "Visualization"
     ]
@@ -383,8 +383,8 @@
     "objectID": "pages/02_visualization.html#split-heatmap-1",
     "href": "pages/02_visualization.html#split-heatmap-1",
     "title": "Visualization",
-    "section": "split heatmap",
-    "text": "split heatmap\n\nby categorical variables\n\n\nHeatmap(mat, \n        name = \"mat\", \n        row_split = row_info$cond\n      )",
+    "section": "Split heatmap",
+    "text": "Split heatmap\nby categorical variables\n\nHeatmap(mat, \n        name = \"mat\", \n        row_split = row_info$cond\n      )",
     "crumbs": [
       "Visualization"
     ]
@@ -394,7 +394,7 @@
     "href": "pages/02_visualization.html#exercise-2",
     "title": "Visualization",
     "section": "Exercise",
-    "text": "Exercise\n\ntake a previous heatmap with the annotations\nchange the clustering parameters\nsplit the heatmap according to the clustering\nrecover the row labels in the order of the clustering",
+    "text": "Exercise\n\nUse the data(\"ToothGrowth\")\nMake the violin plot of teeth length according to the dose of vitamin C\nAdd the pairwise-pvalues",
     "crumbs": [
       "Visualization"
     ]
@@ -474,7 +474,7 @@
     "href": "pages/02_visualization.html#put-together-several-plots-with-patchwork",
     "title": "Visualization",
     "section": "Put together several plots with patchwork",
-    "text": "Put together several plots with patchwork\nggarrange and patchwork are ways to assemble several plots in a single figure. For ggarrange se the beginner R course\npatchwork defines. or augments 6 opreator on plots: + - / | * & the most user friendly ones are + | and /\n\n# install.packages(\"patchwork\")\nlibrary(patchwork)",
+    "text": "Put together several plots with patchwork\nggarrange and patchwork are ways to assemble several plots in a single figure. For ggarrange se the beginner R course\npatchwork defines. or augments 6 operators on plots: + - / | * & the most user friendly ones are + | and /\n\n# install.packages(\"patchwork\")\nlibrary(patchwork)",
     "crumbs": [
       "Visualization"
     ]
@@ -514,7 +514,7 @@
     "href": "pages/02_visualization.html#patchwork-basic-usage-2",
     "title": "Visualization",
     "section": "patchwork Basic usage",
-    "text": "patchwork Basic usage\n/ stack the plots together\n\np1 / p2  # Disposition en ligne",
+    "text": "patchwork Basic usage\n/ stack the plots together\n\np1 / p2",
     "crumbs": [
       "Visualization"
     ]
@@ -523,8 +523,8 @@
     "objectID": "pages/02_visualization.html#patchwork-set-the-layouts",
     "href": "pages/02_visualization.html#patchwork-set-the-layouts",
     "title": "Visualization",
-    "section": "patchwork set the layouts",
-    "text": "patchwork set the layouts\nplot_layout give a finer control over the resulting plot\n\np1 + p2 + p3 + plot_layout(ncol = 1)",
+    "section": "patchwork Set the layouts",
+    "text": "patchwork Set the layouts\nplot_layout give a finer control over the resulting plot\n\np1 + p2 + p3 + plot_layout(ncol = 1)",
     "crumbs": [
       "Visualization"
     ]
@@ -533,8 +533,8 @@
     "objectID": "pages/02_visualization.html#patchwork-set-the-layouts-1",
     "href": "pages/02_visualization.html#patchwork-set-the-layouts-1",
     "title": "Visualization",
-    "section": "patchwork set the layouts",
-    "text": "patchwork set the layouts\nplot_layout give a finer control over the resulting plot\n\np1 | p2 + p3 + plot_layout(ncol = 1)",
+    "section": "patchwork Set the layouts",
+    "text": "patchwork Set the layouts\nplot_layout give a finer control over the resulting plot\n\np1 | p2 + p3 + plot_layout(ncol = 1)",
     "crumbs": [
       "Visualization"
     ]
@@ -543,8 +543,8 @@
     "objectID": "pages/02_visualization.html#patchwork-set-the-layouts-2",
     "href": "pages/02_visualization.html#patchwork-set-the-layouts-2",
     "title": "Visualization",
-    "section": "patchwork set the layouts",
-    "text": "patchwork set the layouts\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))",
+    "section": "patchwork Set the layouts",
+    "text": "patchwork Set the layouts\nplot_layout give a finer control over the resulting plot\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))",
     "crumbs": [
       "Visualization"
     ]
@@ -553,8 +553,8 @@
     "objectID": "pages/02_visualization.html#patchwork-nesting-levels",
     "href": "pages/02_visualization.html#patchwork-nesting-levels",
     "title": "Visualization",
-    "section": "patchwork nesting levels",
-    "text": "patchwork nesting levels\n\n(p1 + ( p2 + p3)) + plot_layout(ncol = 1, heights = c(2, 1))",
+    "section": "patchwork Nesting levels",
+    "text": "patchwork Nesting levels\n\n(p1 + ( p2 + p3)) + plot_layout(ncol = 1, heights = c(2, 1))",
     "crumbs": [
       "Visualization"
     ]
@@ -564,7 +564,7 @@
     "href": "pages/02_visualization.html#patchwork-add-other-customisation",
     "title": "Visualization",
     "section": "patchwork Add other customisation",
-    "text": "patchwork Add other customisation\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) + theme_bw()",
+    "text": "patchwork Add other customisation\nExample with theme_...\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) + theme_bw()",
     "crumbs": [
       "Visualization"
     ]
@@ -574,7 +574,7 @@
     "href": "pages/02_visualization.html#patchwork-add-other-customisation-1",
     "title": "Visualization",
     "section": "patchwork Add other customisation",
-    "text": "patchwork Add other customisation\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))  & theme_bw()",
+    "text": "patchwork Add other customisation\nExample with theme_...\n\np1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))  & theme_bw()",
     "crumbs": [
       "Visualization"
     ]
@@ -584,7 +584,7 @@
     "href": "pages/02_visualization.html#patchwork-add-other-customisation-2",
     "title": "Visualization",
     "section": "patchwork Add other customisation",
-    "text": "patchwork Add other customisation\n\n(p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) ) & theme_bw()",
+    "text": "patchwork Add other customisation\nExample with theme_...\n\n(p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) ) & theme_bw()",
     "crumbs": [
       "Visualization"
     ]
@@ -603,8 +603,8 @@
     "objectID": "pages/02_visualization.html#functions",
     "href": "pages/02_visualization.html#functions",
     "title": "Visualization",
-    "section": "functions",
-    "text": "functions\n\nA function in R is 2 things\n\n\n\na block of code stored and executed when called.\n\n\n\nan object composed of\n\n\n\n\ncomponent\naccessed using\n\n\n\n\narguments\nformals()\n\n\nbody\nbody()\n\n\nenvironment\nenvironment()\n\n\n\n\n\n\nA function can be created in two ways\n\nuse a function that creates specific functions like colorRamp2()\n\nuse the function function()",
+    "section": "Functions",
+    "text": "Functions\n\nA function in R is 2 things\n\n\n\nA block of code stored and executed when called.\n\n\n\nAn object composed of\n\n\n\n\ncomponent\naccessed using\n\n\n\n\narguments\nformals()\n\n\nbody\nbody()\n\n\nenvironment\nenvironment()\n\n\n\n\n\n\nA function can be created in two ways\n\nUse a function that creates specific functions like colorRamp2()\n\nUse the function function()",
     "crumbs": [
       "Visualization"
     ]
@@ -613,8 +613,8 @@
     "objectID": "pages/02_visualization.html#functions-example",
     "href": "pages/02_visualization.html#functions-example",
     "title": "Visualization",
-    "section": "functions: example",
-    "text": "functions: example\n\n# Pval_Pyramids\n# Indicates the number of pvalues in each categories according to the hard coded threshold\n# args: pvals: a vector of numeric values assumed to be pvalues\n# return: a dataframe with columns interval and nb\nPval_Pyramids &lt;- function(pvals){\n  breaksForCut &lt;- c(-1, 0, 1e-300, 1e-200, 1e-100, 1e-50, 1e-10, 1e-5, 1e-4, 1e-3, 1e-2, 5e-2, 1)\n  labelsForCut &lt;- c(\"p=0\", \"0&lt;p&lt;=1e-300\", \"1e-300&lt;p&lt;=1e-200\", \"1e-200&lt;p&lt;=1e-100\", \"1e-100&lt;p&lt;=1e-50\", \"1e-50&lt;p&lt;=1e-10\", \"1e-10&lt;p&lt;=1e-05\", \"1e-05&lt;p&lt;=1e-4\", \"1e-4&lt;p&lt;=0.001\", \"0.001&lt;p&lt;=0.01\", \"0.01&lt;p&lt;=0.05\", \"0.05&lt;p&lt;=1\")\n  Ppyram &lt;- pvals %&gt;% \n              cut(breaks=breaksForCut, labels=labelsForCut)  %&gt;% \n              table() %&gt;% as.data.frame() %&gt;% \n              rename(interval=1, nb=Freq)\n  return(Ppyram)\n}",
+    "section": "Functions: example",
+    "text": "Functions: example\n\n# Pval_Pyramids\n# Indicates the number of pvalues in each categories according to the hard coded threshold\n# args: pvals: a vector of numeric values assumed to be pvalues\n# return: a dataframe with columns interval and nb\nPval_Pyramids &lt;- function(pvals){\n  breaksForCut &lt;- c(-1, 0, 1e-300, 1e-200, 1e-100, 1e-50, 1e-10, 1e-5, 1e-4, 1e-3, 1e-2, 5e-2, 1)\n  labelsForCut &lt;- c(\"p=0\", \"0&lt;p&lt;=1e-300\", \"1e-300&lt;p&lt;=1e-200\", \"1e-200&lt;p&lt;=1e-100\", \"1e-100&lt;p&lt;=1e-50\", \"1e-50&lt;p&lt;=1e-10\", \"1e-10&lt;p&lt;=1e-05\", \"1e-05&lt;p&lt;=1e-4\", \"1e-4&lt;p&lt;=0.001\", \"0.001&lt;p&lt;=0.01\", \"0.01&lt;p&lt;=0.05\", \"0.05&lt;p&lt;=1\")\n  Ppyram &lt;- pvals %&gt;% \n              cut(breaks=breaksForCut, labels=labelsForCut)  %&gt;% \n              table() %&gt;% as.data.frame() %&gt;% \n              rename(interval=1, nb=Freq)\n  return(Ppyram)\n}",
     "crumbs": [
       "Visualization"
     ]
@@ -623,8 +623,8 @@
     "objectID": "pages/02_visualization.html#functions-exercise",
     "href": "pages/02_visualization.html#functions-exercise",
     "title": "Visualization",
-    "section": "functions: exercise",
-    "text": "functions: exercise\n\ntake any code for a plot and make a fucntion of it\napply this function on other data",
+    "section": "Functions: exercise",
+    "text": "Functions: exercise\n\nTake any code for a plot and make a fucntion of it\nApply this function (on other data)",
     "crumbs": [
       "Visualization"
     ]
@@ -634,7 +634,7 @@
     "href": "pages/02_visualization.html#for-loops",
     "title": "Visualization",
     "section": "for loops",
-    "text": "for loops\n\nmost used kind of loops (in our experience)\nprinciple define an object that will take different values succesively\nrepeat the same process on this object for each value\n\n\n\niteration &lt;- c(\"toto\", \"titi\", \"tata\")\n\nfor(i in iteration){\n  print(i)\n}\n\n\n[1] \"toto\"\n[1] \"titi\"\n[1] \"tata\"\n\n\n ⚠ loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)",
+    "text": "for loops\n\nMost used kind of loops (in our experience)\nPrinciple: define an object that will take different values successively\nRepeat the same process on this object for each value\n\n\n\niteration &lt;- c(\"toto\", \"titi\", \"tata\")\n\nfor(i in iteration){\n  print(i)\n}\n\n\n[1] \"toto\"\n[1] \"titi\"\n[1] \"tata\"\n\n\n ⚠ loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)",
     "crumbs": [
       "Visualization"
     ]
@@ -644,7 +644,7 @@
     "href": "pages/02_visualization.html#for-loops-example",
     "title": "Visualization",
     "section": "for loops: example",
-    "text": "for loops: example\n\ntest several split of cluters\n\n\nfor(k in 2:4) {\n  htmp &lt;- Heatmap(mat, name = \"mat\", row_km = k, row_title = \"cluster_%s\")  \n  print(htmp)\n}",
+    "text": "for loops: example\n\nTest several splits of cluters\n\n\nfor(k in 2:4) {\n  htmp &lt;- Heatmap(mat, name = \"mat\", row_km = k, row_title = \"cluster_%s\")  \n  print(htmp)\n}",
     "crumbs": [
       "Visualization"
     ]
@@ -664,7 +664,7 @@
     "href": "pages/02_visualization.html#for-loops-exercise",
     "title": "Visualization",
     "section": "for loops: exercise",
-    "text": "for loops: exercise\n\ncorrect this loop\nkeep the different heatmaps in a list\nprint them outside this loop\n\n\nfor(k in 2:4) {\n  Heatmap(mat, name = \"mat\", row_km = i, row_title = \"cluster_%s\")  \n}",
+    "text": "for loops: exercise\n\nCorrect this loop\n\n(if it is easy:\n\nKeep the different heatmaps in a list\nPrint them outside this loop\n)\n\n\nfor(k is 2:4) {\n  Heatmap(mat, name = \"mat\", row_km = i, row_title = \"cluster_%s\")  \n}",
     "crumbs": [
       "Visualization"
     ]
@@ -1107,6 +1107,146 @@
     "text": "Amaury et Vincent\nWe are engineers at the Hub of Bioinformatics and Biostatistics. Link\nPlease check the schedule for the Open Desk, every Tuesday mornings. Link\n\n\nWe must thank…\n\nSTA120, for inspiring us a lot with their beautiful website!\n…",
     "crumbs": [
       "About"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-14",
+    "href": "pages/02_visualization.html#common-pitfalls-14",
+    "title": "Visualization",
+    "section": "Common pitfalls 1/4",
+    "text": "Common pitfalls 1/4\n\n\n\n\n\n\n\nInaccessible colors (here for color blind people)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-24",
+    "href": "pages/02_visualization.html#common-pitfalls-24",
+    "title": "Visualization",
+    "section": "Common pitfalls 2/4",
+    "text": "Common pitfalls 2/4\n\n\nChart junk.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-34",
+    "href": "pages/02_visualization.html#common-pitfalls-34",
+    "title": "Visualization",
+    "section": "Common pitfalls 3/4",
+    "text": "Common pitfalls 3/4\n\n\nMisleading axes.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-44",
+    "href": "pages/02_visualization.html#common-pitfalls-44",
+    "title": "Visualization",
+    "section": "Common pitfalls 4/4",
+    "text": "Common pitfalls 4/4",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#common-pitfalls-44-1",
+    "href": "pages/02_visualization.html#common-pitfalls-44-1",
+    "title": "Visualization",
+    "section": "Common pitfalls 4/4",
+    "text": "Common pitfalls 4/4\n \n\nWrong geometry (for what you show)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercise-3",
+    "href": "pages/02_visualization.html#exercise-3",
+    "title": "Visualization",
+    "section": "Exercise",
+    "text": "Exercise\n\nStart with this plot\nUse the Mathematical Annotations listed in ?plotmath\nCorrect the axis label and add the regression formula\n\n\n\nChickWeight %&gt;%\n  filter(Diet==4) %&gt;%\n  ggplot( aes(x = Time, y = weight^(1/3))) +\n    geom_point() +\n    geom_smooth(method = \"lm\", se = TRUE) +\n    labs(\n          title = \"Cube root of weight according to time\",\n          x = \"Time\",\n          y=\"Cube root of weight\"\n    ) +\n    theme_classic()",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#complete-the-heatmap",
+    "href": "pages/02_visualization.html#complete-the-heatmap",
+    "title": "Visualization",
+    "section": "Complete the heatmap:",
+    "text": "Complete the heatmap:\nAdd annotations\nUsing a dataframe directly give and overview\n\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\" , \n        top_annotation = HeatmapAnnotation(df=column_info),\n        left_annotation = HeatmapAnnotation(df=row_info, which = \"row\")\n)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#complete-the-heatmap-1",
+    "href": "pages/02_visualization.html#complete-the-heatmap-1",
+    "title": "Visualization",
+    "section": "Complete the heatmap:",
+    "text": "Complete the heatmap:\nAdd annotations\nWe have more control by selecting each annotations to be displayed separately\n\n\ncolumn_annot &lt;- HeatmapAnnotation(\n                 order=anno_barplot(column_info$order), \n                 category=column_info$category)\nrow_annot &lt;- HeatmapAnnotation(\n                  score=anno_barplot(row_info$score),\n                  cond=row_info$cond, which = \"row\")\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\" , \n        top_annotation = column_annot,\n        left_annotation = row_annot\n)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercise-4",
+    "href": "pages/02_visualization.html#exercise-4",
+    "title": "Visualization",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake the heatmap we are building\nSplit the row annotation on each side\nSplit the columns annotation on each side",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercise-5",
+    "href": "pages/02_visualization.html#exercise-5",
+    "title": "Visualization",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake a previous heatmap with the annotations\nChange the clustering parameters\nSplit the heatmap according to the clustering\nRecover the row labels in the order of the clustering",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#exercise-make-a-multipanel-figure",
+    "href": "pages/02_visualization.html#exercise-make-a-multipanel-figure",
+    "title": "Visualization",
+    "section": "Exercise: make a Multipanel Figure",
+    "text": "Exercise: make a Multipanel Figure\n\nTake any 3 graphics generated today\nUse patchwork to combine them in a single figure.",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#customise-colors",
+    "href": "pages/02_visualization.html#customise-colors",
+    "title": "Visualization",
+    "section": "Customise colors:",
+    "text": "Customise colors:\nThe heatmap part\n\n\nmain_col_fun = circlize::colorRamp2(\n                   c(-2, 0, 2),\n                   c(\"darkblue\", \"white\", \"orangered\"))\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\" , \n        top_annotation = column_annot,\n        left_annotation = row_annot,\n        col = main_col_fun\n)\n\n\n\n\n\n\n\n\n\n\nWe set the limits of the colors ourselves\n⇒ Make comparable heatmaps",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#customise-colors-1",
+    "href": "pages/02_visualization.html#customise-colors-1",
+    "title": "Visualization",
+    "section": "Customise colors:",
+    "text": "Customise colors:\nAnnotations\n\n\ncolumn_annot &lt;- HeatmapAnnotation(\n                 order=anno_barplot(column_info$order), \n                 category=column_info$category,\n                 col=list(category=c(\"0\"=\"#AAE89CFF\", \"1\"=\"#79DB6BFF\", \"2\"=\"#32CD32FF\"))\n                  \n                 )\nrow_annot &lt;- HeatmapAnnotation(\n                  score=anno_barplot(row_info$score),\n                  cond=row_info$cond, which = \"row\",\n                  col=list(cond=c(\"TRUE\"=\"black\", \"FALSE\"=\"white\"))\n                  )\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        row_title = \"row maybe samples\" , \n        top_annotation = column_annot,\n        left_annotation = row_annot,\n        col = main_col_fun\n)",
+    "crumbs": [
+      "Visualization"
+    ]
+  },
+  {
+    "objectID": "pages/02_visualization.html#customise-colors-2",
+    "href": "pages/02_visualization.html#customise-colors-2",
+    "title": "Visualization",
+    "section": "customise colors:",
+    "text": "customise colors:\nTitles\n\n\nHeatmap(mat, \n        name=\"my heatmap\",\n        column_title = \"column maybe genes\", \n        column_title_gp = gpar(fill = \"grey\", col = \"white\", border = \"blue\"),\n        row_title = \"row maybe samples\" , \n        top_annotation = column_annot,\n        left_annotation = row_annot,\n        col = main_col_fun\n)",
+    "crumbs": [
+      "Visualization"
     ]
   }
 ]
