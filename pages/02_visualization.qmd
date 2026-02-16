@@ -221,7 +221,7 @@ g
 :::
 ::::::
 
-## exercise:
+## exercise: {.smaller}
 Correct this code to get this graphic 
 
 ::: {.small}
@@ -291,7 +291,7 @@ g
 ![](../img/02_visualization/together_group_test.png)
 
 
-## Statistical Annotations with `ggpubr`
+## Statistical Annotations with `ggpubr` {.smaller}
 - **compute comparisons and display the p-values**
 ```{r }
 #| eval: true
@@ -323,7 +323,7 @@ ggplot(
 #   theme_classic2()
 -->
 
-## Statistical Annotations with `ggpubr`
+## Statistical Annotations with `ggpubr` {.smaller}
 
 - **compute comparisons and display the p-values**
 ```{r }
@@ -357,7 +357,7 @@ ggplot( aes(order, sleep_total, fill = order)) +
 - change the statistical procedure used by `stat_compare_means`
 - display the formatted p value of every significant comparison
 
-## Statistical Annotations with `ggpubr`
+## Statistical Annotations with `ggpubr` {.smaller}
 
 - **Display p-value from another test procedure**
 ```{r signif, warning=FALSE, fig.height=4}
@@ -387,7 +387,7 @@ ggplot( aes(order, sleep_total, fill = order)) +
 - Add the pairwise-pvalues
 
 
-## Add (mathematical) expressions
+## Add (mathematical) expressions {.smaller}
 ```{r}
 #| echo: true
 #| output-location: column
@@ -411,7 +411,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 #  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
 -->
 
-## exercice
+## exercice {.smaller}
 - start with this plot
 - use the Mathematical Annotations listed in `?plotmath`
 - Correct the axis label and add the regression formula
@@ -530,7 +530,7 @@ column_info <- data.frame(order=1:12, category=rep(0:2,4) )
 ```
 
 
-## make a basic heatmap
+## make a basic heatmap {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -547,7 +547,7 @@ Basic layout includes
 - the row and column labels.  
 - a default clustering.   
 
-## complete the heatmap: add annotations
+## complete the heatmap: add annotations {.smaller}
 - using a dataframe directly give and overview
 ```{r}
 #| echo: TRUE
@@ -671,7 +671,7 @@ ht_opt$TITLE_PADDING = unit(c(8.5, 8.5), "points")
 ht_opt(RESET = TRUE)
 -->
 
-## customise positions
+## customise positions  {.smaller}
 ```{r}
 #| echo: TRUE
 #| eval: true
@@ -696,7 +696,7 @@ Heatmap(mat,
 - split the columns annotation on each side
 
 
-## customise clustering
+## customise clustering {.smaller}
 - either use or remove the clusetering 
 
 ```{r}
@@ -707,7 +707,7 @@ Heatmap(mat,
 Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE) 
 ```
 
-## customise clustering
+## customise clustering {.smaller}
 - either use or remove the clusetering 
 
 ```{r}
@@ -723,7 +723,7 @@ Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE)
 ```
 
 
-## customise clustering
+## customise clustering {.smaller}
 - We can change the display of the dendrogram
 ```{r}
 #| echo: TRUE
@@ -741,7 +741,7 @@ Heatmap(mat,
 ```
 
 
-## customise clustering
+## customise clustering {.smaller}
 - We can change the parameters as in `hclut`
 ```{r}
 #| echo: TRUE
@@ -755,7 +755,7 @@ Heatmap(mat,
        )
 ```
 
-## customise clustering
+## customise clustering {.smaller}
 - We can give a already made dendrogram
 ```{r}
 #| echo: TRUE
@@ -772,7 +772,7 @@ Heatmap(mat,
 ```
 
 
-## split heatmap
+## split heatmap {.smaller}
 - by clustering using `row_km`/`column_km` or `column_split` /`row_split`
 ```{r}
 #| echo: TRUE
@@ -782,7 +782,7 @@ Heatmap(mat,
 Heatmap(mat, name = "mat", cluster_rows = row_dend, row_split = 2, column_split = 3)
 ```
 
-## split heatmap
+## split heatmap {.smaller}
 - by categorical variables
 ```{r}
 #| echo: TRUE
@@ -803,20 +803,6 @@ Heatmap(mat,
 - split the heatmap according to the clustering
 - recover the row labels in the order of the clustering
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--
 ================================================================================================
 ================================================================================================
@@ -834,10 +820,7 @@ Heatmap(mat,
 * Make one plot from several: `aplot`
 * Put together several plots: `ggarrange` and `patchwork`
 
-
-
-
-## Split a plot by conditions: `facet`
+## Split a plot by conditions: `facet` {.smaller}
 - See the course for R beginners
 
 ```{r}
@@ -860,7 +843,7 @@ ChickWeight %>%
 
 
 
-## Split a plot by conditions: `facet`
+## Split a plot by conditions: `facet` 
 - See the course for R beginners
 
 ```{r}
@@ -879,7 +862,8 @@ p <- ChickWeight %>%
     ) +
     theme_classic() 
 ```
-## Split a plot by conditions: `facet`
+
+## Split a plot by conditions: `facet` {.smaller}
 ```{r}
 #| eval: TRUE
 #| echo: true
@@ -888,7 +872,7 @@ p <- ChickWeight %>%
 p + facet_wrap( ~ Diet) 
 ```
  
-## Split a plot by conditions: `facet`
+## Split a plot by conditions: `facet` {.smaller}
 ```{r}
 #| eval: TRUE
 #| echo: true
@@ -904,7 +888,7 @@ p + facet_grid( Diet ~ .)
 ![](../img/02_visualization/aplot.png){height=500}
 
 
-## Make one plot from several: `aplot`
+## Make one plot from several: `aplot` {.smaller}
 - Working code example
 ```{r}
 #| eval: TRUE
@@ -954,7 +938,7 @@ p2 <- ggplot(mtcars, aes(x = cyl)) + geom_bar()
 p3 <-  ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
 ```
 
-## `patchwork`  **Basic usage**
+## `patchwork`  **Basic usage** {.smaller}
 `+` group the plots
 ```{r}
 #| eval: true
@@ -964,7 +948,7 @@ p3 <-  ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
 p1 + p2  + p3 
 ```
 
-## `patchwork` **Basic usage**
+## `patchwork` **Basic usage** {.smaller}
 `|`  put the plots side by side
 ```{r}
 #| eval: true
@@ -974,7 +958,7 @@ p1 + p2  + p3
 p1 + p2  | p3
 ```
 
-## `patchwork` **Basic usage**
+## `patchwork` **Basic usage** {.smaller}
 `/` stack the plots together
 ```{R}
 #| eval: true
@@ -983,7 +967,7 @@ p1 + p2  | p3
 p1 / p2  # Disposition en ligne
 ```
 
-## `patchwork` **set the layouts**
+## `patchwork` **set the layouts** {.smaller}
 `plot_layout` give a finer control over the resulting plot
 ```{R}
 #| eval: true
@@ -993,7 +977,7 @@ p1 + p2 + p3 + plot_layout(ncol = 1)
 
 ```
 
-## `patchwork` **set the layouts**
+## `patchwork` **set the layouts** {.smaller}
 `plot_layout` give a finer control over the resulting plot
 ```{R}
 #| eval: true
@@ -1003,7 +987,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1)
 
 ```
 
-## `patchwork` **set the layouts**
+## `patchwork` **set the layouts** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1011,7 +995,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1)
 p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))
 ```
 
-## `patchwork` **nesting levels**
+## `patchwork` **nesting levels** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1019,7 +1003,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))
 (p1 + ( p2 + p3)) + plot_layout(ncol = 1, heights = c(2, 1))
 ```
 
-## `patchwork` **Add other customisation**
+## `patchwork` **Add other customisation** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1028,7 +1012,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1)) + theme_bw()
 
 ```
 
-## `patchwork` **Add other customisation**
+## `patchwork` **Add other customisation** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1037,7 +1021,7 @@ p1 | p2 + p3 + plot_layout(ncol = 1, heights = c(2, 1))  & theme_bw()
 
 ```
 
-## `patchwork` **Add other customisation**
+## `patchwork` **Add other customisation** {.smaller}
 ```{R}
 #| eval: true
 #| echo: true
@@ -1076,6 +1060,7 @@ ggpubr::annotate_figure
 <font style="color:blue; font-weight:bold;">5. some level of automation</font>  
 
 ## functions 
+:::::::::::::::::: {.r-fit-text }
 A function in R is 2 things
 
 :::::: {.columns }
@@ -1101,7 +1086,7 @@ A function can be created in two ways
 - use a function that creates specific functions like `colorRamp2()`  
 - use the function `function()`  
 
-
+::::::::::::::::::
 
 ## functions: example
 
@@ -1133,7 +1118,7 @@ Pval_Pyramids <- function(pvals){
 
 
 
-## for loops
+## for loops {.smaller}
 - most used kind of loops (in our experience)
 - principle define an object that will take different values succesively 
 - repeat the same process on this object `for` each value
@@ -1175,8 +1160,8 @@ h2 <- Heatmap(mat, name = "mat", row_km = 2, row_title = "cluster_%s")
 h3 <- Heatmap(mat, name = "mat", row_km = 3, row_title = "cluster_%s")  
 h4 <- Heatmap(mat, name = "mat", row_km = 4, row_title = "cluster_%s")  
 ```
-## for loops: example
 
+## for loops: example {.smaller}
 :::::: {.columns }
 ::: {.column style="width='30%'"}
 ```{r}

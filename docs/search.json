@@ -604,7 +604,7 @@
     "href": "pages/02_visualization.html#functions",
     "title": "Visualization",
     "section": "functions",
-    "text": "functions\nA function in R is 2 things\n\n\n\na block of code stored and executed when called.\n\n\n\nan object composed of\n\n\n\n\ncomponent\naccessed using\n\n\n\n\narguments\nformals()\n\n\nbody\nbody()\n\n\nenvironment\nenvironment()\n\n\n\n\n\n\nA function can be created in two ways\n\nuse a function that creates specific functions like colorRamp2()\n\nuse the function function()",
+    "text": "functions\n\nA function in R is 2 things\n\n\n\na block of code stored and executed when called.\n\n\n\nan object composed of\n\n\n\n\ncomponent\naccessed using\n\n\n\n\narguments\nformals()\n\n\nbody\nbody()\n\n\nenvironment\nenvironment()\n\n\n\n\n\n\nA function can be created in two ways\n\nuse a function that creates specific functions like colorRamp2()\n\nuse the function function()",
     "crumbs": [
       "Visualization"
     ]
