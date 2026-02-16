@@ -187,6 +187,14 @@
       margin-right: 0; 
     }
   </style>
+  <style>
+  .reveal .custom_smallOutput > div.column:first-child {
+    width: 60%;
+  }
+  .reveal .custom_smallOutput div.column:not(:first-child) {
+    width: 40%;
+  }
+  </style>
 <meta property="og:title" content="Visualization – IntermediaiRe: intermediate R">
 <meta property="og:description" content="Homepage for IntermediaiRe - Intermediate R programming.">
 <meta property="og:site_name" content="IntermediaiRe: intermediate R">
@@ -392,7 +400,7 @@ Amaury &amp; Vincent
 <div class="column" style="width='75%'; line-height=2em">
 <div class="r-fit-text">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>g <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>g <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">as.factor</span>(cyl)) <span class="sc">%&gt;%</span></span>
 <span id="cb2-3"><a></a>  <span class="fu">ggplot</span>(</span>
 <span id="cb2-4"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> cyl, </span>
@@ -433,15 +441,71 @@ Amaury &amp; Vincent
 <ul>
 <li><strong>compute comparisons and display the p-values</strong></li>
 </ul>
-
-<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># install.packages("ggpubr")</span></span>
+<span id="cb3-2"><a></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb3-5"><a></a>   mtcars, </span>
+<span id="cb3-6"><a></a>   <span class="fu">aes</span>(</span>
+<span id="cb3-7"><a></a>     <span class="at">x=</span><span class="fu">as.factor</span>(cyl), </span>
+<span id="cb3-8"><a></a>     <span class="at">y=</span>mpg, </span>
+<span id="cb3-9"><a></a>     <span class="at">fill =</span> <span class="fu">as.factor</span>(cyl)</span>
+<span id="cb3-10"><a></a>   )</span>
+<span id="cb3-11"><a></a> ) <span class="sc">+</span> </span>
+<span id="cb3-12"><a></a>   <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb3-13"><a></a>   <span class="fu">stat_compare_means</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a></a>   <span class="fu">theme_classic2</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<!--
+# data("ToothGrowth")
+# ggplot(ToothGrowth, aes(x=as.factor(dose), y=len, fill = as.factor(dose))) + 
+#   geom_boxplot() +
+#   stat_compare_means() +
+#   theme_classic2()
+-->
+</section>
 <section id="statistical-annotations-with-ggpubr-1" class="slide level2">
 <h2>Statistical Annotations with <code>ggpubr</code></h2>
 <ul>
 <li><strong>compute comparisons and display the p-values</strong></li>
 </ul>
-
-<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">group_by</span>(order) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">filter</span>(<span class="fu">n</span>()<span class="sc">&gt;=</span><span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a></a><span class="fu">ggplot</span>( <span class="fu">aes</span>(order, sleep_total, <span class="at">fill =</span> order)) <span class="sc">+</span> </span>
+<span id="cb4-5"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">stat_compare_means</span>(<span class="at">label.y =</span> <span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">stat_compare_means</span>(<span class="at">comparisons =</span> <span class="fu">list</span>( </span>
+<span id="cb4-8"><a></a>     <span class="fu">c</span>(<span class="st">"Artiodactyla"</span>, <span class="st">"Carnivora"</span>), </span>
+<span id="cb4-9"><a></a>     <span class="fu">c</span>(<span class="st">"Artiodactyla"</span>, <span class="st">"Primates"</span>),</span>
+<span id="cb4-10"><a></a>    <span class="fu">c</span>(<span class="st">"Artiodactyla"</span>, <span class="st">"Rodentia"</span>)</span>
+<span id="cb4-11"><a></a>    ), <span class="at">label =</span> <span class="st">"p.signif"</span>)  <span class="sc">+</span> </span>
+<span id="cb4-12"><a></a>  <span class="fu">theme_classic2</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<!--
+# list(   c("Artiodactyla", "Carnivora"), c("Primates", "Carnivora"), c("Artiodactyla", "Primates"),c("Rodentia", "Primates"), c("Rodentia", "Carnivora"), c("Rodentia", "Artiodactyla")    )
+-->
+</section>
 <section id="exercice" class="slide level2">
 <h2>Exercice</h2>
 <ul>
@@ -455,8 +519,32 @@ Amaury &amp; Vincent
 <ul>
 <li><strong>Display p-value from another test procedure</strong></li>
 </ul>
-
-<img data-src="02_visualization_files/figure-revealjs/signif-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>myTests <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a></a>              <span class="at">group1 =</span> <span class="fu">c</span>(<span class="st">"Artiodactyla"</span>, <span class="st">"Primates"</span> , <span class="st">"Artiodactyla"</span>, <span class="st">"Rodentia"</span>, <span class="st">"Rodentia"</span>,  <span class="st">"Rodentia"</span>) ,</span>
+<span id="cb5-3"><a></a>              <span class="at">group2 =</span> <span class="fu">c</span>(<span class="st">"Carnivora"</span>   , <span class="st">"Carnivora"</span>, <span class="st">"Primates"</span>    , <span class="st">"Primates"</span>, <span class="st">"Carnivora"</span>, <span class="st">"Artiodactyla"</span>), </span>
+<span id="cb5-4"><a></a>              <span class="at">p      =</span> <span class="fu">c</span>(<span class="fl">0.0076</span>        , <span class="fl">0.79</span>       , <span class="fl">0.0012</span>        , <span class="fl">0.047</span>     ,  <span class="fl">0.045</span>     ,  <span class="fl">0.00057</span>),</span>
+<span id="cb5-5"><a></a>              <span class="at">other  =</span> <span class="fu">c</span>(<span class="st">"S"</span>           , <span class="st">"NS"</span>       , <span class="st">"S"</span>           , <span class="st">"S"</span>       , <span class="st">"S"</span>        , <span class="st">"S"</span>) </span>
+<span id="cb5-6"><a></a>  </span>
+<span id="cb5-7"><a></a>)</span>
+<span id="cb5-8"><a></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a></a>  <span class="fu">group_by</span>(order) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a></a>  <span class="fu">filter</span>(<span class="fu">n</span>()<span class="sc">&gt;=</span><span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a></a><span class="fu">ggplot</span>( <span class="fu">aes</span>(order, sleep_total, <span class="at">fill =</span> order)) <span class="sc">+</span> </span>
+<span id="cb5-12"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb5-13"><a></a>  <span class="fu">stat_pvalue_manual</span>( myTests, <span class="at">y.position =</span> <span class="dv">17</span>, <span class="at">step.increase =</span> <span class="fl">0.05</span>, <span class="at">label =</span> <span class="st">"other"</span>, <span class="at">tip.length =</span> <span class="fl">0.01</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a></a>  <span class="fu">theme_classic2</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/signif-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
 <section id="exercice-1" class="slide level2">
 <h2>Exercice</h2>
 <ul>
@@ -467,37 +555,842 @@ Amaury &amp; Vincent
 </section>
 <section id="add-mathematical-expressions" class="slide level2">
 <h2>Add (mathematical) expressions</h2>
-
-<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb6-2"><a></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a></a>    <span class="fu">stat_cor</span>(<span class="at">label.x =</span> <span class="dv">3</span>, <span class="at">label.y =</span> <span class="dv">34</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a>      <span class="fu">stat_regline_equation</span>(<span class="at">label.x =</span> <span class="dv">3</span>, <span class="at">label.y =</span> <span class="dv">32</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a></a>        <span class="fu">labs</span>(</span>
+<span id="cb6-8"><a></a>          <span class="at">title =</span> <span class="fu">expression</span>(mpg <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>wt <span class="sc">+</span> epsilon[i]),</span>
+<span id="cb6-9"><a></a>          <span class="at">x =</span> <span class="fu">expression</span>(log[<span class="dv">10</span>](Wt)),</span>
+<span id="cb6-10"><a></a>          <span class="at">y=</span><span class="st">"Fuel consumption"</span></span>
+<span id="cb6-11"><a></a>               )<span class="sc">+</span></span>
+<span id="cb6-12"><a></a></span>
+<span id="cb6-13"><a></a>        <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<!--
+#  annotate("text", 7, 80, label = "y == beta[0] + beta[1]*x + epsilon", parse = TRUE) +
+-->
+</section>
 <section id="exercice-2" class="slide level2">
 <h2>exercice</h2>
 <ul>
 <li>start with this plot</li>
-<li>use the Mathematical Annotations listed <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/plotmath.html">here</a></li>
+<li>use the Mathematical Annotations listed in <code>?plotmath</code></li>
 <li>Correct the axis label and add the regression formula</li>
 </ul>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>ChickWeight <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">filter</span>(Diet<span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))) <span class="sc">+</span></span>
+<span id="cb7-4"><a></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a></a>    <span class="fu">labs</span>(</span>
+<span id="cb7-7"><a></a>          <span class="at">title =</span> <span class="st">"Cube root of weight according to time"</span>,</span>
+<span id="cb7-8"><a></a>          <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb7-9"><a></a>          <span class="at">y=</span><span class="st">"Cube root of weight"</span></span>
+<span id="cb7-10"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb7-11"><a></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+</section></section>
+<section>
+<section id="visualization-2" class="title-slide slide level1 center">
+<h1>Visualization</h1>
+<p><font color="gray">1. graphics: Good &amp; bad practices</font><br>
+<font color="gray">2. individual graphics with ggplot</font><br>
+<font style="color:blue; font-weight:bold;">3. Focus on heatmaps</font><br>
+<font color="gray">4. Plot composition</font><br>
+<font color="gray">5. some level of automation</font></p>
+</section>
+<section id="complex-heatmap" class="slide level2 small">
+<h2>Complex heatmap</h2>
+<ul>
+<li>specific plots like heatmap often have dedicated packages</li>
+<li>here we choose the heatmap since
+<ul>
+<li>it is widely used</li>
+<li>we will use it tomorrow in the main exercise.<br>
+<img data-src="../img/02_visualization/3.ong_2020_fig2.jpg" height="400"></li>
+</ul></li>
+</ul>
+</section>
+<section id="complex-heatmap-package" class="slide level2">
+<h2>Complex heatmap package</h2>
+<ul>
+<li>A bioconductor package</li>
+</ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>ChickWeight <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">filter</span>(Diet<span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))) <span class="sc">+</span></span>
-<span id="cb3-4"><a></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb3-5"><a></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a></a>    <span class="fu">labs</span>(</span>
-<span id="cb3-7"><a></a>          <span class="at">title =</span> <span class="st">"Cube root of weight according to time"</span>,</span>
-<span id="cb3-8"><a></a>          <span class="at">x =</span> <span class="st">"Time"</span>,</span>
-<span id="cb3-9"><a></a>          <span class="at">y=</span><span class="st">"Cube root of weight"</span></span>
-<span id="cb3-10"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb3-11"><a></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#BiocManager::install("ComplexHeatmap")</span></span>
+<span id="cb8-2"><a></a><span class="fu">library</span>(ComplexHeatmap)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>with an extensive documentation
+<ul>
+<li>available <a href="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html">here</a></li>
+<li>or by</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co">#BiocManager::install("ComplexHeatmap")</span></span>
+<span id="cb9-2"><a></a><span class="fu">vignette</span>(<span class="st">"complex_heatmap"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="heatmap-structure" class="slide level2">
+<h2>Heatmap structure</h2>
+<div class="columns">
+<div class="column" style="width='25%'">
+<p><img data-src="../img/02_visualization/heatmap_structure.png" height="400"></p>
+</div><div class="column" style="width='75%'">
+<p><img data-src="../img/02_visualization/heatmap_example.png" height="500"></p>
+</div></div>
+</section>
+<section id="data-for-the-heatmap" class="slide level2">
+<h2>data for the heatmap:</h2>
+<ul>
+<li>Let’s make a mock dataset</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb10-2"><a></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">120</span>), <span class="dv">10</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="fu">rownames</span>(mat) <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"R"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb10-5"><a></a><span class="fu">colnames</span>(mat) <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"C"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>)</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a>row_info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond=</span><span class="fu">rnorm</span>(<span class="dv">10</span>) <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="at">score=</span><span class="fu">runif</span>(<span class="dv">10</span>))</span>
+<span id="cb10-8"><a></a>column_info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">order=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">category=</span><span class="fu">rep</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">4</span>) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="make-a-basic-heatmap" class="slide level2">
+<h2>make a basic heatmap</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb11-2"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>, </span>
+<span id="cb11-3"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb11-4"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"><p>Basic layout includes</p>
+<ul>
+<li>the heatmap.<br>
+</li>
+<li>the row and column labels.<br>
+</li>
+<li>a default clustering.</li>
+</ul>
+</section>
+<section id="complete-the-heatmap-add-annotations" class="slide level2">
+<h2>complete the heatmap: add annotations</h2>
+<ul>
+<li>using a dataframe directly give and overview</li>
+</ul>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb12-2"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb12-3"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb12-4"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb12-5"><a></a>        <span class="at">top_annotation =</span> <span class="fu">HeatmapAnnotation</span>(<span class="at">df=</span>column_info),</span>
+<span id="cb12-6"><a></a>        <span class="at">left_annotation =</span> <span class="fu">HeatmapAnnotation</span>(<span class="at">df=</span>row_info, <span class="at">which =</span> <span class="st">"row"</span>)</span>
+<span id="cb12-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="complete-the-heatmap-add-annotations-1" class="slide level2 smaller">
+<h2>complete the heatmap: add annotations</h2>
+<p>We have more control by selecting each annotations to be displayed separately</p>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>column_annot <span class="ot">&lt;-</span> <span class="fu">HeatmapAnnotation</span>(</span>
+<span id="cb13-2"><a></a>                 <span class="at">order=</span><span class="fu">anno_barplot</span>(column_info<span class="sc">$</span>order), </span>
+<span id="cb13-3"><a></a>                 <span class="at">category=</span>column_info<span class="sc">$</span>category)</span>
+<span id="cb13-4"><a></a>row_annot <span class="ot">&lt;-</span> <span class="fu">HeatmapAnnotation</span>(</span>
+<span id="cb13-5"><a></a>                  <span class="at">score=</span><span class="fu">anno_barplot</span>(row_info<span class="sc">$</span>score),</span>
+<span id="cb13-6"><a></a>                  <span class="at">cond=</span>row_info<span class="sc">$</span>cond, <span class="at">which =</span> <span class="st">"row"</span>)</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb13-9"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb13-10"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb13-11"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb13-12"><a></a>        <span class="at">top_annotation =</span> column_annot,</span>
+<span id="cb13-13"><a></a>        <span class="at">left_annotation =</span> row_annot</span>
+<span id="cb13-14"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="customise-colors-main" class="slide level2 smaller">
+<h2>customise colors : main</h2>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>main_col_fun <span class="ot">=</span> circlize<span class="sc">::</span><span class="fu">colorRamp2</span>(</span>
+<span id="cb14-2"><a></a>                   <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb14-3"><a></a>                   <span class="fu">c</span>(<span class="st">"darkblue"</span>, <span class="st">"white"</span>, <span class="st">"orangered"</span>))</span>
+<span id="cb14-4"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb14-5"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb14-6"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb14-7"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb14-8"><a></a>        <span class="at">top_annotation =</span> column_annot,</span>
+<span id="cb14-9"><a></a>        <span class="at">left_annotation =</span> row_annot,</span>
+<span id="cb14-10"><a></a>        <span class="at">col =</span> main_col_fun</span>
+<span id="cb14-11"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<ul>
+<li>you set the limits of the colors yourself</li>
+<li>⇒ enables you to compare heatmaps</li>
+</ul>
+<!--
+I don't speak about NA values nore the options
+- border_gp = gpar(col = "black", lty = 2)
+- rect_gp = gpar(col = "white", lwd = 2)
+-->
+</section>
+<section id="customise-colors-annotations" class="slide level2 smaller">
+<h2>customise colors : annotations</h2>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>column_annot <span class="ot">&lt;-</span> <span class="fu">HeatmapAnnotation</span>(</span>
+<span id="cb15-2"><a></a>                 <span class="at">order=</span><span class="fu">anno_barplot</span>(column_info<span class="sc">$</span>order), </span>
+<span id="cb15-3"><a></a>                 <span class="at">category=</span>column_info<span class="sc">$</span>category,</span>
+<span id="cb15-4"><a></a>                 <span class="at">col=</span><span class="fu">list</span>(<span class="at">category=</span><span class="fu">c</span>(<span class="st">"0"</span><span class="ot">=</span><span class="st">"#AAE89CFF"</span>, <span class="st">"1"</span><span class="ot">=</span><span class="st">"#79DB6BFF"</span>, <span class="st">"2"</span><span class="ot">=</span><span class="st">"#32CD32FF"</span>))</span>
+<span id="cb15-5"><a></a>                  </span>
+<span id="cb15-6"><a></a>                 )</span>
+<span id="cb15-7"><a></a>row_annot <span class="ot">&lt;-</span> <span class="fu">HeatmapAnnotation</span>(</span>
+<span id="cb15-8"><a></a>                  <span class="at">score=</span><span class="fu">anno_barplot</span>(row_info<span class="sc">$</span>score),</span>
+<span id="cb15-9"><a></a>                  <span class="at">cond=</span>row_info<span class="sc">$</span>cond, <span class="at">which =</span> <span class="st">"row"</span>,</span>
+<span id="cb15-10"><a></a>                  <span class="at">col=</span><span class="fu">list</span>(<span class="at">cond=</span><span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"black"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"white"</span>))</span>
+<span id="cb15-11"><a></a>                  )</span>
+<span id="cb15-12"><a></a></span>
+<span id="cb15-13"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb15-14"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb15-15"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb15-16"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb15-17"><a></a>        <span class="at">top_annotation =</span> column_annot,</span>
+<span id="cb15-18"><a></a>        <span class="at">left_annotation =</span> row_annot,</span>
+<span id="cb15-19"><a></a>        <span class="at">col =</span> main_col_fun</span>
+<span id="cb15-20"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="customise-colors-titles" class="slide level2 smaller">
+<h2>customise colors : titles</h2>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb16-2"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb16-3"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb16-4"><a></a>        <span class="at">column_title_gp =</span> <span class="fu">gpar</span>(<span class="at">fill =</span> <span class="st">"grey"</span>, <span class="at">col =</span> <span class="st">"white"</span>, <span class="at">border =</span> <span class="st">"blue"</span>),</span>
+<span id="cb16-5"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb16-6"><a></a>        <span class="at">top_annotation =</span> column_annot,</span>
+<span id="cb16-7"><a></a>        <span class="at">left_annotation =</span> row_annot,</span>
+<span id="cb16-8"><a></a>        <span class="at">col =</span> main_col_fun</span>
+<span id="cb16-9"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<!--
+ht_opt$TITLE_PADDING = unit(c(8.5, 8.5), "points")
+ht_opt(RESET = TRUE)
+-->
+</section>
+<section id="customise-positions" class="slide level2">
+<h2>customise positions</h2>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb17-2"><a></a>        <span class="at">name=</span><span class="st">"my heatmap"</span>,</span>
+<span id="cb17-3"><a></a>        <span class="at">column_title =</span> <span class="st">"column maybe genes"</span>, </span>
+<span id="cb17-4"><a></a>        <span class="at">column_title_side =</span><span class="st">"bottom"</span>,</span>
+<span id="cb17-5"><a></a>        <span class="at">row_title =</span> <span class="st">"row maybe samples"</span> , </span>
+<span id="cb17-6"><a></a>        <span class="at">row_title_side =</span><span class="st">"right"</span>,</span>
+<span id="cb17-7"><a></a>        <span class="at">bottom_annotation =</span> column_annot,</span>
+<span id="cb17-8"><a></a>        <span class="at">right_annotation =</span> row_annot,</span>
+<span id="cb17-9"><a></a>        <span class="at">col =</span> main_col_fun</span>
+<span id="cb17-10"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>exercise</h2>
+<ul>
+<li>take the heatmap we are building</li>
+<li>split the row annotation on each side</li>
+<li>split the columns annotation on each side</li>
+</ul>
+</section>
+<section id="customise-clustering" class="slide level2">
+<h2>customise clustering</h2>
+<ul>
+<li>either use or remove the clusetering</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_columns =</span> <span class="cn">FALSE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="customise-clustering-1" class="slide level2">
+<h2>customise clustering</h2>
+<ul>
+<li>either use or remove the clusetering</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>basic_ht <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>) </span>
+<span id="cb19-2"><a></a><span class="fu">row_order</span>(basic_ht)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  6  3  4  5  1  9  2 10  7  8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">column_order</span>(basic_ht)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 10  2  4  1  8  6  5 12  9  7 11  3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_columns =</span> <span class="cn">FALSE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="customise-clustering-2" class="slide level2">
+<h2>customise clustering</h2>
+<ul>
+<li>We can change the display of the dendrogram</li>
+</ul>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb24-2"><a></a>    <span class="at">name =</span> <span class="st">"mat"</span>,</span>
+<span id="cb24-3"><a></a>    <span class="at">row_dend_width =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">"cm"</span>),</span>
+<span id="cb24-4"><a></a>    <span class="at">row_dend_side =</span> <span class="st">"right"</span>,</span>
+<span id="cb24-5"><a></a>    <span class="at">column_dend_height =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">"cm"</span>),</span>
+<span id="cb24-6"><a></a>    <span class="at">column_dend_side =</span> <span class="st">"bottom"</span></span>
+<span id="cb24-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="3000"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="customise-clustering-3" class="slide level2">
+<h2>customise clustering</h2>
+<ul>
+<li>We can change the parameters as in <code>hclut</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb25-2"><a></a>       <span class="at">name =</span> <span class="st">"mat"</span>, </span>
+<span id="cb25-3"><a></a>       <span class="at">clustering_distance_rows =</span> <span class="st">"pearson"</span>,</span>
+<span id="cb25-4"><a></a>       <span class="at">column_title =</span> <span class="st">"pre-defined distance method (1 - pearson)"</span></span>
+<span id="cb25-5"><a></a>       )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="customise-clustering-4" class="slide level2">
+<h2>customise clustering</h2>
+<ul>
+<li>We can give a already made dendrogram</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>row_dend <span class="ot">=</span> <span class="fu">as.dendrogram</span>(<span class="fu">hclust</span>(<span class="fu">dist</span>(mat)))</span>
+<span id="cb26-2"><a></a>row_dend <span class="ot">=</span> dendextend<span class="sc">::</span><span class="fu">color_branches</span>   (row_dend, <span class="at">k =</span> <span class="dv">2</span>) </span>
+<span id="cb26-3"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb26-4"><a></a>        <span class="at">name =</span> <span class="st">"mat"</span>, </span>
+<span id="cb26-5"><a></a>        <span class="at">cluster_rows =</span> row_dend</span>
+<span id="cb26-6"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="split-heatmap" class="slide level2">
+<h2>split heatmap</h2>
+<ul>
+<li>by clustering using <code>row_km</code>/<code>column_km</code> or <code>column_split</code> /<code>row_split</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">cluster_rows =</span> row_dend, <span class="at">row_split =</span> <span class="dv">2</span>, <span class="at">column_split =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="split-heatmap-1" class="slide level2">
+<h2>split heatmap</h2>
+<ul>
+<li>by categorical variables</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">Heatmap</span>(mat, </span>
+<span id="cb28-2"><a></a>        <span class="at">name =</span> <span class="st">"mat"</span>, </span>
+<span id="cb28-3"><a></a>        <span class="at">row_split =</span> row_info<span class="sc">$</span>cond</span>
+<span id="cb28-4"><a></a>      )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>take a previous heatmap with the annotations</li>
+<li>change the clustering parameters</li>
+<li>split the heatmap according to the clustering</li>
+<li>recover the row labels in the order of the clustering</li>
+</ul>
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+</section></section>
+<section>
+<section id="visualization-3" class="title-slide slide level1 center">
+<h1>Visualization</h1>
+<p><font color="gray">1. graphics: Good &amp; bad practices</font><br>
+<font color="gray">2. individual graphics with ggplot</font><br>
+<font color="gray">3. Focus on heatmaps</font><br>
+<font style="color:blue; font-weight:bold;">4. Plot composition</font><br>
+<font color="gray">5. some level of automation</font></p>
+</section>
+<section id="kind-of-plot-composition" class="slide level2">
+<h2>3 kind of plot composition</h2>
+<ul>
+<li>Split a plot by conditions: <code>facet</code></li>
+<li>Make one plot from several: <code>aplot</code></li>
+<li>Put together several plots: <code>ggarrange</code> and <code>patchwork</code></li>
+</ul>
+</section>
+<section id="split-a-plot-by-conditions-facet" class="slide level2">
+<h2>Split a plot by conditions: <code>facet</code></h2>
+<ul>
+<li>See the course for R beginners</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>ChickWeight <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">filter</span>(Diet<span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))) <span class="sc">+</span></span>
+<span id="cb29-4"><a></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-5"><a></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb29-6"><a></a>    <span class="fu">labs</span>(</span>
+<span id="cb29-7"><a></a>          <span class="at">title =</span> <span class="st">"Cube root of weight according to time"</span>,</span>
+<span id="cb29-8"><a></a>          <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb29-9"><a></a>          <span class="at">y=</span><span class="st">"Cube root of weight"</span></span>
+<span id="cb29-10"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb29-11"><a></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="split-a-plot-by-conditions-facet-1" class="slide level2">
+<h2>Split a plot by conditions: <code>facet</code></h2>
+<ul>
+<li>See the course for R beginners</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>p <span class="ot">&lt;-</span> ChickWeight <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))) <span class="sc">+</span></span>
+<span id="cb30-3"><a></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-4"><a></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb30-5"><a></a>    <span class="fu">labs</span>(</span>
+<span id="cb30-6"><a></a>          <span class="at">title =</span> <span class="st">"Cube root of weight according to time"</span>,</span>
+<span id="cb30-7"><a></a>          <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb30-8"><a></a>          <span class="at">y=</span><span class="st">"Cube root of weight"</span></span>
+<span id="cb30-9"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb30-10"><a></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="split-a-plot-by-conditions-facet-2" class="slide level2">
+<h2>Split a plot by conditions: <code>facet</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>p <span class="sc">+</span> <span class="fu">facet_wrap</span>( <span class="sc">~</span> Diet) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="split-a-plot-by-conditions-facet-3" class="slide level2">
+<h2>Split a plot by conditions: <code>facet</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>p <span class="sc">+</span> <span class="fu">facet_grid</span>( Diet <span class="sc">~</span> .) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="make-one-plot-from-several-aplot" class="slide level2">
+<h2>Make one plot from several: <code>aplot</code></h2>
+<ul>
+<li>Real life example</li>
+</ul>
+<p><img data-src="../img/02_visualization/aplot.png" height="500"></p>
+</section>
+<section id="make-one-plot-from-several-aplot-1" class="slide level2">
+<h2>Make one plot from several: <code>aplot</code></h2>
+<ul>
+<li>Working code example</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">library</span>(aplot)</span>
+<span id="cb33-2"><a></a></span>
+<span id="cb33-3"><a></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, disp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb33-4"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg)) <span class="sc">+</span> </span>
+<span id="cb33-5"><a></a>    <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">'steelblue'</span>, <span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb33-6"><a></a>        ggfun<span class="sc">::</span><span class="fu">theme_noxaxis</span>()</span>
+<span id="cb33-7"><a></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span>, <span class="at">y=</span>disp)) <span class="sc">+</span> </span>
+<span id="cb33-8"><a></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">'firebrick'</span>, <span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb33-9"><a></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb33-10"><a></a>p <span class="sc">%&gt;%</span> </span>
+<span id="cb33-11"><a></a>    <span class="fu">insert_top</span>(p2, <span class="at">height=</span>.<span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-12"><a></a>    <span class="fu">insert_right</span>(p3, <span class="at">width=</span>.<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="put-together-several-plots-with-patchwork" class="slide level2">
+<h2>Put together several plots with <code>patchwork</code></h2>
+<p><code>ggarrange</code> and <code>patchwork</code> are ways to assemble several plots in a single figure. For <code>ggarrange</code> se the beginner R course</p>
+<p><code>patchwork</code> defines. or augments 6 opreator on plots: <code>+ - / | * &amp;</code> the most user friendly ones are <code>+ |</code> and <code>/</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># install.packages("patchwork")</span></span>
+<span id="cb34-2"><a></a><span class="fu">library</span>(patchwork)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="patchwork-example-data" class="slide level2">
+<h2><code>patchwork</code> <strong>example data</strong></h2>
+<p>We will combine thoses 3 plots:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb35-2"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
+<span id="cb35-3"><a></a>p3 <span class="ot">&lt;-</span>  <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(gear, disp, <span class="at">group =</span> gear))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="patchwork-basic-usage" class="slide level2">
+<h2><code>patchwork</code> <strong>Basic usage</strong></h2>
+<p><code>+</code> group the plots</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>p1 <span class="sc">+</span> p2  <span class="sc">+</span> p3 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-basic-usage-1" class="slide level2">
+<h2><code>patchwork</code> <strong>Basic usage</strong></h2>
+<p><code>|</code> put the plots side by side</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>p1 <span class="sc">+</span> p2  <span class="sc">|</span> p3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-basic-usage-2" class="slide level2">
+<h2><code>patchwork</code> <strong>Basic usage</strong></h2>
+<p><code>/</code> stack the plots together</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>p1 <span class="sc">/</span> p2  <span class="co"># Disposition en ligne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-33-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-set-the-layouts" class="slide level2">
+<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<p><code>plot_layout</code> give a finer control over the resulting plot</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-set-the-layouts-1" class="slide level2">
+<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<p><code>plot_layout</code> give a finer control over the resulting plot</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-set-the-layouts-2" class="slide level2">
+<h2><code>patchwork</code> <strong>set the layouts</strong></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-nesting-levels" class="slide level2">
+<h2><code>patchwork</code> <strong>nesting levels</strong></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>(p1 <span class="sc">+</span> ( p2 <span class="sc">+</span> p3)) <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-37-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-add-other-customisation" class="slide level2">
+<h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-38-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-add-other-customisation-1" class="slide level2">
+<h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))  <span class="sc">&amp;</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-39-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="patchwork-add-other-customisation-2" class="slide level2">
+<h2><code>patchwork</code> <strong>Add other customisation</strong></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>(p1 <span class="sc">|</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)) ) <span class="sc">&amp;</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-40-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="exercice-make-a-multipanel-figure" class="slide level2">
+<h2>Exercice: make a Multipanel Figure</h2>
+<ul>
+<li>Take any 3 graphics generated today</li>
+<li>Use <code>patchwork</code> to combine them in a single figure.</li>
+</ul>
+<!--
+## Figure annotations
+
+ggplot2::annotate
+ggplot2::annotation_custom
+ggpubr::annotate_figure 
+
+-->
+<!--
+================================================================================================
+================================================================================================
+================================================================================================
+-->
+</section></section>
+<section>
+<section id="visualization-4" class="title-slide slide level1 center">
+<h1>Visualization</h1>
+<p><font color="gray">1. graphics: Good &amp; bad practices</font><br>
+<font color="gray">2. individual graphics with ggplot</font><br>
+<font color="gray">3. Focus on heatmaps</font><br>
+<font color="gray">4. Plot composition</font><br>
+<font style="color:blue; font-weight:bold;">5. some level of automation</font></p>
+</section>
+<section id="functions" class="slide level2">
+<h2>functions</h2>
+<p>A function in R is 2 things</p>
+<div class="columns">
+<div class="column" style="width='50%'">
+<ul>
+<li>a block of code stored and executed when called.</li>
+</ul>
+</div><div class="column" style="width='50%'">
+<ul>
+<li>an object composed of</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>component</th>
+<th>accessed using</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>arguments</td>
+<td><code>formals()</code></td>
+</tr>
+<tr class="even">
+<td>body</td>
+<td><code>body()</code></td>
+</tr>
+<tr class="odd">
+<td>environment</td>
+<td><code>environment()</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width='30%'">
+
+</div></div>
+<p>A function can be created in two ways</p>
+<ul>
+<li>use a function that creates specific functions like <code>colorRamp2()</code><br>
+</li>
+<li>use the function <code>function()</code></li>
+</ul>
+</section>
+<section id="functions-example" class="slide level2">
+<h2>functions: example</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Pval_Pyramids</span></span>
+<span id="cb46-2"><a></a><span class="co"># Indicates the number of pvalues in each categories according to the hard coded threshold</span></span>
+<span id="cb46-3"><a></a><span class="co"># args: pvals: a vector of numeric values assumed to be pvalues</span></span>
+<span id="cb46-4"><a></a><span class="co"># return: a dataframe with columns interval and nb</span></span>
+<span id="cb46-5"><a></a>Pval_Pyramids <span class="ot">&lt;-</span> <span class="cf">function</span>(pvals){</span>
+<span id="cb46-6"><a></a>  breaksForCut <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">1e-300</span>, <span class="fl">1e-200</span>, <span class="fl">1e-100</span>, <span class="fl">1e-50</span>, <span class="fl">1e-10</span>, <span class="fl">1e-5</span>, <span class="fl">1e-4</span>, <span class="fl">1e-3</span>, <span class="fl">1e-2</span>, <span class="fl">5e-2</span>, <span class="dv">1</span>)</span>
+<span id="cb46-7"><a></a>  labelsForCut <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"p=0"</span>, <span class="st">"0&lt;p&lt;=1e-300"</span>, <span class="st">"1e-300&lt;p&lt;=1e-200"</span>, <span class="st">"1e-200&lt;p&lt;=1e-100"</span>, <span class="st">"1e-100&lt;p&lt;=1e-50"</span>, <span class="st">"1e-50&lt;p&lt;=1e-10"</span>, <span class="st">"1e-10&lt;p&lt;=1e-05"</span>, <span class="st">"1e-05&lt;p&lt;=1e-4"</span>, <span class="st">"1e-4&lt;p&lt;=0.001"</span>, <span class="st">"0.001&lt;p&lt;=0.01"</span>, <span class="st">"0.01&lt;p&lt;=0.05"</span>, <span class="st">"0.05&lt;p&lt;=1"</span>)</span>
+<span id="cb46-8"><a></a>  Ppyram <span class="ot">&lt;-</span> pvals <span class="sc">%&gt;%</span> </span>
+<span id="cb46-9"><a></a>              <span class="fu">cut</span>(<span class="at">breaks=</span>breaksForCut, <span class="at">labels=</span>labelsForCut)  <span class="sc">%&gt;%</span> </span>
+<span id="cb46-10"><a></a>              <span class="fu">table</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb46-11"><a></a>              <span class="fu">rename</span>(<span class="at">interval=</span><span class="dv">1</span>, <span class="at">nb=</span>Freq)</span>
+<span id="cb46-12"><a></a>  <span class="fu">return</span>(Ppyram)</span>
+<span id="cb46-13"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="functions-exercise" class="slide level2">
+<h2>functions: exercise</h2>
+<ul>
+<li>take any code for a plot and make a fucntion of it</li>
+<li>apply this function on other data</li>
+</ul>
+</section>
+<section id="for-loops" class="slide level2">
+<h2>for loops</h2>
+<ul>
+<li>most used kind of loops (in our experience)</li>
+<li>principle define an object that will take different values succesively</li>
+<li>repeat the same process on this object <code>for</code> each value</li>
+</ul>
+<div class="cell custom_smallOutput columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>iteration <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"toto"</span>, <span class="st">"titi"</span>, <span class="st">"tata"</span>)</span>
+<span id="cb47-2"><a></a></span>
+<span id="cb47-3"><a></a><span class="cf">for</span>(i <span class="cf">in</span> iteration){</span>
+<span id="cb47-4"><a></a>  <span class="fu">print</span>(i)</span>
+<span id="cb47-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "toto"
+[1] "titi"
+[1] "tata"</code></pre>
+</div>
+</div></div>
+<p><font color="red"> ⚠ loops are used to iterate over parameters than are not in the data, not over the data (use apply instead)</font></p>
+</section>
+<section id="for-loops-example" class="slide level2">
+<h2>for loops: example</h2>
+<ul>
+<li>test several split of cluters</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb49-2"><a></a>  htmp <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">row_km =</span> k, <span class="at">row_title =</span> <span class="st">"cluster_%s"</span>)  </span>
+<span id="cb49-3"><a></a>  <span class="fu">print</span>(htmp)</span>
+<span id="cb49-4"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="for-loops-example-1" class="slide level2">
+<h2>for loops: example</h2>
+<div class="columns">
+<div class="column" style="width='30%'">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-44-1.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width='30%'">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-45-1.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width='30%'">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-46-1.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="for-loops-exercise" class="slide level2">
+<h2>for loops: exercise</h2>
+<ul>
+<li>correct this loop</li>
+<li>keep the different heatmaps in a list</li>
+<li>print them outside this loop</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb50-2"><a></a>  <span class="fu">Heatmap</span>(mat, <span class="at">name =</span> <span class="st">"mat"</span>, <span class="at">row_km =</span> i, <span class="at">row_title =</span> <span class="st">"cluster_%s"</span>)  </span>
+<span id="cb50-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <!--
 ================================================================================================
 ================================================================================================
 ================================================================================================
 -->
+</section></section>
+<section id="end-of-day-disucssion" class="title-slide slide level1 center">
+<h1>End of day disucssion</h1>
+<p>Do you have any question or remarks on any of the points we discussed ?</p>
+<ol type="1">
+<li>graphics: Good &amp; bad practices</li>
+<li>individual graphics with ggplot</li>
+<li>Focus on heatmaps</li>
+<li>Plot composition</li>
+<li>Some level of automation</li>
+</ol>
 
 
-<img data-src="02_visualization_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../img/logos/phi.svg" class="slide-logo"></p>
