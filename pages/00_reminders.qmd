@@ -134,6 +134,24 @@ With the example dataset [example1.csv](../data/example1.csv), recreate the plot
 
 ::::::
 
+## Project
 
 
+:::::: {.columns}
+
+::: {.column width="45%"}
+ * COVID data
+ * csv file (cleaned) located [here](../data/covid.csv)
+ * Reproduce Figure 2 (complex panel)
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="45%"}
+![](../img/00_reminders/covid.png)
+:::
+
+::::::
 
