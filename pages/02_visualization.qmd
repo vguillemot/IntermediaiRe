@@ -10,7 +10,6 @@ format:
     transition: none
     slide-number: true
     center-title-slide: true
-
 include-in-header:
   - text: |
       <style>
