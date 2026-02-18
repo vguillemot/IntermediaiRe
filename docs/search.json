@@ -344,7 +344,7 @@
     "href": "pages/02_visualization.html#customise-clustering-2",
     "title": "Visualization",
     "section": "Customise clustering",
-    "text": "Customise clustering\n\nWe can change the display of the dendrogram\n\n\n\nHeatmap(mat, \n    name = \"mat\",\n    row_dend_width = unit(4, \"cm\"),\n    row_dend_side = \"right\",\n    column_dend_height = unit(4, \"cm\"),\n    column_dend_side = \"bottom\"\n  )",
+    "text": "Customise clustering\n\n\nWe can change the display of the dendrogram\n\n\n\nHeatmap(mat, \n    name = \"mat\",\n    row_dend_width = unit(4, \"cm\"),\n    row_dend_side = \"right\",\n    column_dend_height = unit(4, \"cm\"),\n    column_dend_side = \"bottom\"\n  )",
     "crumbs": [
       "Visualization"
     ]
@@ -874,7 +874,7 @@
     "href": "pages/03_project.html#detailed-instructions",
     "title": "Workshop: reproduce a complex panelled figure",
     "section": "Detailed instructions",
-    "text": "Detailed instructions\nWork in groups of 3–4.\nStart with each subfigure individually to break up your workload. For example:\n\ncreate a project,\nsave the dataset (located here) in the project’s folder and load it in the environment,\nreproduce first the subfigure showing the expression profile of IL1A with ggplot2,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on reproducing the heatmap with ComplexHeatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.\nAt the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.",
+    "text": "Detailed instructions\nWork in groups of 3–4.\nStart with each subfigure individually to break up your workload. For example:\n\ncreate a project,\nsave the dataset (located here) in the project’s folder and load it in the environment,\nreproduce first the subfigure showing the expression profile of IL1A with ggplot2,\ncreate a function from the previous code that takes as input the name of the gene and outputs the figure,\ncreate subpanels B and C with patchwork,\nwork on reproducing the heatmap with ComplexHeatmap,\ncombine everything in one big panel.\n\nWrite your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.\nAt the end of the day, present your work (use this template): what you achieved, where you had difficulties, the questions you had. We will show you our own version.",
     "crumbs": [
       "Project"
     ]

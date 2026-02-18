@@ -31,7 +31,7 @@ Start with each subfigure individually to break up your workload. For example:
 
 Write your comments describing your work in an R Mardown document, with an HTML output, breaking down the steps.
 
-At the end of the day, present your work: what you achieved, where you had difficulties, the questions you had. We will show you our own version.
+At the end of the day, present your work ([use this template](../data/template.pptx)): what you achieved, where you had difficulties, the questions you had. We will show you our own version.
 
 
 ## References

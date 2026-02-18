@@ -24,6 +24,8 @@ During this class, we will work on a shared script ([link]({{< meta shared_scrip
   * [Introduction to R Markdown](https://rmarkdown.rstudio.com/articles_intro.html)
   * [from Data to Viz](https://www.data-to-viz.com/)
   * [Quarto](https://quarto.org/)
+  * [Tidyverse Style Guide](https://style.tidyverse.org/)
+  * [Our beginner level course](https://vguillemot.github.io/debuter/) (in R)
 
 
 [^1]: have you spotted this infinitely funny pun that works only in French?

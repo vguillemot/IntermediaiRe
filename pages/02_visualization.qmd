@@ -729,6 +729,9 @@ Heatmap(mat, name = "mat", cluster_rows = FALSE, cluster_columns = FALSE)
 
 
 ## Customise clustering {.smaller}
+
+<!-- Attention il faut corriger l'exemple sur la slide 38, je ne sais pas si c'est ici ou avant ou après. -->
+
 - We can change the display of the dendrogram
 ```{r}
 #| echo: TRUE
